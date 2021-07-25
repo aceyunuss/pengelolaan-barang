@@ -37,7 +37,7 @@
 				  <div class="form-group row">
 				    <label for="ip_nmobat" class="col-sm-3 col-form-label">Nama Barang</label>
 				    <div class="col-sm-9">
-				      <input type="text" class="form-control form-control-sm" name="ip_nmobat" id="ip_nmobat" autofocus="" value="<?php echo $data['nm_obat']; ?>" style="text-transform: uppercase;">
+				      <input type="text" class="form-control form-control-sm" name="ip_nmobat" id="ip_nmobat" autofocus="" value="<?php echo $data['nm_barang']; ?>" style="text-transform: uppercase;">
 				    </div>
 				  </div>
 				  

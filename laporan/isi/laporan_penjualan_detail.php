@@ -149,7 +149,7 @@
 				while($data_barang = mysqli_fetch_array($sql_obat)) {
 			 ?>
 				<tr>
-					<td class="kol-nmobat"><?php echo $data_barang['nm_obat']; ?></td>
+					<td class="kol-nmobat"><?php echo $data_barang['nm_barang']; ?></td>
 					<td class="kol-hrgjual"><?php echo $data_barang['hrg_jual']; ?></td>
 					<td class="kol-jmljual"><?php echo $data_barang['jml_jual']; ?></td>
 					<td class="kol-satjual"><?php echo $data_barang['sat_jual']; ?></td>

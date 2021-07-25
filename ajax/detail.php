@@ -3,7 +3,7 @@
 
 	if(@$_GET['page']=='penjualan') {
 		$no_pjl = @mysqli_real_escape_string($conn, $_GET['no_pjl']);
-		$query_lihat = "SELECT tbl_databarang.nm_obat, tbl_penjualandetail.hrg_jual, tbl_penjualandetail.jml_jual, tbl_penjualandetail.sat_jual, tbl_penjualandetail.subtotal FROM tbl_penjualandetail INNER JOIN tbl_databarang ON tbl_penjualandetail.kd_barang = tbl_databarang.kd_barang WHERE tbl_penjualandetail.no_penjualan = '$no_pjl'";
+		$query_lihat = "SELECT tbl_databarang.nm_barang, tbl_penjualandetail.hrg_jual, tbl_penjualandetail.jml_jual, tbl_penjualandetail.sat_jual, tbl_penjualandetail.subtotal FROM tbl_penjualandetail INNER JOIN tbl_databarang ON tbl_penjualandetail.kd_barang = tbl_databarang.kd_barang WHERE tbl_penjualandetail.no_penjualan = '$no_pjl'";
 		$sql_lihat = mysqli_query($conn, $query_lihat) or die ($conn->error);
 		$data = array();
 
@@ -14,7 +14,7 @@
 	} 
 	else if(@$_GET['page']=='pembelian') {
 		$no_faktur = @mysqli_real_escape_string($conn, $_GET['no_faktur']);
-		$query_lihat = "SELECT tbl_databarang.nm_obat, tbl_pembeliandetail.hrg_beli, tbl_pembeliandetail.jml_beli, tbl_pembeliandetail.sat_beli, tbl_pembeliandetail.subtotal FROM tbl_pembeliandetail INNER JOIN tbl_databarang ON tbl_pembeliandetail.kd_barang = tbl_databarang.kd_barang WHERE tbl_pembeliandetail.no_faktur = '$no_faktur'";
+		$query_lihat = "SELECT tbl_databarang.nm_barang, tbl_pembeliandetail.hrg_beli, tbl_pembeliandetail.jml_beli, tbl_pembeliandetail.sat_beli, tbl_pembeliandetail.subtotal FROM tbl_pembeliandetail INNER JOIN tbl_databarang ON tbl_pembeliandetail.kd_barang = tbl_databarang.kd_barang WHERE tbl_pembeliandetail.no_faktur = '$no_faktur'";
 		$sql_lihat = mysqli_query($conn, $query_lihat) or die ($conn->error);
 		$data = array();
 

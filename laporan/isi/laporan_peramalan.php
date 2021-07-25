@@ -39,7 +39,7 @@
 				$sql_obrml = mysqli_query($conn, $query_obrml) or die ($conn->error);
 				$data_obrml = mysqli_fetch_array($sql_obrml);
 				$no_obatramal = $data_obrml['no_obatramal'];
-				$nm_obat = $data_obrml['nm_obat'];
+				$nm_barang = $data_obrml['nm_barang'];
 			 ?>
 			<table class="tabel-judul">
 				<tr>
@@ -51,7 +51,7 @@
 							<tr>
 								<td class="keterangan">Nama Barang</td>
 								<td>:</td>
-								<td class="isi-keterangan"><?php echo $nm_obat; ?></td>
+								<td class="isi-keterangan"><?php echo $nm_barang; ?></td>
 							</tr>
 							<tr>
 								<td class="keterangan">Periode Perencanaan</td>
@@ -347,6 +347,6 @@
 		</table>
 	</div>
 	<div class="kotak-hasil-akhir" style="margin-top: 20px; font-size: 14px; text-align: justify; line-height: 1.6;">
-		Dari hasil perhitungan peramalan penjualan obat <?php echo $nm_obat; ?> untuk periode <?php echo $data_prm['periode_rml']; ?>, diperoleh metode <?php echo $metode_terbaik; ?> memberikan hasil peramalan dengan tingkat error terendah. Sehingga angka penjualan obat <?php echo $nm_obat; ?> untuk periode <?php echo $data_prm['periode_rml']; ?> diramalkan sebesar <?php echo round($data_obrml['hasil_rml'])." ".$data_obrml['sat_obat']; ?>
+		Dari hasil perhitungan peramalan penjualan obat <?php echo $nm_barang; ?> untuk periode <?php echo $data_prm['periode_rml']; ?>, diperoleh metode <?php echo $metode_terbaik; ?> memberikan hasil peramalan dengan tingkat error terendah. Sehingga angka penjualan obat <?php echo $nm_barang; ?> untuk periode <?php echo $data_prm['periode_rml']; ?> diramalkan sebesar <?php echo round($data_obrml['hasil_rml'])." ".$data_obrml['sat_obat']; ?>
 	</div>
 </page>

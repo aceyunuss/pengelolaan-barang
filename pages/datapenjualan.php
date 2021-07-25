@@ -150,10 +150,10 @@
 				var total_penjualan = 0;
 				var objData = JSON.parse(data);
 				$.each(objData, function(key,val){
-					// $("#data_detailpjl").append(val.nm_obat+"/"+val.hrg_jual+"/"+val.jml_jual+"/"+val.sat_jual+"/"+val.subtotal+"<br>");
+					// $("#data_detailpjl").append(val.nm_barang+"/"+val.hrg_jual+"/"+val.jml_jual+"/"+val.sat_jual+"/"+val.subtotal+"<br>");
 					var baris_baru = '';
 					baris_baru += '<tr>';
-					baris_baru += 	'<td>'+val.nm_obat+'</td>';
+					baris_baru += 	'<td>'+val.nm_barang+'</td>';
 					baris_baru += 	'<td class="text-right">'+val.hrg_jual+'</td>';
 					baris_baru += 	'<td class="text-center">'+val.jml_jual+'</td>';
 					baris_baru += 	'<td>'+val.sat_jual+'</td>';

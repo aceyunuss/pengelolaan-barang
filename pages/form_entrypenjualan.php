@@ -66,8 +66,8 @@
                                     </div>
                     			</div>
                                 <div class="position-relative form-group">
-                                    <label for="nm_obat" class="">Nama Obat</label>
-                                    <input name="nm_obat" id="nm_obat" placeholder="" type="text" class="form-control form-control-sm" disabled="">
+                                    <label for="nm_barang" class="">Nama Obat</label>
+                                    <input name="nm_barang" id="nm_barang" placeholder="" type="text" class="form-control form-control-sm" disabled="">
                                     <input type="hidden" id="stok_obat">
                                     <input type="hidden" id="exp_obat">
                                 </div>
@@ -204,13 +204,13 @@
             </thead>
             <tbody>
         <?php 
-            $query_tampil = "SELECT * FROM tbl_databarang ORDER BY nm_obat ASC";
+            $query_tampil = "SELECT * FROM tbl_databarang ORDER BY nm_barang ASC";
             $sql_tampil = mysqli_query($conn, $query_tampil) or die ($conn->error);
             while($data = mysqli_fetch_array($sql_tampil)) {
          ?>
                 <tr>
                     <td><?php echo $data['kd_barang']; ?></td>
-                    <td><?php echo $data['nm_obat']; ?></td>
+                    <td><?php echo $data['nm_barang']; ?></td>
                     <td><?php echo $data['exp_obat']; ?></td>
                     <td><?php echo $data['hrg_obat']; ?></td>
                     <td><?php echo $data['stk_obat']; ?></td>
@@ -219,7 +219,7 @@
                     <td class="td-opsi">
                         <button class="btn-transition btn btn-outline-dark btn-sm" title="pilih" id="tombol_pilihobat" name="tombol_pilihobat" data-dismiss="modal"
                             data-kode="<?php echo $data['kd_barang']; ?>"
-                            data-nama="<?php echo $data['nm_obat']; ?>"
+                            data-nama="<?php echo $data['nm_barang']; ?>"
                             data-harga="<?php echo $data['hrg_obat']; ?>"
                             data-satuan="<?php echo $data['sat_obat']; ?>"
                             data-stok="<?php echo $data['stk_obat']; ?>"
@@ -258,7 +258,7 @@ $(document).ready(function() {
 
     function reset() {
         $("#kode_obat").val("");
-        $("#nm_obat").val("");
+        $("#nm_barang").val("");
         $("#hrg_obat").val("");
         $("#jml_obat").val("");
         $("#span_satuan").text("satuan");
@@ -297,7 +297,7 @@ $(document).ready(function() {
         var exp = $(this).data('exp');
 
         $("#kode_obat").val(kode);
-        $("#nm_obat").val(nama);
+        $("#nm_barang").val(nama);
         $("#stok_obat").val(stok);
         $("#exp_obat").val(exp);
         $("#hrg_obat").val(harga);
@@ -328,7 +328,7 @@ $(document).ready(function() {
 
     $("#tambah_obat").click(function() {
         var kode = $("#kode_obat").val();
-        var nama = $("#nm_obat").val();
+        var nama = $("#nm_barang").val();
         var stok = Number($("#stok_obat").val());
         var exp = $("#exp_obat").val();
         var harga = $("#hrg_obat").val();

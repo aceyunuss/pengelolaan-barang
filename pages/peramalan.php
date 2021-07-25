@@ -21,10 +21,10 @@
 					<h6><i class="fas fa-list-alt"></i> Lengkapi form ini untuk melakukan Perencanaan Fasilitas</h6>
 					
 					  <div class="form-group row">
-					    <label for="nm_obat" class="col-sm-3 col-form-label">Pilih Barang</label>
+					    <label for="nm_barang" class="col-sm-3 col-form-label">Pilih Barang</label>
 					    <div class="col-sm-9">
 					      <div class="input-group">
-					      	<textarea name="nm_obat" id="nm_obat" rows="2" class="form-control" placeholder="barang terpilih" style="font-size: 14px; height: 90px;" readonly=""></textarea>
+					      	<textarea name="nm_barang" id="nm_barang" rows="2" class="form-control" placeholder="barang terpilih" style="font-size: 14px; height: 90px;" readonly=""></textarea>
 					      	<div class="input-group-append">
 	                            <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#modal_dataobat" id="lihat_data_barang"><i class="fas fa-search"></i></button>
 	                        </div>
@@ -155,19 +155,19 @@
 		            </thead>
 		            <tbody>
 		        <?php 
-		            $query_tampil = "SELECT * FROM tbl_databarang ORDER BY nm_obat ASC";
+		            $query_tampil = "SELECT * FROM tbl_databarang ORDER BY nm_barang ASC";
 		            $sql_tampil = mysqli_query($conn, $query_tampil) or die ($conn->error);
 		            $no=0;
 		            while($data = mysqli_fetch_array($sql_tampil)) {
 		         ?>
 		                <tr>
 		                    <td><?php echo $data['kd_barang']; ?></td>
-		                    <td><?php echo $data['nm_obat']; ?></td>
+		                    <td><?php echo $data['nm_barang']; ?></td>
 		                    <td><?php echo $data['stk_obat']; ?></td>
 		                    <td><?php echo $data['sat_obat']; ?></td>
 		                    <td><?php echo $data['ktg_obat']; ?></td>
 		                    <td class="td-opsi">
-		                        <input class="form-check-input position-static pilih-obat" type="checkbox" name="obat[]" id="obat<?php echo $no++; ?>" value="<?php echo $data['kd_barang']; ?>" data-nama="<?php echo $data['nm_obat']; ?>">
+		                        <input class="form-check-input position-static pilih-obat" type="checkbox" name="obat[]" id="obat<?php echo $no++; ?>" value="<?php echo $data['kd_barang']; ?>" data-nama="<?php echo $data['nm_barang']; ?>">
 		                    </td>
 		                </tr>
 		         <?php 
@@ -198,7 +198,7 @@
         var satuan = $(this).data("satuan");
         $("#ip_kd_barang").val(kode);
         $("#ip_sat_obat").val(satuan);
-        $("#nm_obat").val(nama);
+        $("#nm_barang").val(nama);
     });
 
     $("#jml_hari").click(function() {
@@ -216,7 +216,7 @@
 	    	nama[i] = $(this).data('nama');
 	   	});
 	   	jml = obat.length;
-	   	$("#nm_obat").val(nama);
+	   	$("#nm_barang").val(nama);
 
 	   	obat = [];
 		nama = [];
@@ -245,8 +245,8 @@
 	// });
 
     $("#hitung_ramal").click(function() {
-    	var nama = $("#nm_obat").val();
-    	var kdobat = $("#nm_obat").val();
+    	var nama = $("#nm_barang").val();
+    	var kdobat = $("#nm_barang").val();
     	var metode = $("#met_peramalan").val();
     	var periode = document.querySelector('input[name="ip_periode"]:checked').value;
     	var jml_hari = $("#jml_hari").val();
@@ -254,7 +254,7 @@
     	// var alpha = $("#nilai_alpha").val();
 
     	if(nama=="") {
-    		document.getElementById("nm_obat").focus();
+    		document.getElementById("nm_barang").focus();
             Swal.fire(
               'Data Belum Lengkap',
               'maaf, tolong pilih obat terlebih dulu',

@@ -1,5 +1,5 @@
 <?php 
-	$nama_obat = @$_POST['nm_obat'];
+	$nama_obat = @$_POST['nm_barang'];
 	$kd_barang = @$_POST['ip_kd_barang'];
 	$sat_obat = @$_POST['ip_sat_obat'];
 	$prd_ramalan = @$_POST['ip_periode'];

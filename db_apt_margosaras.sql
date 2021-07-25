@@ -56,7 +56,7 @@ INSERT INTO `data_barang` (`kode`, `nama`, `exp_date`, `harga`, `stok`, `satuan`
 
 CREATE TABLE IF NOT EXISTS `tbl_databarang` (
   `kd_barang` varchar(18) NOT NULL,
-  `nm_obat` varchar(80) NOT NULL,
+  `nm_barang` varchar(80) NOT NULL,
   `exp_obat` date NOT NULL,
   `ktg_obat` varchar(15) NOT NULL,
   `bnt_obat` varchar(20) NOT NULL,
@@ -72,7 +72,7 @@ CREATE TABLE IF NOT EXISTS `tbl_databarang` (
 -- Dumping data untuk tabel `tbl_databarang`
 --
 
-INSERT INTO `tbl_databarang` (`kd_barang`, `nm_obat`, `exp_obat`, `ktg_obat`, `bnt_obat`, `sat_obat`, `hrg_obat`, `hrgbeli_obat`, `stk_obat`, `minstk_obat`) VALUES
+INSERT INTO `tbl_databarang` (`kd_barang`, `nm_barang`, `exp_obat`, `ktg_obat`, `bnt_obat`, `sat_obat`, `hrg_obat`, `hrgbeli_obat`, `stk_obat`, `minstk_obat`) VALUES
 ('0693228-0844', 'ASEPSO ORIG', '2022-07-09', 'HV', 'BATANG', 'BATANG', 7000, 5600, 15, 3),
 ('130110', 'ALLERIN', '2021-08-01', 'HV', 'SIRUP', 'BOTOL', 12500, 10000, 12, 3),
 ('14124A', 'VIVA TONER ALL VAR', '2022-07-01', 'HV', 'CAIR', 'BOTOL', 5200, 4160, 12, 3),
@@ -304,7 +304,7 @@ CREATE TABLE IF NOT EXISTS `tbl_barangramal` (
   `no_obatramal` varchar(16) NOT NULL,
   `no_rml` varchar(16) NOT NULL,
   `kd_barang` varchar(18) NOT NULL,
-  `nm_obat` varchar(80) NOT NULL,
+  `nm_barang` varchar(80) NOT NULL,
   `sat_obat` varchar(11) NOT NULL,
   `mtd_terbaik` enum('SMA','SES') NOT NULL,
   `hasil_rml` double NOT NULL,
@@ -317,7 +317,7 @@ CREATE TABLE IF NOT EXISTS `tbl_barangramal` (
 -- Dumping data untuk tabel `tbl_barangramal`
 --
 
-INSERT INTO `tbl_barangramal` (`no_obatramal`, `no_rml`, `kd_barang`, `nm_obat`, `sat_obat`, `mtd_terbaik`, `hasil_rml`) VALUES
+INSERT INTO `tbl_barangramal` (`no_obatramal`, `no_rml`, `kd_barang`, `nm_barang`, `sat_obat`, `mtd_terbaik`, `hasil_rml`) VALUES
 ('ORM/20200127/001', 'PRM/20200127/001', '520013421', 'SANMOL 500MG TAB STR 4S', 'STRIP', 'SES', 19.046),
 ('ORM/20200127/002', 'PRM/20200127/002', '520013421', 'SANMOL 500MG TAB STR 4S', 'STRIP', 'SES', 16.78),
 ('ORM/20200127/003', 'PRM/20200127/003', '520013421', 'SANMOL 500MG TAB STR 4S', 'STRIP', 'SES', 16.596),

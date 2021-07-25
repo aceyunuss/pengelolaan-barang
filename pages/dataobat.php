@@ -36,13 +36,13 @@
 		    </thead>
 		    <tbody>
 		<?php 
-			$query_tampil = "SELECT * FROM tbl_databarang ORDER BY nm_obat ASC";
+			$query_tampil = "SELECT * FROM tbl_databarang ORDER BY nm_barang ASC";
 			$sql_tampil = mysqli_query($conn, $query_tampil) or die ($conn->error);
 			while($data = mysqli_fetch_array($sql_tampil)) {
 		 ?>
 		 		<tr>
 		 			<td><?php echo $data['kd_barang']; ?></td>
-		 			<td><?php echo $data['nm_obat']; ?></td>
+		 			<td><?php echo $data['nm_barang']; ?></td>
 		 			<!-- <td><?php echo $data['exp_obat']; ?></td> -->
 		 			<td><?php echo $data['hrg_obat']; ?></td>
 		 			<td><?php echo $data['stk_obat']; ?></td>
@@ -52,7 +52,7 @@
 		 			<td class="td-opsi">
 		 				<button class="btn-transition btn btn-outline-success btn-sm" title="detail obat" id="tombol_detail" name="tombol_detail" data-toggle="modal" data-target="#detail_obat"
 		 				data-kode="<?php echo $data['kd_barang']; ?>"
-		 				data-nama="<?php echo $data['nm_obat']; ?>"
+		 				data-nama="<?php echo $data['nm_barang']; ?>"
 		 				data-exp="<?php echo tgl_indo($data['exp_obat']); ?>"
 		 				data-ktg="<?php echo $data['ktg_obat']; ?>"
 		 				data-bentuk="<?php echo $data['bnt_obat']; ?>"
@@ -67,7 +67,7 @@
                         <button class="btn-transition btn btn-outline-primary btn-sm" title="edit" id="tombol_edit" name="tombol_edit" data-kode="<?php echo $data['kd_barang']; ?>">
                             <i class="fas fa-edit"></i>
                         </button>
-                        <button class="btn-transition btn btn-outline-danger btn-sm" title="hapus" id="tombol_hapus" name="tombol_hapus" data-kode="<?php echo $data['kd_barang']; ?>" data-nama="<?php echo $data['nm_obat']; ?>">
+                        <button class="btn-transition btn btn-outline-danger btn-sm" title="hapus" id="tombol_hapus" name="tombol_hapus" data-kode="<?php echo $data['kd_barang']; ?>" data-nama="<?php echo $data['nm_barang']; ?>">
                             <i class="fas fa-trash"></i>
                         </button>
                     <?php } ?>

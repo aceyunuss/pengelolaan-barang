@@ -4,12 +4,12 @@
 	$jml_obat = count($kd_barang);
 
 	for($i=0; $i<$jml_obat; $i++) {
-		$query_obat = "SELECT kd_barang, nm_obat, sat_obat FROM tbl_databarang WHERE kd_barang='$kd_barang[$i]'";
+		$query_obat = "SELECT kd_barang, nm_barang, sat_obat FROM tbl_databarang WHERE kd_barang='$kd_barang[$i]'";
 		$sql_obat = mysqli_query($conn, $query_obat) or die ($conn->error);
 		$data_barang = mysqli_fetch_array($sql_obat);
 		// $kd_barang[$i] = $data_barang['kd_barang'];
 		$sat_obat[$i] = $data_barang['sat_obat'];
-		$nama_obat[$i] = $data_barang['nm_obat'];
+		$nama_obat[$i] = $data_barang['nm_barang'];
 	}
 
 	$prd_ramalan = @$_POST['ip_periode'];

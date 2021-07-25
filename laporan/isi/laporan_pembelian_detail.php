@@ -164,7 +164,7 @@
 					while($data_barang = mysqli_fetch_array($sql_obat)) {
 				 ?>
 					<tr>
-						<td class="kol-nmobat"><?php echo $data_barang['nm_obat']; ?></td>
+						<td class="kol-nmobat"><?php echo $data_barang['nm_barang']; ?></td>
 						<td class="kol-hrgjual">Rp<?php echo number_format($data_barang['hrg_beli'], 0,",", "."); ?></td>
 						<td class="kol-jmljual"><?php echo $data_barang['jml_beli']; ?></td>
 						<td class="kol-satjual"><?php echo $data_barang['sat_beli']; ?></td>
