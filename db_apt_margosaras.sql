@@ -1558,10 +1558,10 @@ INSERT INTO `tbl_prd_sma` (`no_prd_sma`, `no_mtd_sma`, `periode`, `jml_penjualan
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tbl_stokexpobat`
+-- Struktur dari tabel `tbl_stokexpbarang`
 --
 
-CREATE TABLE IF NOT EXISTS `tbl_stokexpobat` (
+CREATE TABLE IF NOT EXISTS `tbl_stokexpbarang` (
   `no_stok` int(11) NOT NULL AUTO_INCREMENT,
   `kd_obat` varchar(15) NOT NULL,
   `tgl_exp` date NOT NULL,

@@ -32,7 +32,7 @@
 	}
 	else if(@$_GET['page']=='expstok_obat') {
 		$kd_obat = @mysqli_real_escape_string($conn, $_GET['kd_obat']);
-		$query_expstok = "SELECT * FROM tbl_stokexpobat WHERE kd_obat = '$kd_obat'";
+		$query_expstok = "SELECT * FROM tbl_stokexpbarang WHERE kd_obat = '$kd_obat'";
 		$sql_expstok = mysqli_query($conn, $query_expstok) or die ($conn->error);
 		$data_expstok = array();
 

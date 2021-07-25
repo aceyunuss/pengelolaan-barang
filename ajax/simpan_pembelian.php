@@ -44,17 +44,17 @@
 		$query_estok = "UPDATE tbl_databarang SET stk_obat='$stok_baru', hrgbeli_obat = '$harga', hrg_obat = '$harga_jual' WHERE kd_obat='$kd_obat'";
 		mysqli_query($conn, $query_estok) or die ($conn->error);
 
-		$query_exp = "SELECT stok FROM tbl_stokexpobat WHERE kd_obat = '$kd_obat' AND tgl_exp = '$exp_obat'";
+		$query_exp = "SELECT stok FROM tbl_stokexpbarang WHERE kd_obat = '$kd_obat' AND tgl_exp = '$exp_obat'";
 		$sql_exp = mysqli_query($conn, $query_exp) or die ($conn->error);
 		$rows_exp = mysqli_num_rows($sql_exp);
 		if($rows_exp > 0) {
 			$data_exp = mysqli_fetch_array($sql_exp);
 			$stok_lamaexp = $data_exp['stok'];
 			$stok_baruexp = $stok_lamaexp + $jml_obat;
-			$query_updstokexp = "UPDATE tbl_stokexpobat SET stok='$stok_baruexp' WHERE kd_obat='$kd_obat' AND tgl_exp = '$exp_obat'";
+			$query_updstokexp = "UPDATE tbl_stokexpbarang SET stok='$stok_baruexp' WHERE kd_obat='$kd_obat' AND tgl_exp = '$exp_obat'";
 			mysqli_query($conn, $query_updstokexp) or die ($conn->error);
 		} else {
-			$query_stokexp = "INSERT INTO tbl_stokexpobat (kd_obat, tgl_exp, stok) VALUES ('$kd_obat', '$exp_obat', '$jml_obat')";
+			$query_stokexp = "INSERT INTO tbl_stokexpbarang (kd_obat, tgl_exp, stok) VALUES ('$kd_obat', '$exp_obat', '$jml_obat')";
 			mysqli_query($conn, $query_stokexp) or die ($conn->error);
 		}
 	}

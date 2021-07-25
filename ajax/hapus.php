@@ -23,7 +23,7 @@
 	{
 		$exp = mysqli_real_escape_string($conn, $_POST['exp']);
 		$stok = mysqli_real_escape_string($conn, $_POST['stok']);
-		$query_ksgstok = "UPDATE tbl_stokexpobat SET stok = '0' WHERE kd_obat = '$id' AND tgl_exp = '$exp'";
+		$query_ksgstok = "UPDATE tbl_stokexpbarang SET stok = '0' WHERE kd_obat = '$id' AND tgl_exp = '$exp'";
 		mysqli_query($conn, $query_ksgstok) or die ($conn->error);
 
 		$query_stok = "SELECT stk_obat FROM tbl_databarang WHERE kd_obat = '$id'";

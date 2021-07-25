@@ -108,7 +108,7 @@
 				  </div>
 				  
 				  <?php 
-				  	$query_stok = "SELECT * FROM tbl_stokexpobat WHERE kd_obat = '$kd_obat'";
+				  	$query_stok = "SELECT * FROM tbl_stokexpbarang WHERE kd_obat = '$kd_obat'";
 				  	$sql_stok = mysqli_query($conn, $query_stok) or die ($conn->error);
 				  	$no=1;
 				  	while($data_stok = mysqli_fetch_array($sql_stok)) {

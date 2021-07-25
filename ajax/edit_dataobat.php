@@ -35,7 +35,7 @@
 		$exp_s = $a_exp[$i];
 		$stok_s = $a_stok[$i];
 		$stok = $stok + $stok_s;
-		$query_stok = "UPDATE tbl_stokexpobat SET tgl_exp = '$exp_s', stok = '$stok_s' WHERE no_stok = '$nmr_stok'";
+		$query_stok = "UPDATE tbl_stokexpbarang SET tgl_exp = '$exp_s', stok = '$stok_s' WHERE no_stok = '$nmr_stok'";
 		$sql_stok = mysqli_query($conn, $query_stok) or die ($conn->error);
 	}
 

@@ -57,12 +57,12 @@
 		$query_estok = "UPDATE tbl_databarang SET stk_obat='$stok_baru' WHERE kd_obat='$kd_obat'";
 		mysqli_query($conn, $query_estok) or die ($conn->error);
 
-		$query_stokexp = "SELECT stok FROM tbl_stokexpobat WHERE kd_obat = '$kd_obat' AND tgl_exp = '$exp_obat'";
+		$query_stokexp = "SELECT stok FROM tbl_stokexpbarang WHERE kd_obat = '$kd_obat' AND tgl_exp = '$exp_obat'";
 		$sql_stokexp = mysqli_query($conn, $query_stokexp) or die ($conn->error);
 		$data_stokexp = mysqli_fetch_array($sql_stokexp);
 		$stok_lamaexp = $data_stokexp['stok'];
 		$stok_baruexp = $stok_lamaexp - $jml_obat;
-		$query_estokexp = "UPDATE tbl_stokexpobat SET stok='$stok_baruexp' WHERE kd_obat='$kd_obat' AND tgl_exp = '$exp_obat'";
+		$query_estokexp = "UPDATE tbl_stokexpbarang SET stok='$stok_baruexp' WHERE kd_obat='$kd_obat' AND tgl_exp = '$exp_obat'";
 		mysqli_query($conn, $query_estokexp) or die ($conn->error);
 	}
  ?>
