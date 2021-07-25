@@ -165,7 +165,7 @@
 		                    <td><?php echo $data['nm_barang']; ?></td>
 		                    <td><?php echo $data['stk_obat']; ?></td>
 		                    <td><?php echo $data['sat_obat']; ?></td>
-		                    <td><?php echo $data['ktg_obat']; ?></td>
+		                    <td><?php echo $data['ktg_barang']; ?></td>
 		                    <td class="td-opsi">
 		                        <input class="form-check-input position-static pilih-obat" type="checkbox" name="obat[]" id="obat<?php echo $no++; ?>" value="<?php echo $data['kd_barang']; ?>" data-nama="<?php echo $data['nm_barang']; ?>">
 		                    </td>

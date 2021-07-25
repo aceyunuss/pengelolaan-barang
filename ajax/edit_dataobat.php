@@ -39,7 +39,7 @@
 		$sql_stok = mysqli_query($conn, $query_stok) or die ($conn->error);
 	}
 
-	$query = "UPDATE tbl_databarang SET nm_barang='$nama', ktg_obat='$ktg', sat_obat='$satuan', hrg_obat='$harga_jual', hrgbeli_obat='$harga', stk_obat='$stok', bnt_obat='$bentuk', minstk_obat='$min_stok' WHERE kd_barang = '$kode'";
+	$query = "UPDATE tbl_databarang SET nm_barang='$nama', ktg_barang='$ktg', sat_obat='$satuan', hrg_obat='$harga_jual', hrgbeli_obat='$harga', stk_obat='$stok', bnt_obat='$bentuk', minstk_obat='$min_stok' WHERE kd_barang = '$kode'";
 	$sql = mysqli_query($conn, $query) or die ($conn->error);
 
 

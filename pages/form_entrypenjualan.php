@@ -215,7 +215,7 @@
                     <td><?php echo $data['hrg_obat']; ?></td>
                     <td><?php echo $data['stk_obat']; ?></td>
                     <td><?php echo $data['sat_obat']; ?></td>
-                    <td><?php echo $data['ktg_obat']; ?></td>
+                    <td><?php echo $data['ktg_barang']; ?></td>
                     <td class="td-opsi">
                         <button class="btn-transition btn btn-outline-dark btn-sm" title="pilih" id="tombol_pilihobat" name="tombol_pilihobat" data-dismiss="modal"
                             data-kode="<?php echo $data['kd_barang']; ?>"

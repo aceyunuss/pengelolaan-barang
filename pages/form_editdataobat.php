@@ -46,19 +46,19 @@
 				    <div class="col-sm-9">
 				      <div class="form-check">
 				      	<label class="form-check-label" style="font-weight: normal;">
-				      		<input name="ip_ktgobat" id="ktg_gen" type="radio" class="form-check-input" value="New" <?php if($data['ktg_obat'] == "New") {echo "checked";} ?>> 
+				      		<input name="ip_ktgobat" id="ktg_gen" type="radio" class="form-check-input" value="New" <?php if($data['ktg_barang'] == "New") {echo "checked";} ?>> 
 				      		New
 				      	</label>
 				      </div>
                       <div class="form-check">
                     	<label class="form-check-label" style="font-weight: normal;">
-                    		<input name="ip_ktgobat" id="ktg_paten" type="radio" class="form-check-input" value="Part Pendukung" <?php if($data['ktg_obat'] == "Part Pendukung") {echo "checked";} ?>>
+                    		<input name="ip_ktgobat" id="ktg_paten" type="radio" class="form-check-input" value="Part Pendukung" <?php if($data['ktg_barang'] == "Part Pendukung") {echo "checked";} ?>>
                     		Part Pendukung
                     	</label>
                 	  </div>
                 	  <div class="form-check">
                     	<label class="form-check-label" style="font-weight: normal;">
-                    		<input name="ip_ktgobat" id="ktg_hv" type="radio" class="form-check-input" value="Heavy" <?php if($data['ktg_obat'] == "Heavy") {echo "checked";} ?>>
+                    		<input name="ip_ktgobat" id="ktg_hv" type="radio" class="form-check-input" value="Heavy" <?php if($data['ktg_barang'] == "Heavy") {echo "checked";} ?>>
                     		Heavy
                     	</label>
                 	  </div>

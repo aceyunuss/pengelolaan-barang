@@ -47,14 +47,14 @@
 		 			<td><?php echo $data['hrg_obat']; ?></td>
 		 			<td><?php echo $data['stk_obat']; ?></td>
 		 			<td><?php echo $data['sat_obat']; ?></td>
-		 			<td><?php echo $data['ktg_obat']; ?></td>
+		 			<td><?php echo $data['ktg_barang']; ?></td>
 
 		 			<td class="td-opsi">
 		 				<button class="btn-transition btn btn-outline-success btn-sm" title="detail obat" id="tombol_detail" name="tombol_detail" data-toggle="modal" data-target="#detail_obat"
 		 				data-kode="<?php echo $data['kd_barang']; ?>"
 		 				data-nama="<?php echo $data['nm_barang']; ?>"
 		 				data-exp="<?php echo tgl_indo($data['exp_barang']); ?>"
-		 				data-ktg="<?php echo $data['ktg_obat']; ?>"
+		 				data-ktg="<?php echo $data['ktg_barang']; ?>"
 		 				data-bentuk="<?php echo $data['bnt_obat']; ?>"
 		 				data-satuan="<?php echo $data['sat_obat']; ?>"
 		 				data-harbel="<?php echo "Rp".number_format($data['hrgbeli_obat'], 0,",", "."); ?>"
