@@ -96,7 +96,7 @@
 						  <div class="input-group-prepend">
 						    <span class="input-group-text" id="inputGroup-sizing-sm">Rp</span>
 						  </div>
-						  <input type="number" class="form-control" id="ip_hrgobat" name="ip_hrgobat" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" value="<?php echo $data['hrgbeli_obat']; ?>">
+						  <input type="number" class="form-control" id="ip_hrgobat" name="ip_hrgobat" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" value="<?php echo $data['hrgbeli_barang']; ?>">
 					  </div>
 				    </div>
 				  </div>

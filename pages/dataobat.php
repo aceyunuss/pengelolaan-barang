@@ -57,7 +57,7 @@
 		 				data-ktg="<?php echo $data['ktg_barang']; ?>"
 		 				data-bentuk="<?php echo $data['bnt_barang']; ?>"
 		 				data-satuan="<?php echo $data['sat_barang']; ?>"
-		 				data-harbel="<?php echo "Rp".number_format($data['hrgbeli_obat'], 0,",", "."); ?>"
+		 				data-harbel="<?php echo "Rp".number_format($data['hrgbeli_barang'], 0,",", "."); ?>"
 		 				data-harju="<?php echo "Rp".number_format($data['hrg_barang'], 0,",", ".");; ?>"
 		 				data-stok="<?php echo $data['stk_obat']; ?>"
 		 				data-minstok="<?php echo $data['minstk_obat']; ?>">
