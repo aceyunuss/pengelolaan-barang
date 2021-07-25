@@ -30,7 +30,7 @@
 			<?php 
 				$tgl_sekarang = date('Y-m-d');
 				$nomor = 1;
-				$query_pjlobat = "SELECT nm_obat, tbl_penjualandetail.kd_obat, sat_obat, SUM(tbl_penjualandetail.jml_jual) AS jml_terjual, SUM(tbl_penjualandetail.hrg_jual*tbl_penjualandetail.jml_jual) AS keuntungan FROM tbl_penjualandetail INNER JOIN tbl_dataobat ON tbl_penjualandetail.kd_obat = tbl_dataobat.kd_obat INNER JOIN tbl_penjualan ON tbl_penjualandetail.no_penjualan = tbl_penjualan.no_penjualan WHERE (tbl_penjualan.tgl_penjualan BETWEEN '' AND '$tgl_sekarang') GROUP BY tbl_penjualandetail.kd_obat ORDER BY nm_obat ASC";
+				$query_pjlobat = "SELECT nm_obat, tbl_penjualandetail.kd_obat, sat_obat, SUM(tbl_penjualandetail.jml_jual) AS jml_terjual, SUM(tbl_penjualandetail.hrg_jual*tbl_penjualandetail.jml_jual) AS keuntungan FROM tbl_penjualandetail INNER JOIN tbl_databarang ON tbl_penjualandetail.kd_obat = tbl_databarang.kd_obat INNER JOIN tbl_penjualan ON tbl_penjualandetail.no_penjualan = tbl_penjualan.no_penjualan WHERE (tbl_penjualan.tgl_penjualan BETWEEN '' AND '$tgl_sekarang') GROUP BY tbl_penjualandetail.kd_obat ORDER BY nm_obat ASC";
 				$sql_pjlobat = mysqli_query($conn, $query_pjlobat) or die ($conn->error);
 			 ?>
 			<tbody>

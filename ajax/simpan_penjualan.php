@@ -49,12 +49,12 @@
 		$query_pjldtl = "INSERT INTO tbl_penjualandetail (no_penjualan, kd_obat, expired, hrg_jual, jml_jual, sat_jual, subtotal) VALUES('$no_penjualan', '$kd_obat', '$exp_obat', '$hrg_jual', '$jml_obat', '$sat_jual', '$subtotal')";
 		mysqli_query($conn, $query_pjldtl) or die ($conn->error);
 
-		$query_stok = "SELECT stk_obat FROM tbl_dataobat WHERE kd_obat = '$kd_obat'";
+		$query_stok = "SELECT stk_obat FROM tbl_databarang WHERE kd_obat = '$kd_obat'";
 		$sql_stok = mysqli_query($conn, $query_stok) or die ($conn->error);
 		$data_stok = mysqli_fetch_array($sql_stok);
 		$stok_lama = $data_stok['stk_obat'];
 		$stok_baru = $stok_lama - $jml_obat;
-		$query_estok = "UPDATE tbl_dataobat SET stk_obat='$stok_baru' WHERE kd_obat='$kd_obat'";
+		$query_estok = "UPDATE tbl_databarang SET stk_obat='$stok_baru' WHERE kd_obat='$kd_obat'";
 		mysqli_query($conn, $query_estok) or die ($conn->error);
 
 		$query_stokexp = "SELECT stok FROM tbl_stokexpobat WHERE kd_obat = '$kd_obat' AND tgl_exp = '$exp_obat'";

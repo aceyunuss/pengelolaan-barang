@@ -4,7 +4,7 @@
 	$jml_obat = count($kd_obat);
 
 	for($i=0; $i<$jml_obat; $i++) {
-		$query_obat = "SELECT kd_obat, nm_obat, sat_obat FROM tbl_dataobat WHERE kd_obat='$kd_obat[$i]'";
+		$query_obat = "SELECT kd_obat, nm_obat, sat_obat FROM tbl_databarang WHERE kd_obat='$kd_obat[$i]'";
 		$sql_obat = mysqli_query($conn, $query_obat) or die ($conn->error);
 		$data_barang = mysqli_fetch_array($sql_obat);
 		// $kd_obat[$i] = $data_barang['kd_obat'];

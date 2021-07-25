@@ -56,7 +56,7 @@
 	<?php 
 		$no = 1;
 		$total = 0;
-		$query_lihat = "SELECT tbl_dataobat.nm_obat, tbl_pembeliandetail.hrg_beli, tbl_pembeliandetail.jml_beli, tbl_pembeliandetail.sat_beli, tbl_pembeliandetail.subtotal FROM tbl_pembeliandetail INNER JOIN tbl_dataobat ON tbl_pembeliandetail.kd_obat = tbl_dataobat.kd_obat WHERE tbl_pembeliandetail.no_faktur = '$no_faktur'";
+		$query_lihat = "SELECT tbl_databarang.nm_obat, tbl_pembeliandetail.hrg_beli, tbl_pembeliandetail.jml_beli, tbl_pembeliandetail.sat_beli, tbl_pembeliandetail.subtotal FROM tbl_pembeliandetail INNER JOIN tbl_databarang ON tbl_pembeliandetail.kd_obat = tbl_databarang.kd_obat WHERE tbl_pembeliandetail.no_faktur = '$no_faktur'";
 		$sql_lihat = mysqli_query($conn, $query_lihat) or die ($conn->error);
 		while($data = mysqli_fetch_array($sql_lihat)) {
 		$total = $total+$data['subtotal'];

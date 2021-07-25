@@ -9,7 +9,7 @@
 
 	if(@$_GET['page']=='dataobat')
 	{
-		$query = "DELETE FROM tbl_dataobat WHERE kd_obat = '$id'";
+		$query = "DELETE FROM tbl_databarang WHERE kd_obat = '$id'";
 		mysqli_query($conn, $query) or die ($conn->error);
 	}
 
@@ -26,12 +26,12 @@
 		$query_ksgstok = "UPDATE tbl_stokexpobat SET stok = '0' WHERE kd_obat = '$id' AND tgl_exp = '$exp'";
 		mysqli_query($conn, $query_ksgstok) or die ($conn->error);
 
-		$query_stok = "SELECT stk_obat FROM tbl_dataobat WHERE kd_obat = '$id'";
+		$query_stok = "SELECT stk_obat FROM tbl_databarang WHERE kd_obat = '$id'";
 		$sql_stok = mysqli_query($conn, $query_stok) or die ($conn->error);
 		$data_stok = mysqli_fetch_array($sql_stok);
 		$stok_lama = $data_stok['stk_obat'];
 		$stok_baru = $stok_lama - $stok;
-		$query_estok = "UPDATE tbl_dataobat SET stk_obat='$stok_baru' WHERE kd_obat='$id'";
+		$query_estok = "UPDATE tbl_databarang SET stk_obat='$stok_baru' WHERE kd_obat='$id'";
 		mysqli_query($conn, $query_estok) or die ($conn->error);
 	}
 

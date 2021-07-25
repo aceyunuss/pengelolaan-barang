@@ -204,7 +204,7 @@
             </thead>
             <tbody>
         <?php 
-            $query_tampil = "SELECT * FROM tbl_dataobat ORDER BY nm_obat ASC";
+            $query_tampil = "SELECT * FROM tbl_databarang ORDER BY nm_obat ASC";
             $sql_tampil = mysqli_query($conn, $query_tampil) or die ($conn->error);
             while($data = mysqli_fetch_array($sql_tampil)) {
          ?>

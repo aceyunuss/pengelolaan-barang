@@ -31,7 +31,7 @@
 		$query_pbldtl = "INSERT INTO tbl_pembeliandetail (no_faktur, kd_obat, exp_obatbeli, hrg_beli, jml_beli, sat_beli, subtotal) VALUES ('$no_faktur', '$kd_obat', '$exp_obat', '$hrg_beli', '$jml_obat', '$sat_jual', '$subtotal')";
 		mysqli_query($conn, $query_pbldtl) or die ($conn->error);
 
-		$query_stok = "SELECT stk_obat, hrgbeli_obat FROM tbl_dataobat WHERE kd_obat = '$kd_obat'";
+		$query_stok = "SELECT stk_obat, hrgbeli_obat FROM tbl_databarang WHERE kd_obat = '$kd_obat'";
 		$sql_stok = mysqli_query($conn, $query_stok) or die ($conn->error);
 		$data_stok = mysqli_fetch_array($sql_stok);
 		$stok_lama = $data_stok['stk_obat'];
@@ -41,7 +41,7 @@
 			$harga = (($stok_lama*$harga)+($jml_obat*$hrg_beli))/($stok_lama+$jml_obat);
 		}
 		$harga_jual = $harga*1.20;
-		$query_estok = "UPDATE tbl_dataobat SET stk_obat='$stok_baru', hrgbeli_obat = '$harga', hrg_obat = '$harga_jual' WHERE kd_obat='$kd_obat'";
+		$query_estok = "UPDATE tbl_databarang SET stk_obat='$stok_baru', hrgbeli_obat = '$harga', hrg_obat = '$harga_jual' WHERE kd_obat='$kd_obat'";
 		mysqli_query($conn, $query_estok) or die ($conn->error);
 
 		$query_exp = "SELECT stok FROM tbl_stokexpobat WHERE kd_obat = '$kd_obat' AND tgl_exp = '$exp_obat'";

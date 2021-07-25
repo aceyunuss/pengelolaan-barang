@@ -51,10 +51,10 @@ INSERT INTO `data_barang` (`kode`, `nama`, `exp_date`, `harga`, `stok`, `satuan`
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tbl_dataobat`
+-- Struktur dari tabel `tbl_databarang`
 --
 
-CREATE TABLE IF NOT EXISTS `tbl_dataobat` (
+CREATE TABLE IF NOT EXISTS `tbl_databarang` (
   `kd_obat` varchar(18) NOT NULL,
   `nm_obat` varchar(80) NOT NULL,
   `exp_obat` date NOT NULL,
@@ -69,10 +69,10 @@ CREATE TABLE IF NOT EXISTS `tbl_dataobat` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `tbl_dataobat`
+-- Dumping data untuk tabel `tbl_databarang`
 --
 
-INSERT INTO `tbl_dataobat` (`kd_obat`, `nm_obat`, `exp_obat`, `ktg_obat`, `bnt_obat`, `sat_obat`, `hrg_obat`, `hrgbeli_obat`, `stk_obat`, `minstk_obat`) VALUES
+INSERT INTO `tbl_databarang` (`kd_obat`, `nm_obat`, `exp_obat`, `ktg_obat`, `bnt_obat`, `sat_obat`, `hrg_obat`, `hrgbeli_obat`, `stk_obat`, `minstk_obat`) VALUES
 ('0693228-0844', 'ASEPSO ORIG', '2022-07-09', 'HV', 'BATANG', 'BATANG', 7000, 5600, 15, 3),
 ('130110', 'ALLERIN', '2021-08-01', 'HV', 'SIRUP', 'BOTOL', 12500, 10000, 12, 3),
 ('14124A', 'VIVA TONER ALL VAR', '2022-07-01', 'HV', 'CAIR', 'BOTOL', 5200, 4160, 12, 3),
@@ -1614,7 +1614,7 @@ ALTER TABLE `tbl_metode_sma`
 -- Ketidakleluasaan untuk tabel `tbl_obatramal`
 --
 ALTER TABLE `tbl_obatramal`
-  ADD CONSTRAINT `tbl_obatramal_kd_obat` FOREIGN KEY (`kd_obat`) REFERENCES `tbl_dataobat` (`kd_obat`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `tbl_obatramal_kd_obat` FOREIGN KEY (`kd_obat`) REFERENCES `tbl_databarang` (`kd_obat`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `tbl_obatramal_no_ramal` FOREIGN KEY (`no_rml`) REFERENCES `tbl_peramalan` (`no_rml`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --

@@ -23,7 +23,7 @@
 			<div class="col-md-6 offset-md-3 offset-form">
 				<h6><i class="fas fa-list-alt"></i> Lengkapi form ini untuk menambah data barang baru</h6>
 				<?php 
-				  	$query_tampil = "SELECT * FROM tbl_dataobat WHERE kd_obat='$kd_obat'";
+				  	$query_tampil = "SELECT * FROM tbl_databarang WHERE kd_obat='$kd_obat'";
 					$sql_tampil = mysqli_query($conn, $query_tampil) or die ($conn->error);
 					$data = mysqli_fetch_array($sql_tampil);
 				?>

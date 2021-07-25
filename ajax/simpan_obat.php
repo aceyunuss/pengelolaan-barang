@@ -14,7 +14,7 @@
 	$exp = @mysqli_real_escape_string($conn, $_POST['exp']);
 	$stok = @mysqli_real_escape_string($conn, $_POST['stok']);
 
-	$query = "INSERT INTO tbl_dataobat (kd_obat, nm_obat, ktg_obat, bnt_obat, sat_obat, hrg_obat, hrgbeli_obat, stk_obat, minstk_obat) VALUES('$kode', '$nama', '$ktg', '$bentuk', '$satuan', '$harga_jual', '$harga', '$stok', '$min_stok')";
+	$query = "INSERT INTO tbl_databarang (kd_obat, nm_obat, ktg_obat, bnt_obat, sat_obat, hrg_obat, hrgbeli_obat, stk_obat, minstk_obat) VALUES('$kode', '$nama', '$ktg', '$bentuk', '$satuan', '$harga_jual', '$harga', '$stok', '$min_stok')";
 	$sql = mysqli_query($conn, $query) or die ($conn->error);
 
 	$query_stok = "INSERT INTO tbl_stokexpobat (kd_obat, tgl_exp, stok) VALUES ('$kode', '$exp', '$stok')";
