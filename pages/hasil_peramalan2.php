@@ -1,6 +1,6 @@
 <?php 
 	$nama_obat = @$_POST['nm_obat'];
-	$kd_obat = @$_POST['ip_kd_obat'];
+	$kd_barang = @$_POST['ip_kd_barang'];
 	$sat_obat = @$_POST['ip_sat_obat'];
 	$prd_ramalan = @$_POST['ip_periode'];
 	$metode = @$_POST['met_peramalan'];
@@ -45,7 +45,7 @@
 	$periode1 = $prd_tahun1."-".$prd_bulan1."-01";
 	$periode2 = $prd_tahun2."-".$prd_bulan2."-31";
 
-	$query_dpenjualan = "SELECT YEAR(tbl_penjualan.tgl_penjualan) AS tahun, MONTH(tbl_penjualan.tgl_penjualan) AS bulan, SUM(tbl_penjualandetail.jml_jual) AS jumlah_terjual FROM tbl_penjualan INNER JOIN tbl_penjualandetail ON tbl_penjualan.no_penjualan = tbl_penjualandetail.no_penjualan WHERE tbl_penjualandetail.kd_obat = '$kd_obat' AND tbl_penjualan.tgl_penjualan BETWEEN '$periode1' AND '$periode2' GROUP BY YEAR(tbl_penjualan.tgl_penjualan), MONTH(tbl_penjualan.tgl_penjualan)";
+	$query_dpenjualan = "SELECT YEAR(tbl_penjualan.tgl_penjualan) AS tahun, MONTH(tbl_penjualan.tgl_penjualan) AS bulan, SUM(tbl_penjualandetail.jml_jual) AS jumlah_terjual FROM tbl_penjualan INNER JOIN tbl_penjualandetail ON tbl_penjualan.no_penjualan = tbl_penjualandetail.no_penjualan WHERE tbl_penjualandetail.kd_barang = '$kd_barang' AND tbl_penjualan.tgl_penjualan BETWEEN '$periode1' AND '$periode2' GROUP BY YEAR(tbl_penjualan.tgl_penjualan), MONTH(tbl_penjualan.tgl_penjualan)";
 	// $query_dpenjualan = "SELECT * FROM tbl_pegawai";
 	$sql_dpenjualan = mysqli_query($conn, $query_dpenjualan) or die ($conn->error);
 	while($dpenjualan = mysqli_fetch_array($sql_dpenjualan)) {

@@ -55,7 +55,7 @@ INSERT INTO `data_barang` (`kode`, `nama`, `exp_date`, `harga`, `stok`, `satuan`
 --
 
 CREATE TABLE IF NOT EXISTS `tbl_databarang` (
-  `kd_obat` varchar(18) NOT NULL,
+  `kd_barang` varchar(18) NOT NULL,
   `nm_obat` varchar(80) NOT NULL,
   `exp_obat` date NOT NULL,
   `ktg_obat` varchar(15) NOT NULL,
@@ -65,14 +65,14 @@ CREATE TABLE IF NOT EXISTS `tbl_databarang` (
   `hrgbeli_obat` int(11) NOT NULL,
   `stk_obat` int(11) NOT NULL,
   `minstk_obat` int(11) NOT NULL,
-  PRIMARY KEY (`kd_obat`)
+  PRIMARY KEY (`kd_barang`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data untuk tabel `tbl_databarang`
 --
 
-INSERT INTO `tbl_databarang` (`kd_obat`, `nm_obat`, `exp_obat`, `ktg_obat`, `bnt_obat`, `sat_obat`, `hrg_obat`, `hrgbeli_obat`, `stk_obat`, `minstk_obat`) VALUES
+INSERT INTO `tbl_databarang` (`kd_barang`, `nm_obat`, `exp_obat`, `ktg_obat`, `bnt_obat`, `sat_obat`, `hrg_obat`, `hrgbeli_obat`, `stk_obat`, `minstk_obat`) VALUES
 ('0693228-0844', 'ASEPSO ORIG', '2022-07-09', 'HV', 'BATANG', 'BATANG', 7000, 5600, 15, 3),
 ('130110', 'ALLERIN', '2021-08-01', 'HV', 'SIRUP', 'BOTOL', 12500, 10000, 12, 3),
 ('14124A', 'VIVA TONER ALL VAR', '2022-07-01', 'HV', 'CAIR', 'BOTOL', 5200, 4160, 12, 3),
@@ -303,21 +303,21 @@ INSERT INTO `tbl_metode_sma` (`no_mtd_sma`, `no_obatramal`, `mae_sma1`, `mae_sma
 CREATE TABLE IF NOT EXISTS `tbl_barangramal` (
   `no_obatramal` varchar(16) NOT NULL,
   `no_rml` varchar(16) NOT NULL,
-  `kd_obat` varchar(18) NOT NULL,
+  `kd_barang` varchar(18) NOT NULL,
   `nm_obat` varchar(80) NOT NULL,
   `sat_obat` varchar(11) NOT NULL,
   `mtd_terbaik` enum('SMA','SES') NOT NULL,
   `hasil_rml` double NOT NULL,
   PRIMARY KEY (`no_obatramal`),
   KEY `tbl_barangramal_no_ramal` (`no_rml`),
-  KEY `tbl_barangramal_kd_obat` (`kd_obat`)
+  KEY `tbl_barangramal_kd_barang` (`kd_barang`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data untuk tabel `tbl_barangramal`
 --
 
-INSERT INTO `tbl_barangramal` (`no_obatramal`, `no_rml`, `kd_obat`, `nm_obat`, `sat_obat`, `mtd_terbaik`, `hasil_rml`) VALUES
+INSERT INTO `tbl_barangramal` (`no_obatramal`, `no_rml`, `kd_barang`, `nm_obat`, `sat_obat`, `mtd_terbaik`, `hasil_rml`) VALUES
 ('ORM/20200127/001', 'PRM/20200127/001', '520013421', 'SANMOL 500MG TAB STR 4S', 'STRIP', 'SES', 19.046),
 ('ORM/20200127/002', 'PRM/20200127/002', '520013421', 'SANMOL 500MG TAB STR 4S', 'STRIP', 'SES', 16.78),
 ('ORM/20200127/003', 'PRM/20200127/003', '520013421', 'SANMOL 500MG TAB STR 4S', 'STRIP', 'SES', 16.596),
@@ -413,7 +413,7 @@ INSERT INTO `tbl_pembelian` (`no_faktur`, `no_supplier`, `tgl_pembelian`, `cr_ba
 CREATE TABLE IF NOT EXISTS `tbl_pembeliandetail` (
   `no_idx` int(11) NOT NULL AUTO_INCREMENT,
   `no_faktur` varchar(20) NOT NULL,
-  `kd_obat` varchar(15) NOT NULL,
+  `kd_barang` varchar(15) NOT NULL,
   `exp_obatbeli` date NOT NULL,
   `hrg_beli` int(11) NOT NULL,
   `jml_beli` int(11) NOT NULL,
@@ -426,7 +426,7 @@ CREATE TABLE IF NOT EXISTS `tbl_pembeliandetail` (
 -- Dumping data untuk tabel `tbl_pembeliandetail`
 --
 
-INSERT INTO `tbl_pembeliandetail` (`no_idx`, `no_faktur`, `kd_obat`, `exp_obatbeli`, `hrg_beli`, `jml_beli`, `sat_beli`, `subtotal`) VALUES
+INSERT INTO `tbl_pembeliandetail` (`no_idx`, `no_faktur`, `kd_barang`, `exp_obatbeli`, `hrg_beli`, `jml_beli`, `sat_beli`, `subtotal`) VALUES
 (1, 'PBL0001', '15330211', '2022-03-01', 46800, 5, 'BOTOL', 234000),
 (2, 'PBL0002', '18CA1008', '2021-01-01', 250, 100, 'TABLET', 25000),
 (3, 'PBL0002', '520013421', '2022-04-01', 1560, 10, 'STRIP', 15600),
@@ -629,7 +629,7 @@ INSERT INTO `tbl_penjualan` (`no_penjualan`, `tgl_penjualan`, `total_penjualan`,
 CREATE TABLE IF NOT EXISTS `tbl_penjualandetail` (
   `no` int(11) NOT NULL AUTO_INCREMENT,
   `no_penjualan` varchar(16) NOT NULL,
-  `kd_obat` varchar(15) NOT NULL,
+  `kd_barang` varchar(15) NOT NULL,
   `hrg_jual` int(11) NOT NULL,
   `jml_jual` int(11) NOT NULL,
   `sat_jual` varchar(11) DEFAULT NULL,
@@ -642,7 +642,7 @@ CREATE TABLE IF NOT EXISTS `tbl_penjualandetail` (
 -- Dumping data untuk tabel `tbl_penjualandetail`
 --
 
-INSERT INTO `tbl_penjualandetail` (`no`, `no_penjualan`, `kd_obat`, `hrg_jual`, `jml_jual`, `sat_jual`, `subtotal`) VALUES
+INSERT INTO `tbl_penjualandetail` (`no`, `no_penjualan`, `kd_barang`, `hrg_jual`, `jml_jual`, `sat_jual`, `subtotal`) VALUES
 (1, 'PJL/20190102/01', '26141026', 1300, 2, 'SACHET', 2600),
 (2, 'PJL/20190102/01', '520013421', 1560, 2, 'STRIP', 3120),
 (3, 'PJL/20190102/02', '1936067', 13000, 1, 'BOTOL', 13000),
@@ -1563,7 +1563,7 @@ INSERT INTO `tbl_prd_sma` (`no_prd_sma`, `no_mtd_sma`, `periode`, `jml_penjualan
 
 CREATE TABLE IF NOT EXISTS `tbl_stokexpbarang` (
   `no_stok` int(11) NOT NULL AUTO_INCREMENT,
-  `kd_obat` varchar(15) NOT NULL,
+  `kd_barang` varchar(15) NOT NULL,
   `tgl_exp` date NOT NULL,
   `stok` int(11) NOT NULL,
   PRIMARY KEY (`no_stok`)
@@ -1614,7 +1614,7 @@ ALTER TABLE `tbl_metode_sma`
 -- Ketidakleluasaan untuk tabel `tbl_barangramal`
 --
 ALTER TABLE `tbl_barangramal`
-  ADD CONSTRAINT `tbl_barangramal_kd_obat` FOREIGN KEY (`kd_obat`) REFERENCES `tbl_databarang` (`kd_obat`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `tbl_barangramal_kd_barang` FOREIGN KEY (`kd_barang`) REFERENCES `tbl_databarang` (`kd_barang`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `tbl_barangramal_no_ramal` FOREIGN KEY (`no_rml`) REFERENCES `tbl_peramalan` (`no_rml`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --

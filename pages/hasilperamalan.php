@@ -1,13 +1,13 @@
 <?php 
-	$kd_obat = @$_POST['obat'];
-	// $kd_obat = array('520013421','623341057');
-	$jml_obat = count($kd_obat);
+	$kd_barang = @$_POST['obat'];
+	// $kd_barang = array('520013421','623341057');
+	$jml_obat = count($kd_barang);
 
 	for($i=0; $i<$jml_obat; $i++) {
-		$query_obat = "SELECT kd_obat, nm_obat, sat_obat FROM tbl_databarang WHERE kd_obat='$kd_obat[$i]'";
+		$query_obat = "SELECT kd_barang, nm_obat, sat_obat FROM tbl_databarang WHERE kd_barang='$kd_barang[$i]'";
 		$sql_obat = mysqli_query($conn, $query_obat) or die ($conn->error);
 		$data_barang = mysqli_fetch_array($sql_obat);
-		// $kd_obat[$i] = $data_barang['kd_obat'];
+		// $kd_barang[$i] = $data_barang['kd_barang'];
 		$sat_obat[$i] = $data_barang['sat_obat'];
 		$nama_obat[$i] = $data_barang['nm_obat'];
 	}

@@ -159,7 +159,7 @@
 						<th class="kol-subt">Subtotal</th>
 					</tr>
 				<?php 
-					$query_obat = "SELECT * FROM tbl_pembeliandetail INNER JOIN tbl_databarang ON tbl_pembeliandetail.kd_obat = tbl_databarang.kd_obat WHERE tbl_pembeliandetail.no_faktur = '$no_faktur'";
+					$query_obat = "SELECT * FROM tbl_pembeliandetail INNER JOIN tbl_databarang ON tbl_pembeliandetail.kd_barang = tbl_databarang.kd_barang WHERE tbl_pembeliandetail.no_faktur = '$no_faktur'";
 					$sql_obat = mysqli_query($conn, $query_obat) or die ($conn->error);
 					while($data_barang = mysqli_fetch_array($sql_obat)) {
 				 ?>

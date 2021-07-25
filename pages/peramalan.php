@@ -161,13 +161,13 @@
 		            while($data = mysqli_fetch_array($sql_tampil)) {
 		         ?>
 		                <tr>
-		                    <td><?php echo $data['kd_obat']; ?></td>
+		                    <td><?php echo $data['kd_barang']; ?></td>
 		                    <td><?php echo $data['nm_obat']; ?></td>
 		                    <td><?php echo $data['stk_obat']; ?></td>
 		                    <td><?php echo $data['sat_obat']; ?></td>
 		                    <td><?php echo $data['ktg_obat']; ?></td>
 		                    <td class="td-opsi">
-		                        <input class="form-check-input position-static pilih-obat" type="checkbox" name="obat[]" id="obat<?php echo $no++; ?>" value="<?php echo $data['kd_obat']; ?>" data-nama="<?php echo $data['nm_obat']; ?>">
+		                        <input class="form-check-input position-static pilih-obat" type="checkbox" name="obat[]" id="obat<?php echo $no++; ?>" value="<?php echo $data['kd_barang']; ?>" data-nama="<?php echo $data['nm_obat']; ?>">
 		                    </td>
 		                </tr>
 		         <?php 
@@ -196,7 +196,7 @@
         var kode = $(this).data("kode");
         var nama = $(this).data("nama");
         var satuan = $(this).data("satuan");
-        $("#ip_kd_obat").val(kode);
+        $("#ip_kd_barang").val(kode);
         $("#ip_sat_obat").val(satuan);
         $("#nm_obat").val(nama);
     });

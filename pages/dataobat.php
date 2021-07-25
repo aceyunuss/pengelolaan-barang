@@ -41,7 +41,7 @@
 			while($data = mysqli_fetch_array($sql_tampil)) {
 		 ?>
 		 		<tr>
-		 			<td><?php echo $data['kd_obat']; ?></td>
+		 			<td><?php echo $data['kd_barang']; ?></td>
 		 			<td><?php echo $data['nm_obat']; ?></td>
 		 			<!-- <td><?php echo $data['exp_obat']; ?></td> -->
 		 			<td><?php echo $data['hrg_obat']; ?></td>
@@ -51,7 +51,7 @@
 
 		 			<td class="td-opsi">
 		 				<button class="btn-transition btn btn-outline-success btn-sm" title="detail obat" id="tombol_detail" name="tombol_detail" data-toggle="modal" data-target="#detail_obat"
-		 				data-kode="<?php echo $data['kd_obat']; ?>"
+		 				data-kode="<?php echo $data['kd_barang']; ?>"
 		 				data-nama="<?php echo $data['nm_obat']; ?>"
 		 				data-exp="<?php echo tgl_indo($data['exp_obat']); ?>"
 		 				data-ktg="<?php echo $data['ktg_obat']; ?>"
@@ -64,10 +64,10 @@
                             <i class="fas fa-info-circle"></i>
                         </button>
 		 			<?php if($_SESSION['posisi_peg'] == 'Admin' || $_SESSION['posisi_peg'] == 'Manager' || $_SESSION['posisi_peg'] == 'Apoteker') { ?>
-                        <button class="btn-transition btn btn-outline-primary btn-sm" title="edit" id="tombol_edit" name="tombol_edit" data-kode="<?php echo $data['kd_obat']; ?>">
+                        <button class="btn-transition btn btn-outline-primary btn-sm" title="edit" id="tombol_edit" name="tombol_edit" data-kode="<?php echo $data['kd_barang']; ?>">
                             <i class="fas fa-edit"></i>
                         </button>
-                        <button class="btn-transition btn btn-outline-danger btn-sm" title="hapus" id="tombol_hapus" name="tombol_hapus" data-kode="<?php echo $data['kd_obat']; ?>" data-nama="<?php echo $data['nm_obat']; ?>">
+                        <button class="btn-transition btn btn-outline-danger btn-sm" title="hapus" id="tombol_hapus" name="tombol_hapus" data-kode="<?php echo $data['kd_barang']; ?>" data-nama="<?php echo $data['nm_obat']; ?>">
                             <i class="fas fa-trash"></i>
                         </button>
                     <?php } ?>
@@ -195,7 +195,7 @@
 		$.ajax({
 	      type: "GET",
 	      url: "ajax/detail.php?page=expstok_obat",
-	      data: "kd_obat="+kode,
+	      data: "kd_barang="+kode,
 	      success: function(data_expstok) {
 	        var objData = JSON.parse(data_expstok);
 	        $.each(objData, function(key, val) {

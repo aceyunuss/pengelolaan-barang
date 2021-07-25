@@ -204,7 +204,7 @@
             while($data = mysqli_fetch_array($sql_tampil)) {
          ?>
                 <tr>
-                    <td><?php echo $data['kd_obat']; ?></td>
+                    <td><?php echo $data['kd_barang']; ?></td>
                     <td><?php echo $data['nm_obat']; ?></td>
                     <td><?php echo $data['hrgbeli_obat']; ?></td>
                     <td><?php echo $data['stk_obat']; ?></td>
@@ -212,7 +212,7 @@
                     <td><?php echo $data['ktg_obat']; ?></td>
                     <td class="td-opsi">
                         <button class="btn-transition btn btn-outline-dark btn-sm" title="pilih" id="tombol_pilihobat" name="tombol_pilihobat" data-dismiss="modal"
-                            data-kode="<?php echo $data['kd_obat']; ?>"
+                            data-kode="<?php echo $data['kd_barang']; ?>"
                             data-nama="<?php echo $data['nm_obat']; ?>"
                             data-harga="<?php echo $data['hrgbeli_obat']; ?>"
                             data-satuan="<?php echo $data['sat_obat']; ?>"
@@ -426,7 +426,7 @@ $(document).ready(function() {
             count = count+1;
             var output = "";
             output = '<tr id="row_'+count+'">';
-            output += '<td style="display: none;"><input type="hidden" name="hidden_kdobat[]" id="td_kd_obat'+count+'" class="td_kd_obat" value="'+kode+'"></td>';
+            output += '<td style="display: none;"><input type="hidden" name="hidden_kdobat[]" id="td_kd_barang'+count+'" class="td_kd_barang" value="'+kode+'"></td>';
             output += '<td>'+nama+' <input type="hidden" name="hidden_nmobat[]" id="td_nmobat'+count+'" class="td_nmobat" value="'+nama+'"></td>';
             output += '<td>'+exp+' <input type="hidden" name="hidden_expobat[]" id="td_expobat'+count+'" class="td_expobat" value="'+exp+'"></td>';
             output += '<td class="text-right">'+hrg+' <input type="hidden" name="hidden_hrgobat[]" id="td_hrgobat'+count+'" class="td_hrgobat" value="'+hrg+'"></td>';
@@ -551,7 +551,7 @@ $(document).ready(function() {
             }).then((simpan) => {
               if (simpan.value) {
                 var count_data = 0;
-                $(".td_kd_obat").each(function(){
+                $(".td_kd_barang").each(function(){
                     count_data = count_data + 1;
                 });
                 if(count_data > 0) {

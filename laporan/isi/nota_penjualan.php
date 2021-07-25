@@ -47,7 +47,7 @@
 		<div class="data-barang">
 			<table class="tabel-data-barang">
 			<?php 
-				$query_dpjl = "SELECT tbl_databarang.nm_obat, tbl_penjualandetail.jml_jual, tbl_penjualandetail.sat_jual, tbl_penjualandetail.hrg_jual, tbl_penjualandetail.subtotal FROM tbl_penjualandetail INNER JOIN tbl_databarang ON tbl_penjualandetail.kd_obat = tbl_databarang.kd_obat WHERE tbl_penjualandetail.no_penjualan = '$no_pjl'";
+				$query_dpjl = "SELECT tbl_databarang.nm_obat, tbl_penjualandetail.jml_jual, tbl_penjualandetail.sat_jual, tbl_penjualandetail.hrg_jual, tbl_penjualandetail.subtotal FROM tbl_penjualandetail INNER JOIN tbl_databarang ON tbl_penjualandetail.kd_barang = tbl_databarang.kd_barang WHERE tbl_penjualandetail.no_penjualan = '$no_pjl'";
 				$sql_dpjl = mysqli_query($conn, $query_dpjl) or die ($conn->error);
 				while($data_dpjl = mysqli_fetch_array($sql_dpjl)) {
 			 ?>

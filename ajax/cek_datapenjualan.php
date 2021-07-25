@@ -1,7 +1,7 @@
 <?php 
 	include "../koneksi.php";
-	$kd_obat = $_GET['obat'];
-	$jml_obat = count($kd_obat);
+	$kd_barang = $_GET['obat'];
+	$jml_obat = count($kd_barang);
 	$prd_ramalan = $_GET['ip_periode'];
 	if($prd_ramalan=="per_hari") {
 		$interval = $_GET['jml_hari'];
@@ -33,7 +33,7 @@
 		}
 		for($i=10; $i>=0; $i--) {
 			if($prd_ramalan=="per_hari") {
-				$query_tjl = "SELECT tbl_databarang.nm_obat AS nama, DATE_SUB('$tanggal_akhir', INTERVAL '$interval_sql' DAY) AS tgl_awal, DATE_SUB('$tanggal_akhir', INTERVAL '$interval' DAY) AS tgl_akhir_baru, IFNULL(SUM(tbl_pembeliandetail.jml_beli), 0) AS jumlah_terbeli FROM tbl_pembelian INNER JOIN tbl_pembeliandetail ON tbl_pembelian.no_faktur = tbl_pembeliandetail.no_faktur INNER JOIN tbl_databarang ON tbl_pembeliandetail.kd_obat = tbl_databarang.kd_obat WHERE tbl_pembeliandetail.kd_obat = '$kd_obat[$x]' AND tbl_pembelian.tgl_pembelian BETWEEN (DATE_SUB('$tanggal_akhir', INTERVAL '$interval_sql' DAY)) AND '$tanggal_akhir'";
+				$query_tjl = "SELECT tbl_databarang.nm_obat AS nama, DATE_SUB('$tanggal_akhir', INTERVAL '$interval_sql' DAY) AS tgl_awal, DATE_SUB('$tanggal_akhir', INTERVAL '$interval' DAY) AS tgl_akhir_baru, IFNULL(SUM(tbl_pembeliandetail.jml_beli), 0) AS jumlah_terbeli FROM tbl_pembelian INNER JOIN tbl_pembeliandetail ON tbl_pembelian.no_faktur = tbl_pembeliandetail.no_faktur INNER JOIN tbl_databarang ON tbl_pembeliandetail.kd_barang = tbl_databarang.kd_barang WHERE tbl_pembeliandetail.kd_barang = '$kd_barang[$x]' AND tbl_pembelian.tgl_pembelian BETWEEN (DATE_SUB('$tanggal_akhir', INTERVAL '$interval_sql' DAY)) AND '$tanggal_akhir'";
 				$sql_tjl = mysqli_query($conn, $query_tjl) or die ($conn->error);
 				$dpenjualan = mysqli_fetch_array($sql_tjl);
 				$jml_data = $jml_data + $dpenjualan['jumlah_terbeli'];
@@ -41,7 +41,7 @@
 
 				$tanggal_akhir = $dpenjualan['tgl_akhir_baru'];
 			} else {
-				$query_tjl = "SELECT tbl_databarang.nm_obat AS nama, YEAR(DATE_SUB('$tanggal_akhir', INTERVAL 1 MONTH)) AS dua, MONTH(DATE_SUB('$tanggal_akhir', INTERVAL 1 MONTH)) AS satu, DATE_SUB('$tanggal_akhir', INTERVAL 1 MONTH) AS tgl_awal, IFNULL(SUM(tbl_pembeliandetail.jml_beli), 0) AS jumlah_terbeli FROM tbl_pembelian INNER JOIN tbl_pembeliandetail ON tbl_pembelian.no_faktur = tbl_pembeliandetail.no_faktur INNER JOIN tbl_databarang ON tbl_pembeliandetail.kd_obat = tbl_databarang.kd_obat WHERE tbl_pembeliandetail.kd_obat = '$kd_obat[$x]' AND (tbl_pembelian.tgl_pembelian >= DATE_SUB('$tanggal_akhir', INTERVAL 1 MONTH) AND tbl_pembelian.tgl_pembelian < '$tanggal_akhir')";
+				$query_tjl = "SELECT tbl_databarang.nm_obat AS nama, YEAR(DATE_SUB('$tanggal_akhir', INTERVAL 1 MONTH)) AS dua, MONTH(DATE_SUB('$tanggal_akhir', INTERVAL 1 MONTH)) AS satu, DATE_SUB('$tanggal_akhir', INTERVAL 1 MONTH) AS tgl_awal, IFNULL(SUM(tbl_pembeliandetail.jml_beli), 0) AS jumlah_terbeli FROM tbl_pembelian INNER JOIN tbl_pembeliandetail ON tbl_pembelian.no_faktur = tbl_pembeliandetail.no_faktur INNER JOIN tbl_databarang ON tbl_pembeliandetail.kd_barang = tbl_databarang.kd_barang WHERE tbl_pembeliandetail.kd_barang = '$kd_barang[$x]' AND (tbl_pembelian.tgl_pembelian >= DATE_SUB('$tanggal_akhir', INTERVAL 1 MONTH) AND tbl_pembelian.tgl_pembelian < '$tanggal_akhir')";
 				$sql_tjl = mysqli_query($conn, $query_tjl) or die ($conn->error);
 				$dpenjualan = mysqli_fetch_array($sql_tjl);
 				$jml_data = $jml_data + $dpenjualan['jumlah_terbeli'];

@@ -15,7 +15,7 @@
 <?php 
 	// $tanggal_akhir = "2020-03-01";
 	$tanggal_akhir = date('Y-m-01');
-	$kd_obat = "520013421";
+	$kd_barang = "520013421";
 	$judul = "Pola Data Penjualan Obat Sanmol";
 	$labels = array();
 	$data = array();
@@ -23,7 +23,7 @@
 	// echo json_encode($data);
 
 	for($i=10; $i>=0; $i--) {
-		$query_tjl = "SELECT YEAR(DATE_SUB('$tanggal_akhir', INTERVAL 1 MONTH)) AS dua, MONTH(DATE_SUB('$tanggal_akhir', INTERVAL 1 MONTH)) AS satu, DATE_SUB('$tanggal_akhir', INTERVAL 1 MONTH) AS tgl_awal, IFNULL(SUM(tbl_penjualandetail.jml_jual), 0) AS jumlah_terjual FROM tbl_penjualan INNER JOIN tbl_penjualandetail ON tbl_penjualan.no_penjualan = tbl_penjualandetail.no_penjualan WHERE tbl_penjualandetail.kd_obat = '$kd_obat' AND (tbl_penjualan.tgl_penjualan >= DATE_SUB('$tanggal_akhir', INTERVAL 1 MONTH) AND tbl_penjualan.tgl_penjualan < '$tanggal_akhir')";
+		$query_tjl = "SELECT YEAR(DATE_SUB('$tanggal_akhir', INTERVAL 1 MONTH)) AS dua, MONTH(DATE_SUB('$tanggal_akhir', INTERVAL 1 MONTH)) AS satu, DATE_SUB('$tanggal_akhir', INTERVAL 1 MONTH) AS tgl_awal, IFNULL(SUM(tbl_penjualandetail.jml_jual), 0) AS jumlah_terjual FROM tbl_penjualan INNER JOIN tbl_penjualandetail ON tbl_penjualan.no_penjualan = tbl_penjualandetail.no_penjualan WHERE tbl_penjualandetail.kd_barang = '$kd_barang' AND (tbl_penjualan.tgl_penjualan >= DATE_SUB('$tanggal_akhir', INTERVAL 1 MONTH) AND tbl_penjualan.tgl_penjualan < '$tanggal_akhir')";
 		$sql_tjl = mysqli_query($conn, $query_tjl) or die ($conn->error);
 		$dpenjualan = mysqli_fetch_array($sql_tjl);
 		$labels[$i] = bulan_indo($dpenjualan['satu'])." ".$dpenjualan['dua'];

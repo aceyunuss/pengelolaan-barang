@@ -1,5 +1,5 @@
 <?php 
-	$kd_obat = @$_GET['kode'];
+	$kd_barang = @$_GET['kode'];
 ?>
 <nav aria-label="breadcrumb">
   <ol class="breadcrumb bg-light">
@@ -23,7 +23,7 @@
 			<div class="col-md-6 offset-md-3 offset-form">
 				<h6><i class="fas fa-list-alt"></i> Lengkapi form ini untuk menambah data barang baru</h6>
 				<?php 
-				  	$query_tampil = "SELECT * FROM tbl_databarang WHERE kd_obat='$kd_obat'";
+				  	$query_tampil = "SELECT * FROM tbl_databarang WHERE kd_barang='$kd_barang'";
 					$sql_tampil = mysqli_query($conn, $query_tampil) or die ($conn->error);
 					$data = mysqli_fetch_array($sql_tampil);
 				?>
@@ -31,7 +31,7 @@
 				  <div class="form-group row pt-3">
 				    <label for="ip_kdobat" class="col-sm-3 col-form-label">Kode</label>
 				    <div class="col-sm-9">
-				      <input type="text" class="form-control form-control-sm" id="ip_kdobat" name="ip_kdobat" value="<?php echo $kd_obat;?>" readonly="">
+				      <input type="text" class="form-control form-control-sm" id="ip_kdobat" name="ip_kdobat" value="<?php echo $kd_barang;?>" readonly="">
 				    </div>
 				  </div>
 				  <div class="form-group row">
@@ -108,7 +108,7 @@
 				  </div>
 				  
 				  <?php 
-				  	$query_stok = "SELECT * FROM tbl_stokexpbarang WHERE kd_obat = '$kd_obat'";
+				  	$query_stok = "SELECT * FROM tbl_stokexpbarang WHERE kd_barang = '$kd_barang'";
 				  	$sql_stok = mysqli_query($conn, $query_stok) or die ($conn->error);
 				  	$no=1;
 				  	while($data_stok = mysqli_fetch_array($sql_stok)) {
