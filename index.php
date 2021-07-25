@@ -124,9 +124,9 @@
                   <i class="fas fa-shopping-bag"></i> Facility Request
                 </a>
                 <?php if($_SESSION['posisi_peg'] == 'Admin' || $_SESSION['posisi_peg'] == 'Manager') { ?>
-                <a href="?page=peramalan" class="list-group-item list-group-item-action <?php if(@$_GET['page']=='peramalan' || @$_GET['page']=='hasil_peramalan' || @$_GET['page']=='riwayat_peramalan') {echo "active";} ?>">
+                <!-- <a href="?page=peramalan" class="list-group-item list-group-item-action <?php if(@$_GET['page']=='peramalan' || @$_GET['page']=='hasil_peramalan' || @$_GET['page']=='riwayat_peramalan') {echo "active";} ?>">
                   <i class="fas fa-chart-bar"></i> Perencanaan Fasilitas
-                </a>
+                </a> -->
                 <a href="?page=report" class="list-group-item list-group-item-action 
                 <?php if(@$_GET['page']=='report') {echo "active";} ?>">
                   <i class="fa fa-file"></i> Report
