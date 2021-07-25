@@ -125,7 +125,7 @@
 		 		<tr>
 					<td class="nomor"><?php echo $no++; ?></td>
 					<td align="left" class="nama"><?php echo $data_obrml['nm_barang']; ?></td>
-					<td class="satuan"><?php echo $data_obrml['sat_obat']; ?></td>
+					<td class="satuan"><?php echo $data_obrml['sat_barang']; ?></td>
 					<td class="mae"><?php echo round($hasil_mae, 5); ?></td>
 					<td class="mape"><?php echo round($hasil_mape, 5); ?></td>
 					<td class="msd"><?php echo round($hasil_msd, 5); ?></td>

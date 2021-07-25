@@ -1,7 +1,7 @@
 <?php 
 	$nama_obat = @$_POST['nm_barang'];
 	$kd_barang = @$_POST['ip_kd_barang'];
-	$sat_obat = @$_POST['ip_sat_obat'];
+	$sat_barang = @$_POST['ip_sat_barang'];
 	$prd_ramalan = @$_POST['ip_periode'];
 	$metode = @$_POST['met_peramalan'];
 	$nilai_ma1 = 2;
@@ -335,7 +335,7 @@
 		<div class="kotak-hasil hasil-sma" style="padding: 0 10px; margin-top: 8px;">
 			<div class="kotak-alert alert alert-success" role="alert">
 				<p>
-					Hasil peramalan pengajuan perencanaan fasilitas <span id="nama_obat"><?php echo $nama_obat; ?></span> untuk periode bulan <span id="prd_bulan"><?php echo bulan_indo($bulan_ini); ?></span> <span id="prd_tahun"><?php echo "$tahun_ini"; ?></span> adalah sebesar <span id="hasil_ramalan"><?php echo round($hasil_ramalan_es); ?></span> <span id="satuan"><?php echo $sat_obat; ?></span>
+					Hasil peramalan pengajuan perencanaan fasilitas <span id="nama_obat"><?php echo $nama_obat; ?></span> untuk periode bulan <span id="prd_bulan"><?php echo bulan_indo($bulan_ini); ?></span> <span id="prd_tahun"><?php echo "$tahun_ini"; ?></span> adalah sebesar <span id="hasil_ramalan"><?php echo round($hasil_ramalan_es); ?></span> <span id="satuan"><?php echo $sat_barang; ?></span>
 				</p>
 			</div>
 		</div>

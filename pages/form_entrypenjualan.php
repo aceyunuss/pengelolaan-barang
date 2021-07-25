@@ -214,14 +214,14 @@
                     <td><?php echo $data['exp_barang']; ?></td>
                     <td><?php echo $data['hrg_obat']; ?></td>
                     <td><?php echo $data['stk_obat']; ?></td>
-                    <td><?php echo $data['sat_obat']; ?></td>
+                    <td><?php echo $data['sat_barang']; ?></td>
                     <td><?php echo $data['ktg_barang']; ?></td>
                     <td class="td-opsi">
                         <button class="btn-transition btn btn-outline-dark btn-sm" title="pilih" id="tombol_pilihobat" name="tombol_pilihobat" data-dismiss="modal"
                             data-kode="<?php echo $data['kd_barang']; ?>"
                             data-nama="<?php echo $data['nm_barang']; ?>"
                             data-harga="<?php echo $data['hrg_obat']; ?>"
-                            data-satuan="<?php echo $data['sat_obat']; ?>"
+                            data-satuan="<?php echo $data['sat_barang']; ?>"
                             data-stok="<?php echo $data['stk_obat']; ?>"
                             data-exp="<?php echo $data['exp_barang']; ?>"
                         > pilih

@@ -46,7 +46,7 @@
 		 			<!-- <td><?php echo $data['exp_barang']; ?></td> -->
 		 			<td><?php echo $data['hrg_obat']; ?></td>
 		 			<td><?php echo $data['stk_obat']; ?></td>
-		 			<td><?php echo $data['sat_obat']; ?></td>
+		 			<td><?php echo $data['sat_barang']; ?></td>
 		 			<td><?php echo $data['ktg_barang']; ?></td>
 
 		 			<td class="td-opsi">
@@ -56,7 +56,7 @@
 		 				data-exp="<?php echo tgl_indo($data['exp_barang']); ?>"
 		 				data-ktg="<?php echo $data['ktg_barang']; ?>"
 		 				data-bentuk="<?php echo $data['bnt_barang']; ?>"
-		 				data-satuan="<?php echo $data['sat_obat']; ?>"
+		 				data-satuan="<?php echo $data['sat_barang']; ?>"
 		 				data-harbel="<?php echo "Rp".number_format($data['hrgbeli_obat'], 0,",", "."); ?>"
 		 				data-harju="<?php echo "Rp".number_format($data['hrg_obat'], 0,",", ".");; ?>"
 		 				data-stok="<?php echo $data['stk_obat']; ?>"

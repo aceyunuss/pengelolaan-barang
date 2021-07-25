@@ -258,7 +258,7 @@
 		<tr>
 			<td><?php echo $x+1; ?></td>
 			<td><?php echo $nama_obat[$x]; ?></td>
-			<td><?php echo $sat_obat[$x]; ?></td>
+			<td><?php echo $sat_barang[$x]; ?></td>
 			<td><?php echo $mae_rml; ?></td>
 			<td><?php echo $mape_rml; ?></td>
 			<td><?php echo $msd_rml; ?></td>
@@ -280,7 +280,7 @@
 		 //    } else {
 		 //        $no_obatramal = "ORM/".$tgl."/001";
 		 //    }
-			// $query_obtrml = "INSERT INTO tbl_barangramal VALUES('$no_obatramal', '$no_rml', '$kd_barang[$x]', '$nama_obat[$x]', '$sat_obat[$x]', '$mtd_terbaik', '$hasil_ramalan_akhir')";
+			// $query_obtrml = "INSERT INTO tbl_barangramal VALUES('$no_obatramal', '$no_rml', '$kd_barang[$x]', '$nama_obat[$x]', '$sat_barang[$x]', '$mtd_terbaik', '$hasil_ramalan_akhir')";
 			// mysqli_query($conn, $query_obtrml) or die ($conn->error);
 			
 

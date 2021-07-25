@@ -323,7 +323,7 @@
 					<div class="kotak-hasil hasil-sma" style="padding: 0 10px; margin-top: 8px;">
 						<div class="kotak-alert alert alert-success" role="alert">
 							<p>
-								Hasil peramalan penjualan obat <span id="nama_obat"><?php echo $nama_obat[0]; ?></span> untuk periode bulan <span id="prd_bulan"><?php echo bulan_indo($bulan_ini); ?></span> <span id="prd_tahun"><?php echo "$tahun_ini"; ?></span> adalah sebesar <span id="hasil_ramalan"><?php echo round($hasil_ramalan); ?></span> <span id="satuan"><?php echo $sat_obat[0]; ?></span>
+								Hasil peramalan penjualan obat <span id="nama_obat"><?php echo $nama_obat[0]; ?></span> untuk periode bulan <span id="prd_bulan"><?php echo bulan_indo($bulan_ini); ?></span> <span id="prd_tahun"><?php echo "$tahun_ini"; ?></span> adalah sebesar <span id="hasil_ramalan"><?php echo round($hasil_ramalan); ?></span> <span id="satuan"><?php echo $sat_barang[0]; ?></span>
 							</p>
 						</div>
 					</div>
@@ -496,7 +496,7 @@
 					<div class="kotak-hasil hasil-sma" style="padding: 0 10px; margin-top: 8px;">
 						<div class="kotak-alert alert alert-success" role="alert">
 							<p>
-								Hasil peramalan penjualan obat <span id="nama_obat"><?php echo $nama_obat[0]; ?></span> untuk periode bulan <span id="prd_bulan"><?php echo bulan_indo($bulan_ini); ?></span> <span id="prd_tahun"><?php echo "$tahun_ini"; ?></span> adalah sebesar <span id="hasil_ramalan"><?php echo round($hasil_ramalan_es); ?></span> <span id="satuan"><?php echo $sat_obat[0]; ?></span>
+								Hasil peramalan penjualan obat <span id="nama_obat"><?php echo $nama_obat[0]; ?></span> untuk periode bulan <span id="prd_bulan"><?php echo bulan_indo($bulan_ini); ?></span> <span id="prd_tahun"><?php echo "$tahun_ini"; ?></span> adalah sebesar <span id="hasil_ramalan"><?php echo round($hasil_ramalan_es); ?></span> <span id="satuan"><?php echo $sat_barang[0]; ?></span>
 							</p>
 						</div>
 					</div>
@@ -605,7 +605,7 @@
 						} else {
 							echo "bulan ".bulan_indo($bulan_ini)."  ".$tahun_ini; 
 						} ?>,
-						obat <?php echo $nama_obat[0]; ?> diprediksi akan terjual sebanyak <?php echo round($hasil_ramalan_akhir); ?> <?php echo $sat_obat[0]; ?> dengan tingkat keakuratan sebesar <?php echo round($akurasi, 2); ?>%
+						obat <?php echo $nama_obat[0]; ?> diprediksi akan terjual sebanyak <?php echo round($hasil_ramalan_akhir); ?> <?php echo $sat_barang[0]; ?> dengan tingkat keakuratan sebesar <?php echo round($akurasi, 2); ?>%
 					</p> -->
 					<style>
 						.tabel-hasil td {
@@ -623,7 +623,7 @@
 									echo $interval." Hari kedepan (".tgl_indo($data[$baris][0])." sd. ".tgl_indo($data[$baris][1]).")";
 								} else {
 									echo "bulan ".bulan_indo($bulan_ini)."  ".$tahun_ini; 
-								} ?> barang <?php echo $nama_obat[0]; ?> diprediksi akan terpakai sebanyak <?php echo round($hasil_ramalan_akhir); ?> <?php echo $sat_obat[0]; ?>
+								} ?> barang <?php echo $nama_obat[0]; ?> diprediksi akan terpakai sebanyak <?php echo round($hasil_ramalan_akhir); ?> <?php echo $sat_barang[0]; ?>
 							</td>
 						</tr>
 						<tr>
@@ -773,7 +773,7 @@
 	 //    } else {
 	 //        $no_obatramal = "ORM/".$tgl."/001";
 	 //    }
-		// $query_obtrml = "INSERT INTO tbl_barangramal VALUES('$no_obatramal', '$no_rml', '$kd_barang[0]', '$nama_obat[0]', '$sat_obat[0]', '$mtd_terbaik', '$hasil_ramalan_akhir')";
+		// $query_obtrml = "INSERT INTO tbl_barangramal VALUES('$no_obatramal', '$no_rml', '$kd_barang[0]', '$nama_obat[0]', '$sat_barang[0]', '$mtd_terbaik', '$hasil_ramalan_akhir')";
 		// mysqli_query($conn, $query_obtrml) or die ($conn->error);
 		
 

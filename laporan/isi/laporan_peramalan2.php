@@ -367,6 +367,6 @@
 		</table>
 	</div>
 	<div class="kotak-hasil-akhir" style="margin-top: 20px; font-size: 14px; text-align: justify; line-height: 1.6;">
-		Dari hasil perhitungan peramalan penjualan obat <?php echo $data_prm['nm_barang']; ?> untuk periode <?php echo periode($data_prm['periode_rml']); ?>, diperoleh metode <?php echo $metode_terbaik; ?> memberikan hasil peramalan dengan tingkat error terendah. Sehingga angka penjualan obat <?php echo $data_prm['nm_barang']; ?> untuk periode bulan <?php echo periode($data_prm['periode_rml']); ?> diramalkan sebesar <?php echo round($data_prm['hasil'])." ".$data_prm['sat_obat']; ?>
+		Dari hasil perhitungan peramalan penjualan obat <?php echo $data_prm['nm_barang']; ?> untuk periode <?php echo periode($data_prm['periode_rml']); ?>, diperoleh metode <?php echo $metode_terbaik; ?> memberikan hasil peramalan dengan tingkat error terendah. Sehingga angka penjualan obat <?php echo $data_prm['nm_barang']; ?> untuk periode bulan <?php echo periode($data_prm['periode_rml']); ?> diramalkan sebesar <?php echo round($data_prm['hasil'])." ".$data_prm['sat_barang']; ?>
 	</div>
 </page>

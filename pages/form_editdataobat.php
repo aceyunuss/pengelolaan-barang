@@ -81,16 +81,16 @@
 				    <div class="col-sm-9">
 				      <select name="ip_stobat" id="ip_stobat" class="form-control form-control-sm">
 				      	<option value="0">pilih satuan barang</option>
-				      	<option value="PCS" <?php if($data['sat_obat']=="PCS") {echo "selected";} ?> >Pcs</option>
+				      	<option value="PCS" <?php if($data['sat_barang']=="PCS") {echo "selected";} ?> >Pcs</option>
 				      	
-				      	<option value="TUBE" <?php if($data['sat_obat']=="TUBE") {echo "selected";} ?> >Tube</option>
-				      	<option value="BOTOL" <?php if($data['sat_obat']=="BOTOL") {echo "selected";} ?> >Botol</option>
-				      	<option value="BATANG" <?php if($data['sat_obat']=="BATANG") {echo "selected";} ?> >Batang</option>
+				      	<option value="TUBE" <?php if($data['sat_barang']=="TUBE") {echo "selected";} ?> >Tube</option>
+				      	<option value="BOTOL" <?php if($data['sat_barang']=="BOTOL") {echo "selected";} ?> >Botol</option>
+				      	<option value="BATANG" <?php if($data['sat_barang']=="BATANG") {echo "selected";} ?> >Batang</option>
 				      </select>
 				    </div>
 				  </div>
 				  <div class="form-group row">
-				    <label for="ip_hrgobat" class="col-sm-3 col-form-label">Harga per <span id="u_satuan"><?php echo $data['sat_obat']; ?></span></label>
+				    <label for="ip_hrgobat" class="col-sm-3 col-form-label">Harga per <span id="u_satuan"><?php echo $data['sat_barang']; ?></span></label>
 				    <div class="col-sm-9">
 				      <div class="input-group input-group-sm">
 						  <div class="input-group-prepend">

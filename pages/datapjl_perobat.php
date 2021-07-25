@@ -30,7 +30,7 @@
 			<?php 
 				$tgl_sekarang = date('Y-m-d');
 				$nomor = 1;
-				$query_pjlobat = "SELECT nm_barang, tbl_penjualandetail.kd_barang, sat_obat, SUM(tbl_penjualandetail.jml_jual) AS jml_terjual, SUM(tbl_penjualandetail.hrg_jual*tbl_penjualandetail.jml_jual) AS keuntungan FROM tbl_penjualandetail INNER JOIN tbl_databarang ON tbl_penjualandetail.kd_barang = tbl_databarang.kd_barang INNER JOIN tbl_penjualan ON tbl_penjualandetail.no_penjualan = tbl_penjualan.no_penjualan WHERE (tbl_penjualan.tgl_penjualan BETWEEN '' AND '$tgl_sekarang') GROUP BY tbl_penjualandetail.kd_barang ORDER BY nm_barang ASC";
+				$query_pjlobat = "SELECT nm_barang, tbl_penjualandetail.kd_barang, sat_barang, SUM(tbl_penjualandetail.jml_jual) AS jml_terjual, SUM(tbl_penjualandetail.hrg_jual*tbl_penjualandetail.jml_jual) AS keuntungan FROM tbl_penjualandetail INNER JOIN tbl_databarang ON tbl_penjualandetail.kd_barang = tbl_databarang.kd_barang INNER JOIN tbl_penjualan ON tbl_penjualandetail.no_penjualan = tbl_penjualan.no_penjualan WHERE (tbl_penjualan.tgl_penjualan BETWEEN '' AND '$tgl_sekarang') GROUP BY tbl_penjualandetail.kd_barang ORDER BY nm_barang ASC";
 				$sql_pjlobat = mysqli_query($conn, $query_pjlobat) or die ($conn->error);
 			 ?>
 			<tbody>
@@ -41,7 +41,7 @@
 					<td><?php echo $nomor++; ?></td>
 					<td><?php echo $data_pjlobat['kd_barang']; ?></td>
 					<td><?php echo $data_pjlobat['nm_barang']; ?></td>
-					<td><?php echo $data_pjlobat['sat_obat']; ?></td>
+					<td><?php echo $data_pjlobat['sat_barang']; ?></td>
 					<td><?php echo $data_pjlobat['jml_terjual']; ?></td>
 					<td><?php echo number_format($data_pjlobat['keuntungan']); ?></td>
 				</tr>
