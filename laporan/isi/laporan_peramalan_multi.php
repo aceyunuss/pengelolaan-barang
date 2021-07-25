@@ -19,7 +19,7 @@
 	$query_prm = "SELECT * FROM tbl_peramalan WHERE no_rml='$no_rml'";
 	$sql_prm = mysqli_query($conn, $query_prm) or die ($conn->error);
 	$data_prm = mysqli_fetch_array($sql_prm);
-	$jml_obat = $data_prm['jml_obat'];
+	$jml_barang = $data_prm['jml_barang'];
  ?>
 <link type="text/css" href="./isi/style_css/laporan_peramalan_multi.css" rel="stylesheet">
 

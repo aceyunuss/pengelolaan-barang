@@ -55,7 +55,7 @@
 					<td align="left" class="nama_obat">
 						<?php echo $data_dpjl['nm_barang']; ?>
 					</td>
-					<td class="jml_obat">
+					<td class="jml_barang">
 						<?php echo $data_dpjl['jml_jual']; ?>
 					</td>
 					<td class="sat_barang">

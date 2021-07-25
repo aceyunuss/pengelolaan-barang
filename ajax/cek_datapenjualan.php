@@ -1,7 +1,7 @@
 <?php 
 	include "../koneksi.php";
 	$kd_barang = $_GET['obat'];
-	$jml_obat = count($kd_barang);
+	$jml_barang = count($kd_barang);
 	$prd_ramalan = $_GET['ip_periode'];
 	if($prd_ramalan=="per_hari") {
 		$interval = $_GET['jml_hari'];
@@ -15,7 +15,7 @@
 
 	$arraykode = array();
 	$nama_obat = array();
-	for($x=0; $x<$jml_obat; $x++) {
+	for($x=0; $x<$jml_barang; $x++) {
 		$jml_data = 0;
 
 		if($prd_ramalan=="bulan_depan") {

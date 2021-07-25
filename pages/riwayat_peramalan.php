@@ -41,10 +41,10 @@
 						<td><?php echo $data_prm['periode_rml']; ?></td>
 						<td>
 							<?php 
-								echo $data_prm['jml_obat'];
-								if($data_prm['jml_obat']==1){
+								echo $data_prm['jml_barang'];
+								if($data_prm['jml_barang']==1){
 									$nama_laporan = "laporan_peramalan";
-								} else if($data_prm['jml_obat']>1){
+								} else if($data_prm['jml_barang']>1){
 									$nama_laporan = "laporan_peramalan_multi";
 								}
 							?>

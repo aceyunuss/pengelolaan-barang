@@ -31,29 +31,29 @@
 
 		// $kd_barang = "tes";
 		// $hrg_jual = 2000;
-		// $jml_obat = 2;
+		// $jml_barang = 2;
 		// $sat_jual = "Strip";
 		// $subtotal = 4000;
 
-		// $query_pjldtl = "INSERT INTO tbl_penjualandetail (no_penjualan, kd_barang, hrg_jual, jml_jual, sat_jual, subtotal) VALUES ('$no_penjualan', '$kd_barang', '$hrg_jual', '$jml_obat', '$sat_jual', '$subtotal')";
+		// $query_pjldtl = "INSERT INTO tbl_penjualandetail (no_penjualan, kd_barang, hrg_jual, jml_jual, sat_jual, subtotal) VALUES ('$no_penjualan', '$kd_barang', '$hrg_jual', '$jml_barang', '$sat_jual', '$subtotal')";
 		// mysqli_query($conn, $query_pjldtl) or die ($conn->error);
 
 	for($i = 0; $i < count($_POST['hidden_kdobat']); $i++) {
 		$kd_barang = $_POST['hidden_kdobat'][$i];
 		$hrg_jual = $_POST['hidden_hrgobat'][$i];
-		$jml_obat = $_POST['hidden_jmlobat'][$i];
+		$jml_barang = $_POST['hidden_jmlobat'][$i];
 		$sat_jual = $_POST['hidden_satobat'][$i];
 		$subtotal = $_POST['hidden_subtotal'][$i];
 		$exp_barang = $_POST['hidden_expobat'][$i];
 
-		$query_pjldtl = "INSERT INTO tbl_penjualandetail (no_penjualan, kd_barang, expired, hrg_jual, jml_jual, sat_jual, subtotal) VALUES('$no_penjualan', '$kd_barang', '$exp_barang', '$hrg_jual', '$jml_obat', '$sat_jual', '$subtotal')";
+		$query_pjldtl = "INSERT INTO tbl_penjualandetail (no_penjualan, kd_barang, expired, hrg_jual, jml_jual, sat_jual, subtotal) VALUES('$no_penjualan', '$kd_barang', '$exp_barang', '$hrg_jual', '$jml_barang', '$sat_jual', '$subtotal')";
 		mysqli_query($conn, $query_pjldtl) or die ($conn->error);
 
 		$query_stok = "SELECT stk_barang FROM tbl_databarang WHERE kd_barang = '$kd_barang'";
 		$sql_stok = mysqli_query($conn, $query_stok) or die ($conn->error);
 		$data_stok = mysqli_fetch_array($sql_stok);
 		$stok_lama = $data_stok['stk_barang'];
-		$stok_baru = $stok_lama - $jml_obat;
+		$stok_baru = $stok_lama - $jml_barang;
 		$query_estok = "UPDATE tbl_databarang SET stk_barang='$stok_baru' WHERE kd_barang='$kd_barang'";
 		mysqli_query($conn, $query_estok) or die ($conn->error);
 
@@ -61,7 +61,7 @@
 		$sql_stokexp = mysqli_query($conn, $query_stokexp) or die ($conn->error);
 		$data_stokexp = mysqli_fetch_array($sql_stokexp);
 		$stok_lamaexp = $data_stokexp['stok'];
-		$stok_baruexp = $stok_lamaexp - $jml_obat;
+		$stok_baruexp = $stok_lamaexp - $jml_barang;
 		$query_estokexp = "UPDATE tbl_stokexpbarang SET stok='$stok_baruexp' WHERE kd_barang='$kd_barang' AND tgl_exp = '$exp_barang'";
 		mysqli_query($conn, $query_estokexp) or die ($conn->error);
 	}

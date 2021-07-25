@@ -82,7 +82,7 @@
 			</tr>
 		</thead>
 	<?php 
-	for($x=0; $x<$jml_obat; $x++) {
+	for($x=0; $x<$jml_barang; $x++) {
 		$skor_sma = 0;
 		$skor_ses = 0;
 		

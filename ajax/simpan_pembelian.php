@@ -25,20 +25,20 @@
 		$kd_barang = $_POST['hidden_kdobat'][$i];
 		$hrg_beli = $_POST['hidden_hrgobat'][$i];
 		$exp_barang = $_POST['hidden_expobat'][$i];
-		$jml_obat = $_POST['hidden_jmlobat'][$i];
+		$jml_barang = $_POST['hidden_jmlobat'][$i];
 		$sat_jual = $_POST['hidden_satobat'][$i];
 		$subtotal = $_POST['hidden_subtotal'][$i];
-		$query_pbldtl = "INSERT INTO tbl_pembeliandetail (no_faktur, kd_barang, exp_barangbeli, hrg_beli, jml_beli, sat_beli, subtotal) VALUES ('$no_faktur', '$kd_barang', '$exp_barang', '$hrg_beli', '$jml_obat', '$sat_jual', '$subtotal')";
+		$query_pbldtl = "INSERT INTO tbl_pembeliandetail (no_faktur, kd_barang, exp_barangbeli, hrg_beli, jml_beli, sat_beli, subtotal) VALUES ('$no_faktur', '$kd_barang', '$exp_barang', '$hrg_beli', '$jml_barang', '$sat_jual', '$subtotal')";
 		mysqli_query($conn, $query_pbldtl) or die ($conn->error);
 
 		$query_stok = "SELECT stk_barang, hrgbeli_barang FROM tbl_databarang WHERE kd_barang = '$kd_barang'";
 		$sql_stok = mysqli_query($conn, $query_stok) or die ($conn->error);
 		$data_stok = mysqli_fetch_array($sql_stok);
 		$stok_lama = $data_stok['stk_barang'];
-		$stok_baru = $stok_lama + $jml_obat;
+		$stok_baru = $stok_lama + $jml_barang;
 		$harga = $data_stok['hrgbeli_barang'];
 		if($stok_lama >= 0) {
-			$harga = (($stok_lama*$harga)+($jml_obat*$hrg_beli))/($stok_lama+$jml_obat);
+			$harga = (($stok_lama*$harga)+($jml_barang*$hrg_beli))/($stok_lama+$jml_barang);
 		}
 		$harga_jual = $harga*1.20;
 		$query_estok = "UPDATE tbl_databarang SET stk_barang='$stok_baru', hrgbeli_barang = '$harga', hrg_barang = '$harga_jual' WHERE kd_barang='$kd_barang'";
@@ -50,11 +50,11 @@
 		if($rows_exp > 0) {
 			$data_exp = mysqli_fetch_array($sql_exp);
 			$stok_lamaexp = $data_exp['stok'];
-			$stok_baruexp = $stok_lamaexp + $jml_obat;
+			$stok_baruexp = $stok_lamaexp + $jml_barang;
 			$query_updstokexp = "UPDATE tbl_stokexpbarang SET stok='$stok_baruexp' WHERE kd_barang='$kd_barang' AND tgl_exp = '$exp_barang'";
 			mysqli_query($conn, $query_updstokexp) or die ($conn->error);
 		} else {
-			$query_stokexp = "INSERT INTO tbl_stokexpbarang (kd_barang, tgl_exp, stok) VALUES ('$kd_barang', '$exp_barang', '$jml_obat')";
+			$query_stokexp = "INSERT INTO tbl_stokexpbarang (kd_barang, tgl_exp, stok) VALUES ('$kd_barang', '$exp_barang', '$jml_barang')";
 			mysqli_query($conn, $query_stokexp) or die ($conn->error);
 		}
 	}

@@ -81,9 +81,9 @@
                                   </div>
                     			</div>
                                 <div class="position-relative form-group">
-                                    <label for="jml_obat" class="">Jumlah</label>
+                                    <label for="jml_barang" class="">Jumlah</label>
                                     <div class="input-group input-group-sm">
-                                      <input type="number" class="form-control" id="jml_obat" name="jml_obat" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+                                      <input type="number" class="form-control" id="jml_barang" name="jml_barang" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
                                       <div class="input-group-append">
                                         <span class="input-group-text" id="span_satuan">satuan</span>
                                       </div>
@@ -260,15 +260,15 @@ $(document).ready(function() {
         $("#kode_obat").val("");
         $("#nm_barang").val("");
         $("#hrg_barang").val("");
-        $("#jml_obat").val("");
+        $("#jml_barang").val("");
         $("#span_satuan").text("satuan");
         $("#toth_obat").val("");
         $("#stok_obat").val("");
         $("#exp_barang").val("");
     }
 
-    function jml_obat() {
-        var jml = Number($("#jml_obat").val());
+    function jml_barang() {
+        var jml = Number($("#jml_barang").val());
         var harga = Number ($("#hrg_barang").val());
         if (jml>=0) {
             var sub_total = jml*harga;
@@ -278,7 +278,7 @@ $(document).ready(function() {
         }
     }
     function hrg_barang() {
-        var jml = Number($("#jml_obat").val());
+        var jml = Number($("#jml_barang").val());
         var harga = Number ($("#hrg_barang").val());
         if (harga>=0) {
             var sub_total = jml*harga;
@@ -302,7 +302,7 @@ $(document).ready(function() {
         $("#exp_barang").val(exp);
         $("#hrg_barang").val(harga);
         $("#span_satuan").text(satuan);
-        $("#jml_obat").val(1);
+        $("#jml_barang").val(1);
         $("#toth_obat").val(harga);
     });
 
@@ -319,8 +319,8 @@ $(document).ready(function() {
 
     $("#hrg_barang").keyup(function() { hrg_barang(); });
     $("#hrg_barang").change(function() { hrg_barang(); });
-    $("#jml_obat").keyup(function() { jml_obat(); });
-    $("#jml_obat").change(function() { jml_obat(); });
+    $("#jml_barang").keyup(function() { jml_barang(); });
+    $("#jml_barang").change(function() { jml_barang(); });
 
     $("#reset_obat").click(function() {
         reset();
@@ -332,7 +332,7 @@ $(document).ready(function() {
         var stok = Number($("#stok_obat").val());
         var exp = $("#exp_barang").val();
         var harga = $("#hrg_barang").val();
-        var jumlah = Number($("#jml_obat").val());
+        var jumlah = Number($("#jml_barang").val());
         var satuan = $("#span_satuan").text();
         var subtotal = Number($("#toth_obat").val());
 
@@ -351,7 +351,7 @@ $(document).ready(function() {
               'warning'
             )
         } else if(jumlah=="" || jumlah<=0) {
-            document.getElementById("jml_obat").focus();
+            document.getElementById("jml_barang").focus();
             Swal.fire(
               'Data Belum Lengkap',
               'maaf, tolong isi jumlah obat dengan benar',

@@ -1,9 +1,9 @@
 <?php 
 	$kd_barang = @$_POST['obat'];
 	// $kd_barang = array('520013421','623341057');
-	$jml_obat = count($kd_barang);
+	$jml_barang = count($kd_barang);
 
-	for($i=0; $i<$jml_obat; $i++) {
+	for($i=0; $i<$jml_barang; $i++) {
 		$query_obat = "SELECT kd_barang, nm_barang, sat_barang FROM tbl_databarang WHERE kd_barang='$kd_barang[$i]'";
 		$sql_obat = mysqli_query($conn, $query_obat) or die ($conn->error);
 		$data_barang = mysqli_fetch_array($sql_obat);
@@ -66,7 +66,7 @@
 	} else {
 	    $no_rml = "PRM/".$tgl."/001";
 	}
-	$query_prm = "INSERT INTO tbl_peramalan VALUES('$no_rml', '$tgl_rml', '$periode_ramal', '$jml_obat', '$nilai_ma[0]', '$nilai_ma[1]', '$alpha[0]', '$alpha[1]')";
+	$query_prm = "INSERT INTO tbl_peramalan VALUES('$no_rml', '$tgl_rml', '$periode_ramal', '$jml_barang', '$nilai_ma[0]', '$nilai_ma[1]', '$alpha[0]', '$alpha[1]')";
 	// mysqli_query($conn, $query_prm) or die ($conn->error);
 
 	
@@ -95,10 +95,10 @@
 		</div>
 	</div>
 	<?php 
-		if($jml_obat==1){
+		if($jml_barang==1){
 			include 'pages/peramalan_singleobat.php';
 			$nama_laporan = "laporan_peramalan";
-		} else if($jml_obat>1){
+		} else if($jml_barang>1){
 			include 'pages/peramalan_multiobat.php';
 			$nama_laporan = "laporan_peramalan_multi";
 		}

@@ -991,7 +991,7 @@ CREATE TABLE IF NOT EXISTS `tbl_peramalan` (
   `no_rml` varchar(16) NOT NULL,
   `tgl_rml` date NOT NULL,
   `periode_rml` varchar(30) NOT NULL,
-  `jml_obat` int(11) NOT NULL,
+  `jml_barang` int(11) NOT NULL,
   `nilai_ma1` int(11) NOT NULL,
   `nilai_ma2` int(11) NOT NULL,
   `nilai_alpha1` double NOT NULL,
@@ -1003,7 +1003,7 @@ CREATE TABLE IF NOT EXISTS `tbl_peramalan` (
 -- Dumping data untuk tabel `tbl_peramalan`
 --
 
-INSERT INTO `tbl_peramalan` (`no_rml`, `tgl_rml`, `periode_rml`, `jml_obat`, `nilai_ma1`, `nilai_ma2`, `nilai_alpha1`, `nilai_alpha2`) VALUES
+INSERT INTO `tbl_peramalan` (`no_rml`, `tgl_rml`, `periode_rml`, `jml_barang`, `nilai_ma1`, `nilai_ma2`, `nilai_alpha1`, `nilai_alpha2`) VALUES
 ('PRM/20200127/001', '2020-01-27', 'Januari 2020', 1, 2, 5, 0.2, 0.8),
 ('PRM/20200127/002', '2020-01-27', 'Februari 2020', 1, 2, 5, 0.2, 0.8),
 ('PRM/20200127/003', '2020-01-27', '28/Jan/20 sd. 26/Feb/20', 1, 2, 5, 0.2, 0.8),
