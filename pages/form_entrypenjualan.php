@@ -213,7 +213,7 @@
                     <td><?php echo $data['nm_barang']; ?></td>
                     <td><?php echo $data['exp_barang']; ?></td>
                     <td><?php echo $data['hrg_barang']; ?></td>
-                    <td><?php echo $data['stk_obat']; ?></td>
+                    <td><?php echo $data['stk_barang']; ?></td>
                     <td><?php echo $data['sat_barang']; ?></td>
                     <td><?php echo $data['ktg_barang']; ?></td>
                     <td class="td-opsi">
@@ -222,7 +222,7 @@
                             data-nama="<?php echo $data['nm_barang']; ?>"
                             data-harga="<?php echo $data['hrg_barang']; ?>"
                             data-satuan="<?php echo $data['sat_barang']; ?>"
-                            data-stok="<?php echo $data['stk_obat']; ?>"
+                            data-stok="<?php echo $data['stk_barang']; ?>"
                             data-exp="<?php echo $data['exp_barang']; ?>"
                         > pilih
                         </button>

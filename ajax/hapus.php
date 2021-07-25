@@ -26,12 +26,12 @@
 		$query_ksgstok = "UPDATE tbl_stokexpbarang SET stok = '0' WHERE kd_barang = '$id' AND tgl_exp = '$exp'";
 		mysqli_query($conn, $query_ksgstok) or die ($conn->error);
 
-		$query_stok = "SELECT stk_obat FROM tbl_databarang WHERE kd_barang = '$id'";
+		$query_stok = "SELECT stk_barang FROM tbl_databarang WHERE kd_barang = '$id'";
 		$sql_stok = mysqli_query($conn, $query_stok) or die ($conn->error);
 		$data_stok = mysqli_fetch_array($sql_stok);
-		$stok_lama = $data_stok['stk_obat'];
+		$stok_lama = $data_stok['stk_barang'];
 		$stok_baru = $stok_lama - $stok;
-		$query_estok = "UPDATE tbl_databarang SET stk_obat='$stok_baru' WHERE kd_barang='$id'";
+		$query_estok = "UPDATE tbl_databarang SET stk_barang='$stok_baru' WHERE kd_barang='$id'";
 		mysqli_query($conn, $query_estok) or die ($conn->error);
 	}
 

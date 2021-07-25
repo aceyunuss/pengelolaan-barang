@@ -207,7 +207,7 @@
                     <td><?php echo $data['kd_barang']; ?></td>
                     <td><?php echo $data['nm_barang']; ?></td>
                     <td><?php echo $data['hrgbeli_barang']; ?></td>
-                    <td><?php echo $data['stk_obat']; ?></td>
+                    <td><?php echo $data['stk_barang']; ?></td>
                     <td><?php echo $data['sat_barang']; ?></td>
                     <td><?php echo $data['ktg_barang']; ?></td>
                     <td class="td-opsi">

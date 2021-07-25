@@ -45,7 +45,7 @@
 		 			<td><?php echo $data['nm_barang']; ?></td>
 		 			<!-- <td><?php echo $data['exp_barang']; ?></td> -->
 		 			<td><?php echo $data['hrg_barang']; ?></td>
-		 			<td><?php echo $data['stk_obat']; ?></td>
+		 			<td><?php echo $data['stk_barang']; ?></td>
 		 			<td><?php echo $data['sat_barang']; ?></td>
 		 			<td><?php echo $data['ktg_barang']; ?></td>
 
@@ -59,8 +59,8 @@
 		 				data-satuan="<?php echo $data['sat_barang']; ?>"
 		 				data-harbel="<?php echo "Rp".number_format($data['hrgbeli_barang'], 0,",", "."); ?>"
 		 				data-harju="<?php echo "Rp".number_format($data['hrg_barang'], 0,",", ".");; ?>"
-		 				data-stok="<?php echo $data['stk_obat']; ?>"
-		 				data-minstok="<?php echo $data['minstk_obat']; ?>">
+		 				data-stok="<?php echo $data['stk_barang']; ?>"
+		 				data-minstok="<?php echo $data['minstk_barang']; ?>">
                             <i class="fas fa-info-circle"></i>
                         </button>
 		 			<?php if($_SESSION['posisi_peg'] == 'Admin' || $_SESSION['posisi_peg'] == 'Manager' || $_SESSION['posisi_peg'] == 'Apoteker') { ?>

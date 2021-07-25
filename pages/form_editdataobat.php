@@ -103,7 +103,7 @@
 				  <div class="form-group row">
 				    <label for="ip_minstok" class="col-sm-3 col-form-label">Stok Minimal</label>
 				    <div class="col-sm-9">
-					    <input type="number" class="form-control form-control-sm" id="ip_minstok" name="ip_minstok" value="<?php echo $data['minstk_obat']; ?>">
+					    <input type="number" class="form-control form-control-sm" id="ip_minstok" name="ip_minstok" value="<?php echo $data['minstk_barang']; ?>">
 					</div>
 				  </div>
 				  
