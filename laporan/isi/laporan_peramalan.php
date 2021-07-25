@@ -35,7 +35,7 @@
 	<div class="page-content page-laporan-penjualan-detail">
 		<div class="kotak-judul">
 			<?php 
-				$query_obrml = "SELECT * FROM tbl_obatramal INNER JOIN tbl_peramalan ON tbl_obatramal.no_rml=tbl_peramalan.no_rml WHERE tbl_peramalan.no_rml='$no_rml'";
+				$query_obrml = "SELECT * FROM tbl_barangramal INNER JOIN tbl_peramalan ON tbl_barangramal.no_rml=tbl_peramalan.no_rml WHERE tbl_peramalan.no_rml='$no_rml'";
 				$sql_obrml = mysqli_query($conn, $query_obrml) or die ($conn->error);
 				$data_obrml = mysqli_fetch_array($sql_obrml);
 				$no_obatramal = $data_obrml['no_obatramal'];
@@ -120,7 +120,7 @@
 	</div>
 	<div class="kotak-perbandingan">
 		<?php 
-			$query_mtd_sma = "SELECT * FROM tbl_metode_sma INNER JOIN tbl_obatramal ON tbl_metode_sma.no_obatramal=tbl_obatramal.no_obatramal WHERE tbl_metode_sma.no_obatramal='$no_obatramal'";
+			$query_mtd_sma = "SELECT * FROM tbl_metode_sma INNER JOIN tbl_barangramal ON tbl_metode_sma.no_obatramal=tbl_barangramal.no_obatramal WHERE tbl_metode_sma.no_obatramal='$no_obatramal'";
 			$sql_mtd_sma = mysqli_query($conn, $query_mtd_sma) or die ($conn->error);
 			$data_mtd_sma = mysqli_fetch_array($sql_mtd_sma);
 		 ?>
@@ -197,7 +197,7 @@
 	</div>
 	<div class="kotak-perbandingan">
 		<?php 
-			$query_mtd_ses = "SELECT * FROM tbl_metode_ses INNER JOIN tbl_obatramal ON tbl_metode_ses.no_obatramal=tbl_obatramal.no_obatramal WHERE tbl_metode_ses.no_obatramal='$no_obatramal'";
+			$query_mtd_ses = "SELECT * FROM tbl_metode_ses INNER JOIN tbl_barangramal ON tbl_metode_ses.no_obatramal=tbl_barangramal.no_obatramal WHERE tbl_metode_ses.no_obatramal='$no_obatramal'";
 			$sql_mtd_ses = mysqli_query($conn, $query_mtd_ses) or die ($conn->error);
 			$data_mtd_ses = mysqli_fetch_array($sql_mtd_ses);
 		 ?>

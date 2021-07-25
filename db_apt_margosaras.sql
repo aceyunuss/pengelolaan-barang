@@ -297,10 +297,10 @@ INSERT INTO `tbl_metode_sma` (`no_mtd_sma`, `no_obatramal`, `mae_sma1`, `mae_sma
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tbl_obatramal`
+-- Struktur dari tabel `tbl_barangramal`
 --
 
-CREATE TABLE IF NOT EXISTS `tbl_obatramal` (
+CREATE TABLE IF NOT EXISTS `tbl_barangramal` (
   `no_obatramal` varchar(16) NOT NULL,
   `no_rml` varchar(16) NOT NULL,
   `kd_obat` varchar(18) NOT NULL,
@@ -309,15 +309,15 @@ CREATE TABLE IF NOT EXISTS `tbl_obatramal` (
   `mtd_terbaik` enum('SMA','SES') NOT NULL,
   `hasil_rml` double NOT NULL,
   PRIMARY KEY (`no_obatramal`),
-  KEY `tbl_obatramal_no_ramal` (`no_rml`),
-  KEY `tbl_obatramal_kd_obat` (`kd_obat`)
+  KEY `tbl_barangramal_no_ramal` (`no_rml`),
+  KEY `tbl_barangramal_kd_obat` (`kd_obat`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `tbl_obatramal`
+-- Dumping data untuk tabel `tbl_barangramal`
 --
 
-INSERT INTO `tbl_obatramal` (`no_obatramal`, `no_rml`, `kd_obat`, `nm_obat`, `sat_obat`, `mtd_terbaik`, `hasil_rml`) VALUES
+INSERT INTO `tbl_barangramal` (`no_obatramal`, `no_rml`, `kd_obat`, `nm_obat`, `sat_obat`, `mtd_terbaik`, `hasil_rml`) VALUES
 ('ORM/20200127/001', 'PRM/20200127/001', '520013421', 'SANMOL 500MG TAB STR 4S', 'STRIP', 'SES', 19.046),
 ('ORM/20200127/002', 'PRM/20200127/002', '520013421', 'SANMOL 500MG TAB STR 4S', 'STRIP', 'SES', 16.78),
 ('ORM/20200127/003', 'PRM/20200127/003', '520013421', 'SANMOL 500MG TAB STR 4S', 'STRIP', 'SES', 16.596),
@@ -1602,20 +1602,20 @@ INSERT INTO `tbl_supplier` (`no_supp`, `nama_supp`, `nama_pet`, `nohp_pet`, `alm
 -- Ketidakleluasaan untuk tabel `tbl_metode_ses`
 --
 ALTER TABLE `tbl_metode_ses`
-  ADD CONSTRAINT `mtd_ses_no_obatramal` FOREIGN KEY (`no_obatramal`) REFERENCES `tbl_obatramal` (`no_obatramal`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `mtd_ses_no_obatramal` FOREIGN KEY (`no_obatramal`) REFERENCES `tbl_barangramal` (`no_obatramal`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Ketidakleluasaan untuk tabel `tbl_metode_sma`
 --
 ALTER TABLE `tbl_metode_sma`
-  ADD CONSTRAINT `mtd_sma_no_obatramal` FOREIGN KEY (`no_obatramal`) REFERENCES `tbl_obatramal` (`no_obatramal`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `mtd_sma_no_obatramal` FOREIGN KEY (`no_obatramal`) REFERENCES `tbl_barangramal` (`no_obatramal`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Ketidakleluasaan untuk tabel `tbl_obatramal`
+-- Ketidakleluasaan untuk tabel `tbl_barangramal`
 --
-ALTER TABLE `tbl_obatramal`
-  ADD CONSTRAINT `tbl_obatramal_kd_obat` FOREIGN KEY (`kd_obat`) REFERENCES `tbl_databarang` (`kd_obat`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `tbl_obatramal_no_ramal` FOREIGN KEY (`no_rml`) REFERENCES `tbl_peramalan` (`no_rml`) ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE `tbl_barangramal`
+  ADD CONSTRAINT `tbl_barangramal_kd_obat` FOREIGN KEY (`kd_obat`) REFERENCES `tbl_databarang` (`kd_obat`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `tbl_barangramal_no_ramal` FOREIGN KEY (`no_rml`) REFERENCES `tbl_peramalan` (`no_rml`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Ketidakleluasaan untuk tabel `tbl_prd_ses`

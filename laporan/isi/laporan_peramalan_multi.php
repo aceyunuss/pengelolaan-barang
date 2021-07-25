@@ -89,7 +89,7 @@
 			</tr>	
 		<?php 
 			$no=1;
-			$query_obrml = "SELECT * FROM tbl_obatramal INNER JOIN tbl_peramalan ON tbl_obatramal.no_rml=tbl_peramalan.no_rml WHERE tbl_peramalan.no_rml='$no_rml'";
+			$query_obrml = "SELECT * FROM tbl_barangramal INNER JOIN tbl_peramalan ON tbl_barangramal.no_rml=tbl_peramalan.no_rml WHERE tbl_peramalan.no_rml='$no_rml'";
 			$sql_obrml = mysqli_query($conn, $query_obrml) or die ($conn->error);
 			while($data_obrml = mysqli_fetch_array($sql_obrml)) {
 				$no_obatramal = $data_obrml['no_obatramal'];

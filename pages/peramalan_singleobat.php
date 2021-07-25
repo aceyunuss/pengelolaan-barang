@@ -763,7 +763,7 @@
 	</script>
 	
 	<?php 
-		// $carikode = mysqli_query($conn, "SELECT MAX(no_obatramal) FROM tbl_obatramal INNER JOIN tbl_peramalan ON tbl_obatramal.no_rml = tbl_peramalan.no_rml WHERE tbl_peramalan.tgl_rml = '$tgl_rml'") or die (mysql_error());
+		// $carikode = mysqli_query($conn, "SELECT MAX(no_obatramal) FROM tbl_barangramal INNER JOIN tbl_peramalan ON tbl_barangramal.no_rml = tbl_peramalan.no_rml WHERE tbl_peramalan.tgl_rml = '$tgl_rml'") or die (mysql_error());
 		// $datakode = mysqli_fetch_array($carikode);
 		// if($datakode) {
 	 //        $nilaikode = substr($datakode[0], 13);
@@ -773,12 +773,12 @@
 	 //    } else {
 	 //        $no_obatramal = "ORM/".$tgl."/001";
 	 //    }
-		// $query_obtrml = "INSERT INTO tbl_obatramal VALUES('$no_obatramal', '$no_rml', '$kd_obat[0]', '$nama_obat[0]', '$sat_obat[0]', '$mtd_terbaik', '$hasil_ramalan_akhir')";
+		// $query_obtrml = "INSERT INTO tbl_barangramal VALUES('$no_obatramal', '$no_rml', '$kd_obat[0]', '$nama_obat[0]', '$sat_obat[0]', '$mtd_terbaik', '$hasil_ramalan_akhir')";
 		// mysqli_query($conn, $query_obtrml) or die ($conn->error);
 		
 
 		// // SIMPAN TABEL MTD SMA
-		// $carikode = mysqli_query($conn, "SELECT MAX(no_mtd_sma) FROM tbl_metode_sma INNER JOIN tbl_obatramal ON tbl_metode_sma.no_obatramal = tbl_obatramal.no_obatramal INNER JOIN tbl_peramalan ON tbl_obatramal.no_rml = tbl_peramalan.no_rml WHERE tbl_peramalan.tgl_rml = '$tgl_rml'") or die (mysql_error());
+		// $carikode = mysqli_query($conn, "SELECT MAX(no_mtd_sma) FROM tbl_metode_sma INNER JOIN tbl_barangramal ON tbl_metode_sma.no_obatramal = tbl_barangramal.no_obatramal INNER JOIN tbl_peramalan ON tbl_barangramal.no_rml = tbl_peramalan.no_rml WHERE tbl_peramalan.tgl_rml = '$tgl_rml'") or die (mysql_error());
 		// $datakode = mysqli_fetch_array($carikode);
 		// if($datakode) {
 	 //        $nilaikode = substr($datakode[0], 13);
@@ -804,7 +804,7 @@
 		// mysqli_query($conn, $query_sma) or die ($conn->error);
 
 		// // SIMPAN TABEL MTD SES
-		// $carikode = mysqli_query($conn, "SELECT MAX(no_mtd_ses) FROM tbl_metode_ses INNER JOIN tbl_obatramal ON tbl_metode_ses.no_obatramal = tbl_obatramal.no_obatramal INNER JOIN tbl_peramalan ON tbl_obatramal.no_rml = tbl_peramalan.no_rml WHERE tbl_peramalan.tgl_rml = '$tgl_rml'") or die (mysql_error());
+		// $carikode = mysqli_query($conn, "SELECT MAX(no_mtd_ses) FROM tbl_metode_ses INNER JOIN tbl_barangramal ON tbl_metode_ses.no_obatramal = tbl_barangramal.no_obatramal INNER JOIN tbl_peramalan ON tbl_barangramal.no_rml = tbl_peramalan.no_rml WHERE tbl_peramalan.tgl_rml = '$tgl_rml'") or die (mysql_error());
 		// $datakode = mysqli_fetch_array($carikode);
 		// if($datakode) {
 	 //        $nilaikode = substr($datakode[0], 13);
