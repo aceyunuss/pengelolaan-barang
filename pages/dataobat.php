@@ -43,7 +43,7 @@
 		 		<tr>
 		 			<td><?php echo $data['kd_barang']; ?></td>
 		 			<td><?php echo $data['nm_barang']; ?></td>
-		 			<!-- <td><?php echo $data['exp_obat']; ?></td> -->
+		 			<!-- <td><?php echo $data['exp_barang']; ?></td> -->
 		 			<td><?php echo $data['hrg_obat']; ?></td>
 		 			<td><?php echo $data['stk_obat']; ?></td>
 		 			<td><?php echo $data['sat_obat']; ?></td>
@@ -53,7 +53,7 @@
 		 				<button class="btn-transition btn btn-outline-success btn-sm" title="detail obat" id="tombol_detail" name="tombol_detail" data-toggle="modal" data-target="#detail_obat"
 		 				data-kode="<?php echo $data['kd_barang']; ?>"
 		 				data-nama="<?php echo $data['nm_barang']; ?>"
-		 				data-exp="<?php echo tgl_indo($data['exp_obat']); ?>"
+		 				data-exp="<?php echo tgl_indo($data['exp_barang']); ?>"
 		 				data-ktg="<?php echo $data['ktg_obat']; ?>"
 		 				data-bentuk="<?php echo $data['bnt_obat']; ?>"
 		 				data-satuan="<?php echo $data['sat_obat']; ?>"

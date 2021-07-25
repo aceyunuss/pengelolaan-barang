@@ -57,7 +57,7 @@ INSERT INTO `data_barang` (`kode`, `nama`, `exp_date`, `harga`, `stok`, `satuan`
 CREATE TABLE IF NOT EXISTS `tbl_databarang` (
   `kd_barang` varchar(18) NOT NULL,
   `nm_barang` varchar(80) NOT NULL,
-  `exp_obat` date NOT NULL,
+  `exp_barang` date NOT NULL,
   `ktg_obat` varchar(15) NOT NULL,
   `bnt_obat` varchar(20) NOT NULL,
   `sat_obat` varchar(11) NOT NULL,
@@ -72,7 +72,7 @@ CREATE TABLE IF NOT EXISTS `tbl_databarang` (
 -- Dumping data untuk tabel `tbl_databarang`
 --
 
-INSERT INTO `tbl_databarang` (`kd_barang`, `nm_barang`, `exp_obat`, `ktg_obat`, `bnt_obat`, `sat_obat`, `hrg_obat`, `hrgbeli_obat`, `stk_obat`, `minstk_obat`) VALUES
+INSERT INTO `tbl_databarang` (`kd_barang`, `nm_barang`, `exp_barang`, `ktg_obat`, `bnt_obat`, `sat_obat`, `hrg_obat`, `hrgbeli_obat`, `stk_obat`, `minstk_obat`) VALUES
 ('0693228-0844', 'ASEPSO ORIG', '2022-07-09', 'HV', 'BATANG', 'BATANG', 7000, 5600, 15, 3),
 ('130110', 'ALLERIN', '2021-08-01', 'HV', 'SIRUP', 'BOTOL', 12500, 10000, 12, 3),
 ('14124A', 'VIVA TONER ALL VAR', '2022-07-01', 'HV', 'CAIR', 'BOTOL', 5200, 4160, 12, 3),
@@ -414,7 +414,7 @@ CREATE TABLE IF NOT EXISTS `tbl_pembeliandetail` (
   `no_idx` int(11) NOT NULL AUTO_INCREMENT,
   `no_faktur` varchar(20) NOT NULL,
   `kd_barang` varchar(15) NOT NULL,
-  `exp_obatbeli` date NOT NULL,
+  `exp_barangbeli` date NOT NULL,
   `hrg_beli` int(11) NOT NULL,
   `jml_beli` int(11) NOT NULL,
   `sat_beli` varchar(11) NOT NULL,
@@ -426,7 +426,7 @@ CREATE TABLE IF NOT EXISTS `tbl_pembeliandetail` (
 -- Dumping data untuk tabel `tbl_pembeliandetail`
 --
 
-INSERT INTO `tbl_pembeliandetail` (`no_idx`, `no_faktur`, `kd_barang`, `exp_obatbeli`, `hrg_beli`, `jml_beli`, `sat_beli`, `subtotal`) VALUES
+INSERT INTO `tbl_pembeliandetail` (`no_idx`, `no_faktur`, `kd_barang`, `exp_barangbeli`, `hrg_beli`, `jml_beli`, `sat_beli`, `subtotal`) VALUES
 (1, 'PBL0001', '15330211', '2022-03-01', 46800, 5, 'BOTOL', 234000),
 (2, 'PBL0002', '18CA1008', '2021-01-01', 250, 100, 'TABLET', 25000),
 (3, 'PBL0002', '520013421', '2022-04-01', 1560, 10, 'STRIP', 15600),

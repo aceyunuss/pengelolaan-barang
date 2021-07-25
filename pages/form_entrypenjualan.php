@@ -69,7 +69,7 @@
                                     <label for="nm_barang" class="">Nama Obat</label>
                                     <input name="nm_barang" id="nm_barang" placeholder="" type="text" class="form-control form-control-sm" disabled="">
                                     <input type="hidden" id="stok_obat">
-                                    <input type="hidden" id="exp_obat">
+                                    <input type="hidden" id="exp_barang">
                                 </div>
                     			<div class="position-relative form-group">
                     				<label for="hrg_obat" class="">Harga</label>
@@ -211,7 +211,7 @@
                 <tr>
                     <td><?php echo $data['kd_barang']; ?></td>
                     <td><?php echo $data['nm_barang']; ?></td>
-                    <td><?php echo $data['exp_obat']; ?></td>
+                    <td><?php echo $data['exp_barang']; ?></td>
                     <td><?php echo $data['hrg_obat']; ?></td>
                     <td><?php echo $data['stk_obat']; ?></td>
                     <td><?php echo $data['sat_obat']; ?></td>
@@ -223,7 +223,7 @@
                             data-harga="<?php echo $data['hrg_obat']; ?>"
                             data-satuan="<?php echo $data['sat_obat']; ?>"
                             data-stok="<?php echo $data['stk_obat']; ?>"
-                            data-exp="<?php echo $data['exp_obat']; ?>"
+                            data-exp="<?php echo $data['exp_barang']; ?>"
                         > pilih
                         </button>
                     </td>
@@ -264,7 +264,7 @@ $(document).ready(function() {
         $("#span_satuan").text("satuan");
         $("#toth_obat").val("");
         $("#stok_obat").val("");
-        $("#exp_obat").val("");
+        $("#exp_barang").val("");
     }
 
     function jml_obat() {
@@ -299,7 +299,7 @@ $(document).ready(function() {
         $("#kode_obat").val(kode);
         $("#nm_barang").val(nama);
         $("#stok_obat").val(stok);
-        $("#exp_obat").val(exp);
+        $("#exp_barang").val(exp);
         $("#hrg_obat").val(harga);
         $("#span_satuan").text(satuan);
         $("#jml_obat").val(1);
@@ -330,7 +330,7 @@ $(document).ready(function() {
         var kode = $("#kode_obat").val();
         var nama = $("#nm_barang").val();
         var stok = Number($("#stok_obat").val());
-        var exp = $("#exp_obat").val();
+        var exp = $("#exp_barang").val();
         var harga = $("#hrg_obat").val();
         var jumlah = Number($("#jml_obat").val());
         var satuan = $("#span_satuan").text();

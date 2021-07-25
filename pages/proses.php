@@ -15,7 +15,7 @@
 		$all_data = $obj->getActiveSheet()->toArray(null, true, true, true);
 
 		// echo $all_data[2]['C'];
-		$sql = "INSERT INTO tbl_databarang (kd_barang, nm_barang, exp_obat, ktg_obat, bnt_obat, sat_obat, hrg_obat, hrgbeli_obat, stk_obat, minstk_obat) VALUES";
+		$sql = "INSERT INTO tbl_databarang (kd_barang, nm_barang, exp_barang, ktg_obat, bnt_obat, sat_obat, hrg_obat, hrgbeli_obat, stk_obat, minstk_obat) VALUES";
 		for($i=2; $i<=count($all_data); $i++) {
 			$kode = $all_data[$i]['A'];
 			$nama = $all_data[$i]['B'];
