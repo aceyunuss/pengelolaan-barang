@@ -72,12 +72,12 @@
                                     <input type="hidden" id="exp_barang">
                                 </div>
                     			<div class="position-relative form-group">
-                    				<label for="hrg_obat" class="">Harga</label>
+                    				<label for="hrg_barang" class="">Harga</label>
                     				<div class="input-group input-group-sm">
                                       <div class="input-group-prepend">
                                         <span class="input-group-text" id="inputGroup-sizing-sm">Rp</span>
                                       </div>
-                                      <input type="number" class="form-control" id="hrg_obat" name="hrg_obat" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+                                      <input type="number" class="form-control" id="hrg_barang" name="hrg_barang" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
                                   </div>
                     			</div>
                                 <div class="position-relative form-group">
@@ -212,7 +212,7 @@
                     <td><?php echo $data['kd_barang']; ?></td>
                     <td><?php echo $data['nm_barang']; ?></td>
                     <td><?php echo $data['exp_barang']; ?></td>
-                    <td><?php echo $data['hrg_obat']; ?></td>
+                    <td><?php echo $data['hrg_barang']; ?></td>
                     <td><?php echo $data['stk_obat']; ?></td>
                     <td><?php echo $data['sat_barang']; ?></td>
                     <td><?php echo $data['ktg_barang']; ?></td>
@@ -220,7 +220,7 @@
                         <button class="btn-transition btn btn-outline-dark btn-sm" title="pilih" id="tombol_pilihobat" name="tombol_pilihobat" data-dismiss="modal"
                             data-kode="<?php echo $data['kd_barang']; ?>"
                             data-nama="<?php echo $data['nm_barang']; ?>"
-                            data-harga="<?php echo $data['hrg_obat']; ?>"
+                            data-harga="<?php echo $data['hrg_barang']; ?>"
                             data-satuan="<?php echo $data['sat_barang']; ?>"
                             data-stok="<?php echo $data['stk_obat']; ?>"
                             data-exp="<?php echo $data['exp_barang']; ?>"
@@ -259,7 +259,7 @@ $(document).ready(function() {
     function reset() {
         $("#kode_obat").val("");
         $("#nm_barang").val("");
-        $("#hrg_obat").val("");
+        $("#hrg_barang").val("");
         $("#jml_obat").val("");
         $("#span_satuan").text("satuan");
         $("#toth_obat").val("");
@@ -269,7 +269,7 @@ $(document).ready(function() {
 
     function jml_obat() {
         var jml = Number($("#jml_obat").val());
-        var harga = Number ($("#hrg_obat").val());
+        var harga = Number ($("#hrg_barang").val());
         if (jml>=0) {
             var sub_total = jml*harga;
             $("#toth_obat").val(sub_total);
@@ -277,9 +277,9 @@ $(document).ready(function() {
             $("#toth_obat").val("");
         }
     }
-    function hrg_obat() {
+    function hrg_barang() {
         var jml = Number($("#jml_obat").val());
-        var harga = Number ($("#hrg_obat").val());
+        var harga = Number ($("#hrg_barang").val());
         if (harga>=0) {
             var sub_total = jml*harga;
             $("#toth_obat").val(sub_total);
@@ -300,7 +300,7 @@ $(document).ready(function() {
         $("#nm_barang").val(nama);
         $("#stok_obat").val(stok);
         $("#exp_barang").val(exp);
-        $("#hrg_obat").val(harga);
+        $("#hrg_barang").val(harga);
         $("#span_satuan").text(satuan);
         $("#jml_obat").val(1);
         $("#toth_obat").val(harga);
@@ -317,8 +317,8 @@ $(document).ready(function() {
         }
     })
 
-    $("#hrg_obat").keyup(function() { hrg_obat(); });
-    $("#hrg_obat").change(function() { hrg_obat(); });
+    $("#hrg_barang").keyup(function() { hrg_barang(); });
+    $("#hrg_barang").change(function() { hrg_barang(); });
     $("#jml_obat").keyup(function() { jml_obat(); });
     $("#jml_obat").change(function() { jml_obat(); });
 
@@ -331,7 +331,7 @@ $(document).ready(function() {
         var nama = $("#nm_barang").val();
         var stok = Number($("#stok_obat").val());
         var exp = $("#exp_barang").val();
-        var harga = $("#hrg_obat").val();
+        var harga = $("#hrg_barang").val();
         var jumlah = Number($("#jml_obat").val());
         var satuan = $("#span_satuan").text();
         var subtotal = Number($("#toth_obat").val());
@@ -344,7 +344,7 @@ $(document).ready(function() {
               'warning'
             )
         } else if(harga=="" || harga<=0) {
-            document.getElementById("hrg_obat").focus();
+            document.getElementById("hrg_barang").focus();
             Swal.fire(
               'Data Belum Lengkap',
               'maaf, tolong isi harga obat dengan benar',

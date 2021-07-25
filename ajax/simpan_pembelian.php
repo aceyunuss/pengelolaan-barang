@@ -41,7 +41,7 @@
 			$harga = (($stok_lama*$harga)+($jml_obat*$hrg_beli))/($stok_lama+$jml_obat);
 		}
 		$harga_jual = $harga*1.20;
-		$query_estok = "UPDATE tbl_databarang SET stk_obat='$stok_baru', hrgbeli_obat = '$harga', hrg_obat = '$harga_jual' WHERE kd_barang='$kd_barang'";
+		$query_estok = "UPDATE tbl_databarang SET stk_obat='$stok_baru', hrgbeli_obat = '$harga', hrg_barang = '$harga_jual' WHERE kd_barang='$kd_barang'";
 		mysqli_query($conn, $query_estok) or die ($conn->error);
 
 		$query_exp = "SELECT stok FROM tbl_stokexpbarang WHERE kd_barang = '$kd_barang' AND tgl_exp = '$exp_barang'";

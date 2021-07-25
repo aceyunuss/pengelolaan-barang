@@ -61,7 +61,7 @@
 					<td class="sat_barang">
 						<?php echo $data_dpjl['sat_jual']; ?>
 					</td>
-					<td align="right" class="hrg_obat">
+					<td align="right" class="hrg_barang">
 						<?php echo $data_dpjl['hrg_jual']; ?>
 					</td>
 					<td align="right" class="subt_obat">
