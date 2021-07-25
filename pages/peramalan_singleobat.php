@@ -763,22 +763,22 @@
 	</script>
 	
 	<?php 
-		// $carikode = mysqli_query($conn, "SELECT MAX(no_obatramal) FROM tbl_barangramal INNER JOIN tbl_peramalan ON tbl_barangramal.no_rml = tbl_peramalan.no_rml WHERE tbl_peramalan.tgl_rml = '$tgl_rml'") or die (mysql_error());
+		// $carikode = mysqli_query($conn, "SELECT MAX(no_barangramal) FROM tbl_barangramal INNER JOIN tbl_peramalan ON tbl_barangramal.no_rml = tbl_peramalan.no_rml WHERE tbl_peramalan.tgl_rml = '$tgl_rml'") or die (mysql_error());
 		// $datakode = mysqli_fetch_array($carikode);
 		// if($datakode) {
 	 //        $nilaikode = substr($datakode[0], 13);
 	 //        $kode = (int) $nilaikode;
 	 //        $kode = $kode + 1;
-	 //        $no_obatramal = "ORM/".$tgl."/".str_pad($kode, 3, "0", STR_PAD_LEFT);
+	 //        $no_barangramal = "ORM/".$tgl."/".str_pad($kode, 3, "0", STR_PAD_LEFT);
 	 //    } else {
-	 //        $no_obatramal = "ORM/".$tgl."/001";
+	 //        $no_barangramal = "ORM/".$tgl."/001";
 	 //    }
-		// $query_obtrml = "INSERT INTO tbl_barangramal VALUES('$no_obatramal', '$no_rml', '$kd_barang[0]', '$nama_obat[0]', '$sat_barang[0]', '$mtd_terbaik', '$hasil_ramalan_akhir')";
+		// $query_obtrml = "INSERT INTO tbl_barangramal VALUES('$no_barangramal', '$no_rml', '$kd_barang[0]', '$nama_obat[0]', '$sat_barang[0]', '$mtd_terbaik', '$hasil_ramalan_akhir')";
 		// mysqli_query($conn, $query_obtrml) or die ($conn->error);
 		
 
 		// // SIMPAN TABEL MTD SMA
-		// $carikode = mysqli_query($conn, "SELECT MAX(no_mtd_sma) FROM tbl_metode_sma INNER JOIN tbl_barangramal ON tbl_metode_sma.no_obatramal = tbl_barangramal.no_obatramal INNER JOIN tbl_peramalan ON tbl_barangramal.no_rml = tbl_peramalan.no_rml WHERE tbl_peramalan.tgl_rml = '$tgl_rml'") or die (mysql_error());
+		// $carikode = mysqli_query($conn, "SELECT MAX(no_mtd_sma) FROM tbl_metode_sma INNER JOIN tbl_barangramal ON tbl_metode_sma.no_barangramal = tbl_barangramal.no_barangramal INNER JOIN tbl_peramalan ON tbl_barangramal.no_rml = tbl_peramalan.no_rml WHERE tbl_peramalan.tgl_rml = '$tgl_rml'") or die (mysql_error());
 		// $datakode = mysqli_fetch_array($carikode);
 		// if($datakode) {
 	 //        $nilaikode = substr($datakode[0], 13);
@@ -800,11 +800,11 @@
   //       $stat_sma1 = $stat_sma[0];
   //       $stat_sma2 = $stat_sma[1];
 
-  //       $query_sma = "INSERT INTO tbl_metode_sma VALUES('$no_mtd_sma', '$no_obatramal', '$mae_sma1', '$mae_sma2', '$mape_sma1', '$mape_sma2', '$msd_sma1', '$msd_sma2', '$hasil_sma1', '$hasil_sma2', '$stat_sma1', '$stat_sma2')";
+  //       $query_sma = "INSERT INTO tbl_metode_sma VALUES('$no_mtd_sma', '$no_barangramal', '$mae_sma1', '$mae_sma2', '$mape_sma1', '$mape_sma2', '$msd_sma1', '$msd_sma2', '$hasil_sma1', '$hasil_sma2', '$stat_sma1', '$stat_sma2')";
 		// mysqli_query($conn, $query_sma) or die ($conn->error);
 
 		// // SIMPAN TABEL MTD SES
-		// $carikode = mysqli_query($conn, "SELECT MAX(no_mtd_ses) FROM tbl_metode_ses INNER JOIN tbl_barangramal ON tbl_metode_ses.no_obatramal = tbl_barangramal.no_obatramal INNER JOIN tbl_peramalan ON tbl_barangramal.no_rml = tbl_peramalan.no_rml WHERE tbl_peramalan.tgl_rml = '$tgl_rml'") or die (mysql_error());
+		// $carikode = mysqli_query($conn, "SELECT MAX(no_mtd_ses) FROM tbl_metode_ses INNER JOIN tbl_barangramal ON tbl_metode_ses.no_barangramal = tbl_barangramal.no_barangramal INNER JOIN tbl_peramalan ON tbl_barangramal.no_rml = tbl_peramalan.no_rml WHERE tbl_peramalan.tgl_rml = '$tgl_rml'") or die (mysql_error());
 		// $datakode = mysqli_fetch_array($carikode);
 		// if($datakode) {
 	 //        $nilaikode = substr($datakode[0], 13);
@@ -826,7 +826,7 @@
   //       $stat_ses1 = $stat_ses[0];
   //       $stat_ses2 = $stat_ses[1];
 
-  //       $query_ses = "INSERT INTO tbl_metode_ses VALUES('$no_mtd_ses', '$no_obatramal', '$mae_ses1', '$mae_ses2', '$mape_ses1', '$mape_ses2', '$msd_ses1', '$msd_ses2', '$hasil_ses1', '$hasil_ses2', '$stat_ses1', '$stat_ses2')";
+  //       $query_ses = "INSERT INTO tbl_metode_ses VALUES('$no_mtd_ses', '$no_barangramal', '$mae_ses1', '$mae_ses2', '$mape_ses1', '$mape_ses2', '$msd_ses1', '$msd_ses2', '$hasil_ses1', '$hasil_ses2', '$stat_ses1', '$stat_ses2')";
 		// mysqli_query($conn, $query_ses) or die ($conn->error);
 
   //       // SIMPAN TABEL PERIODE SMA

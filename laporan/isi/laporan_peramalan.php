@@ -38,7 +38,7 @@
 				$query_obrml = "SELECT * FROM tbl_barangramal INNER JOIN tbl_peramalan ON tbl_barangramal.no_rml=tbl_peramalan.no_rml WHERE tbl_peramalan.no_rml='$no_rml'";
 				$sql_obrml = mysqli_query($conn, $query_obrml) or die ($conn->error);
 				$data_obrml = mysqli_fetch_array($sql_obrml);
-				$no_obatramal = $data_obrml['no_obatramal'];
+				$no_barangramal = $data_obrml['no_barangramal'];
 				$nm_barang = $data_obrml['nm_barang'];
 			 ?>
 			<table class="tabel-judul">
@@ -101,7 +101,7 @@
 				<th class="error">Error Absolute M=5 <br> |X-F<sub>5</sub>|</th>
 			</tr>
 			<?php 
-				$query_prd_sma = "SELECT * FROM tbl_prd_sma INNER JOIN tbl_metode_sma ON tbl_prd_sma.no_mtd_sma=tbl_metode_sma.no_mtd_sma WHERE tbl_metode_sma.no_obatramal='$no_obatramal'";
+				$query_prd_sma = "SELECT * FROM tbl_prd_sma INNER JOIN tbl_metode_sma ON tbl_prd_sma.no_mtd_sma=tbl_metode_sma.no_mtd_sma WHERE tbl_metode_sma.no_barangramal='$no_barangramal'";
 				$sql_prd_sma = mysqli_query($conn, $query_prd_sma) or die ($conn->error);
 				$no = 1;
 				while($data_prd_sma = mysqli_fetch_array($sql_prd_sma)) {
@@ -120,7 +120,7 @@
 	</div>
 	<div class="kotak-perbandingan">
 		<?php 
-			$query_mtd_sma = "SELECT * FROM tbl_metode_sma INNER JOIN tbl_barangramal ON tbl_metode_sma.no_obatramal=tbl_barangramal.no_obatramal WHERE tbl_metode_sma.no_obatramal='$no_obatramal'";
+			$query_mtd_sma = "SELECT * FROM tbl_metode_sma INNER JOIN tbl_barangramal ON tbl_metode_sma.no_barangramal=tbl_barangramal.no_barangramal WHERE tbl_metode_sma.no_barangramal='$no_barangramal'";
 			$sql_mtd_sma = mysqli_query($conn, $query_mtd_sma) or die ($conn->error);
 			$data_mtd_sma = mysqli_fetch_array($sql_mtd_sma);
 		 ?>
@@ -178,7 +178,7 @@
 				<th class="error">Error Absolute a=0.8 <br> |X-F<sub>0.8</sub>|</th>
 			</tr>
 			<?php 
-				$query_prd_ses = "SELECT * FROM tbl_prd_ses INNER JOIN tbl_metode_ses ON tbl_prd_ses.no_mtd_ses=tbl_metode_ses.no_mtd_ses WHERE tbl_metode_ses.no_obatramal='$no_obatramal'";
+				$query_prd_ses = "SELECT * FROM tbl_prd_ses INNER JOIN tbl_metode_ses ON tbl_prd_ses.no_mtd_ses=tbl_metode_ses.no_mtd_ses WHERE tbl_metode_ses.no_barangramal='$no_barangramal'";
 				$sql_prd_ses = mysqli_query($conn, $query_prd_ses) or die ($conn->error);
 				$no = 1;
 				while($data_prd_ses = mysqli_fetch_array($sql_prd_ses)) {
@@ -197,7 +197,7 @@
 	</div>
 	<div class="kotak-perbandingan">
 		<?php 
-			$query_mtd_ses = "SELECT * FROM tbl_metode_ses INNER JOIN tbl_barangramal ON tbl_metode_ses.no_obatramal=tbl_barangramal.no_obatramal WHERE tbl_metode_ses.no_obatramal='$no_obatramal'";
+			$query_mtd_ses = "SELECT * FROM tbl_metode_ses INNER JOIN tbl_barangramal ON tbl_metode_ses.no_barangramal=tbl_barangramal.no_barangramal WHERE tbl_metode_ses.no_barangramal='$no_barangramal'";
 			$sql_mtd_ses = mysqli_query($conn, $query_mtd_ses) or die ($conn->error);
 			$data_mtd_ses = mysqli_fetch_array($sql_mtd_ses);
 		 ?>

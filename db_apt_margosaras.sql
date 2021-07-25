@@ -204,7 +204,7 @@ INSERT INTO `tbl_databarang` (`kd_barang`, `nm_barang`, `exp_barang`, `ktg_baran
 
 CREATE TABLE IF NOT EXISTS `tbl_metode_ses` (
   `no_mtd_ses` varchar(16) NOT NULL,
-  `no_obatramal` varchar(16) NOT NULL,
+  `no_barangramal` varchar(16) NOT NULL,
   `mae_ses1` double NOT NULL,
   `mae_ses2` double NOT NULL,
   `mape_ses1` double NOT NULL,
@@ -216,14 +216,14 @@ CREATE TABLE IF NOT EXISTS `tbl_metode_ses` (
   `stat_ses1` enum('baik','kurang') DEFAULT NULL,
   `stat_ses2` enum('baik','kurang') NOT NULL,
   PRIMARY KEY (`no_mtd_ses`),
-  KEY `mtd_ses_no_obatramal` (`no_obatramal`)
+  KEY `mtd_ses_no_barangramal` (`no_barangramal`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data untuk tabel `tbl_metode_ses`
 --
 
-INSERT INTO `tbl_metode_ses` (`no_mtd_ses`, `no_obatramal`, `mae_ses1`, `mae_ses2`, `mape_ses1`, `mape_ses2`, `msd_ses1`, `msd_ses2`, `hasil_ses1`, `hasil_ses2`, `stat_ses1`, `stat_ses2`) VALUES
+INSERT INTO `tbl_metode_ses` (`no_mtd_ses`, `no_barangramal`, `mae_ses1`, `mae_ses2`, `mape_ses1`, `mape_ses2`, `msd_ses1`, `msd_ses2`, `hasil_ses1`, `hasil_ses2`, `stat_ses1`, `stat_ses2`) VALUES
 ('SES/20200127/001', 'ORM/20200127/001', 3.2921, 4.1859, 17.3264, 22.809, 13.1186, 21.331, 19.046, 18.793, 'baik', 'kurang'),
 ('SES/20200127/002', 'ORM/20200127/002', 4.6511, 5.1585, 41.5701, 42.8605, 33.1281, 37.0336, 16.78, 8.559, 'baik', 'kurang'),
 ('SES/20200127/003', 'ORM/20200127/003', 3.4085, 4.0238, 28.7934, 32.7767, 22.8988, 28.4252, 16.596, 9.506, 'baik', 'kurang'),
@@ -253,7 +253,7 @@ INSERT INTO `tbl_metode_ses` (`no_mtd_ses`, `no_obatramal`, `mae_ses1`, `mae_ses
 
 CREATE TABLE IF NOT EXISTS `tbl_metode_sma` (
   `no_mtd_sma` varchar(16) NOT NULL,
-  `no_obatramal` varchar(16) NOT NULL,
+  `no_barangramal` varchar(16) NOT NULL,
   `mae_sma1` double NOT NULL,
   `mae_sma2` double NOT NULL,
   `mape_sma1` double NOT NULL,
@@ -265,14 +265,14 @@ CREATE TABLE IF NOT EXISTS `tbl_metode_sma` (
   `stat_sma1` enum('baik','kurang') NOT NULL,
   `stat_sma2` enum('baik','kurang') NOT NULL,
   PRIMARY KEY (`no_mtd_sma`),
-  KEY `mtd_sma_no_obatramal` (`no_obatramal`)
+  KEY `mtd_sma_no_barangramal` (`no_barangramal`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data untuk tabel `tbl_metode_sma`
 --
 
-INSERT INTO `tbl_metode_sma` (`no_mtd_sma`, `no_obatramal`, `mae_sma1`, `mae_sma2`, `mape_sma1`, `mape_sma2`, `msd_sma1`, `msd_sma2`, `hasil_sma1`, `hasil_sma2`, `stat_sma1`, `stat_sma2`) VALUES
+INSERT INTO `tbl_metode_sma` (`no_mtd_sma`, `no_barangramal`, `mae_sma1`, `mae_sma2`, `mape_sma1`, `mape_sma2`, `msd_sma1`, `msd_sma2`, `hasil_sma1`, `hasil_sma2`, `stat_sma1`, `stat_sma2`) VALUES
 ('SMA/20200127/001', 'ORM/20200127/001', 3.7222222222222, 3.3, 20.593333333333, 16.033166666667, 15.361111111111, 14.526666666667, 20, 20.4, 'kurang', 'baik'),
 ('SMA/20200127/002', 'ORM/20200127/002', 4.8333333333333, 5.3333333333333, 43.556222222222, 53.588666666667, 35.361111111111, 48.28, 12, 17, 'baik', 'kurang'),
 ('SMA/20200127/003', 'ORM/20200127/003', 3.8333333333333, 4.8, 33.355666666667, 43.541333333333, 29.527777777778, 41.333333333333, 13, 17, 'baik', 'kurang'),
@@ -301,14 +301,14 @@ INSERT INTO `tbl_metode_sma` (`no_mtd_sma`, `no_obatramal`, `mae_sma1`, `mae_sma
 --
 
 CREATE TABLE IF NOT EXISTS `tbl_barangramal` (
-  `no_obatramal` varchar(16) NOT NULL,
+  `no_barangramal` varchar(16) NOT NULL,
   `no_rml` varchar(16) NOT NULL,
   `kd_barang` varchar(18) NOT NULL,
   `nm_barang` varchar(80) NOT NULL,
   `sat_barang` varchar(11) NOT NULL,
   `mtd_terbaik` enum('SMA','SES') NOT NULL,
   `hasil_rml` double NOT NULL,
-  PRIMARY KEY (`no_obatramal`),
+  PRIMARY KEY (`no_barangramal`),
   KEY `tbl_barangramal_no_ramal` (`no_rml`),
   KEY `tbl_barangramal_kd_barang` (`kd_barang`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -317,7 +317,7 @@ CREATE TABLE IF NOT EXISTS `tbl_barangramal` (
 -- Dumping data untuk tabel `tbl_barangramal`
 --
 
-INSERT INTO `tbl_barangramal` (`no_obatramal`, `no_rml`, `kd_barang`, `nm_barang`, `sat_barang`, `mtd_terbaik`, `hasil_rml`) VALUES
+INSERT INTO `tbl_barangramal` (`no_barangramal`, `no_rml`, `kd_barang`, `nm_barang`, `sat_barang`, `mtd_terbaik`, `hasil_rml`) VALUES
 ('ORM/20200127/001', 'PRM/20200127/001', '520013421', 'SANMOL 500MG TAB STR 4S', 'STRIP', 'SES', 19.046),
 ('ORM/20200127/002', 'PRM/20200127/002', '520013421', 'SANMOL 500MG TAB STR 4S', 'STRIP', 'SES', 16.78),
 ('ORM/20200127/003', 'PRM/20200127/003', '520013421', 'SANMOL 500MG TAB STR 4S', 'STRIP', 'SES', 16.596),
@@ -1602,13 +1602,13 @@ INSERT INTO `tbl_supplier` (`no_supp`, `nama_supp`, `nama_pet`, `nohp_pet`, `alm
 -- Ketidakleluasaan untuk tabel `tbl_metode_ses`
 --
 ALTER TABLE `tbl_metode_ses`
-  ADD CONSTRAINT `mtd_ses_no_obatramal` FOREIGN KEY (`no_obatramal`) REFERENCES `tbl_barangramal` (`no_obatramal`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `mtd_ses_no_barangramal` FOREIGN KEY (`no_barangramal`) REFERENCES `tbl_barangramal` (`no_barangramal`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Ketidakleluasaan untuk tabel `tbl_metode_sma`
 --
 ALTER TABLE `tbl_metode_sma`
-  ADD CONSTRAINT `mtd_sma_no_obatramal` FOREIGN KEY (`no_obatramal`) REFERENCES `tbl_barangramal` (`no_obatramal`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `mtd_sma_no_barangramal` FOREIGN KEY (`no_barangramal`) REFERENCES `tbl_barangramal` (`no_barangramal`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Ketidakleluasaan untuk tabel `tbl_barangramal`

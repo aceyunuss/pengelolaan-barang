@@ -92,10 +92,10 @@
 			$query_obrml = "SELECT * FROM tbl_barangramal INNER JOIN tbl_peramalan ON tbl_barangramal.no_rml=tbl_peramalan.no_rml WHERE tbl_peramalan.no_rml='$no_rml'";
 			$sql_obrml = mysqli_query($conn, $query_obrml) or die ($conn->error);
 			while($data_obrml = mysqli_fetch_array($sql_obrml)) {
-				$no_obatramal = $data_obrml['no_obatramal'];
+				$no_barangramal = $data_obrml['no_barangramal'];
 				$mtd_terbaik = $data_obrml['mtd_terbaik'];
 				if($mtd_terbaik=="SMA") {
-					$query_mtd = "SELECT * FROM tbl_metode_sma WHERE no_obatramal='$no_obatramal'";
+					$query_mtd = "SELECT * FROM tbl_metode_sma WHERE no_barangramal='$no_barangramal'";
 					$sql_mtd = mysqli_query($conn, $query_mtd) or die ($conn->error);
 					$data_mtd = mysqli_fetch_array($sql_mtd);
 					if($data_mtd['stat_sma1']=="baik") {
@@ -108,7 +108,7 @@
 						$hasil_msd = $data_mtd['msd_sma2'];
 					}
 				} else if($mtd_terbaik=="SES") {
-					$query_mtd = "SELECT * FROM tbl_metode_ses WHERE no_obatramal='$no_obatramal'";
+					$query_mtd = "SELECT * FROM tbl_metode_ses WHERE no_barangramal='$no_barangramal'";
 					$sql_mtd = mysqli_query($conn, $query_mtd) or die ($conn->error);
 					$data_mtd = mysqli_fetch_array($sql_mtd);
 					if($data_mtd['stat_ses1']=="baik") {
