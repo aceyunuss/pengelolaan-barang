@@ -23,10 +23,10 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `data_obat`
+-- Struktur dari tabel `data_barang`
 --
 
-CREATE TABLE IF NOT EXISTS `data_obat` (
+CREATE TABLE IF NOT EXISTS `data_barang` (
   `kode` varchar(20) NOT NULL,
   `nama` varchar(50) NOT NULL,
   `exp_date` date NOT NULL,
@@ -37,10 +37,10 @@ CREATE TABLE IF NOT EXISTS `data_obat` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `data_obat`
+-- Dumping data untuk tabel `data_barang`
 --
 
-INSERT INTO `data_obat` (`kode`, `nama`, `exp_date`, `harga`, `stok`, `satuan`) VALUES
+INSERT INTO `data_barang` (`kode`, `nama`, `exp_date`, `harga`, `stok`, `satuan`) VALUES
 ('OBT00001', 'ALBOTHYL 20ML', '2020-11-11', 15000, 16, 'Botol'),
 ('OBT00002', 'KOMIX OBH', '2020-08-01', 2500, 25, 'Sachet'),
 ('OBT00003', 'ABBOTIC 500 MG TAB', '2019-10-20', 1500, 20, 'Tablet'),

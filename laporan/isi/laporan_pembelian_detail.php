@@ -161,14 +161,14 @@
 				<?php 
 					$query_obat = "SELECT * FROM tbl_pembeliandetail INNER JOIN tbl_dataobat ON tbl_pembeliandetail.kd_obat = tbl_dataobat.kd_obat WHERE tbl_pembeliandetail.no_faktur = '$no_faktur'";
 					$sql_obat = mysqli_query($conn, $query_obat) or die ($conn->error);
-					while($data_obat = mysqli_fetch_array($sql_obat)) {
+					while($data_barang = mysqli_fetch_array($sql_obat)) {
 				 ?>
 					<tr>
-						<td class="kol-nmobat"><?php echo $data_obat['nm_obat']; ?></td>
-						<td class="kol-hrgjual">Rp<?php echo number_format($data_obat['hrg_beli'], 0,",", "."); ?></td>
-						<td class="kol-jmljual"><?php echo $data_obat['jml_beli']; ?></td>
-						<td class="kol-satjual"><?php echo $data_obat['sat_beli']; ?></td>
-						<td class="kol-subt">Rp<?php echo number_format($data_obat['subtotal'], 0,",", "."); ?></td>
+						<td class="kol-nmobat"><?php echo $data_barang['nm_obat']; ?></td>
+						<td class="kol-hrgjual">Rp<?php echo number_format($data_barang['hrg_beli'], 0,",", "."); ?></td>
+						<td class="kol-jmljual"><?php echo $data_barang['jml_beli']; ?></td>
+						<td class="kol-satjual"><?php echo $data_barang['sat_beli']; ?></td>
+						<td class="kol-subt">Rp<?php echo number_format($data_barang['subtotal'], 0,",", "."); ?></td>
 					</tr>
 				<?php } ?>
 					<tr>

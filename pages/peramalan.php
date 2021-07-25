@@ -26,7 +26,7 @@
 					      <div class="input-group">
 					      	<textarea name="nm_obat" id="nm_obat" rows="2" class="form-control" placeholder="barang terpilih" style="font-size: 14px; height: 90px;" readonly=""></textarea>
 					      	<div class="input-group-append">
-	                            <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#modal_dataobat" id="lihat_data_obat"><i class="fas fa-search"></i></button>
+	                            <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#modal_dataobat" id="lihat_data_barang"><i class="fas fa-search"></i></button>
 	                        </div>
 					      </div>
 					    </div>

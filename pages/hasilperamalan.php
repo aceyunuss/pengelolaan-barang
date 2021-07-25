@@ -6,10 +6,10 @@
 	for($i=0; $i<$jml_obat; $i++) {
 		$query_obat = "SELECT kd_obat, nm_obat, sat_obat FROM tbl_dataobat WHERE kd_obat='$kd_obat[$i]'";
 		$sql_obat = mysqli_query($conn, $query_obat) or die ($conn->error);
-		$data_obat = mysqli_fetch_array($sql_obat);
-		// $kd_obat[$i] = $data_obat['kd_obat'];
-		$sat_obat[$i] = $data_obat['sat_obat'];
-		$nama_obat[$i] = $data_obat['nm_obat'];
+		$data_barang = mysqli_fetch_array($sql_obat);
+		// $kd_obat[$i] = $data_barang['kd_obat'];
+		$sat_obat[$i] = $data_barang['sat_obat'];
+		$nama_obat[$i] = $data_barang['nm_obat'];
 	}
 
 	$prd_ramalan = @$_POST['ip_periode'];

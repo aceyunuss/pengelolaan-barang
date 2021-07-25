@@ -62,7 +62,7 @@
                                     <div class="input-group">
                                         <input type="text" class="form-control form-control-sm" id="kode_obat">
                                         <div class="input-group-append">
-                                            <button type="button" class="btn btn-secondary btn-sm" data-toggle="modal" data-target="#modal_dataobat" id="lihat_data_obat"><i class="fas fa-search"></i></button>
+                                            <button type="button" class="btn btn-secondary btn-sm" data-toggle="modal" data-target="#modal_dataobat" id="lihat_data_barang"><i class="fas fa-search"></i></button>
                                         </div>
                                     </div>
                     			</div>
@@ -315,7 +315,7 @@ $(document).ready(function() {
     });
 
     $("#kode_obat").click(function() {
-        $("#lihat_data_obat").click();
+        $("#lihat_data_barang").click();
     });
 
     $("button[name='tombol_pilihobat']").click(function() {
@@ -388,7 +388,7 @@ $(document).ready(function() {
         var subt = Number($("#toth_obat").val());
 
         if(kode == ""){
-            document.getElementById("lihat_data_obat").focus();
+            document.getElementById("lihat_data_barang").focus();
             Swal.fire(
               'Data Belum Lengkap',
               'maaf, tolong isi kode obat',
@@ -526,7 +526,7 @@ $(document).ready(function() {
               'warning'
             )
         } else if(total_pembayaran==0) {
-            document.getElementById("lihat_data_obat").focus();
+            document.getElementById("lihat_data_barang").focus();
             Swal.fire(
               'Data Belum Lengkap',
               'maaf, tolong tambahkan obat terlebih dahulu',
