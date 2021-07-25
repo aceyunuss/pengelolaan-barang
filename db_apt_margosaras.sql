@@ -59,7 +59,7 @@ CREATE TABLE IF NOT EXISTS `tbl_databarang` (
   `nm_barang` varchar(80) NOT NULL,
   `exp_barang` date NOT NULL,
   `ktg_barang` varchar(15) NOT NULL,
-  `bnt_obat` varchar(20) NOT NULL,
+  `bnt_barang` varchar(20) NOT NULL,
   `sat_obat` varchar(11) NOT NULL,
   `hrg_obat` int(11) NOT NULL,
   `hrgbeli_obat` int(11) NOT NULL,
@@ -72,7 +72,7 @@ CREATE TABLE IF NOT EXISTS `tbl_databarang` (
 -- Dumping data untuk tabel `tbl_databarang`
 --
 
-INSERT INTO `tbl_databarang` (`kd_barang`, `nm_barang`, `exp_barang`, `ktg_barang`, `bnt_obat`, `sat_obat`, `hrg_obat`, `hrgbeli_obat`, `stk_obat`, `minstk_obat`) VALUES
+INSERT INTO `tbl_databarang` (`kd_barang`, `nm_barang`, `exp_barang`, `ktg_barang`, `bnt_barang`, `sat_obat`, `hrg_obat`, `hrgbeli_obat`, `stk_obat`, `minstk_obat`) VALUES
 ('0693228-0844', 'ASEPSO ORIG', '2022-07-09', 'HV', 'BATANG', 'BATANG', 7000, 5600, 15, 3),
 ('130110', 'ALLERIN', '2021-08-01', 'HV', 'SIRUP', 'BOTOL', 12500, 10000, 12, 3),
 ('14124A', 'VIVA TONER ALL VAR', '2022-07-01', 'HV', 'CAIR', 'BOTOL', 5200, 4160, 12, 3),

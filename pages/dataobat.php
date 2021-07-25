@@ -55,7 +55,7 @@
 		 				data-nama="<?php echo $data['nm_barang']; ?>"
 		 				data-exp="<?php echo tgl_indo($data['exp_barang']); ?>"
 		 				data-ktg="<?php echo $data['ktg_barang']; ?>"
-		 				data-bentuk="<?php echo $data['bnt_obat']; ?>"
+		 				data-bentuk="<?php echo $data['bnt_barang']; ?>"
 		 				data-satuan="<?php echo $data['sat_obat']; ?>"
 		 				data-harbel="<?php echo "Rp".number_format($data['hrgbeli_obat'], 0,",", "."); ?>"
 		 				data-harju="<?php echo "Rp".number_format($data['hrg_obat'], 0,",", ".");; ?>"

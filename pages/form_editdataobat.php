@@ -69,10 +69,10 @@
 				    <div class="col-sm-9">
 				      <select name="ip_bntobat" id="ip_bntobat" class="form-control form-control-sm">
 				      	<option value="0">pilih bentuk</option>
-				      	<option value="Besar" <?php if($data['bnt_obat']=="Besar") {echo "selected";} ?> >Besar</option>
-				      	<option value="Kecil" <?php if($data['bnt_obat']=="Kecil") {echo "selected";} ?>>Kecil</option>
+				      	<option value="Besar" <?php if($data['bnt_barang']=="Besar") {echo "selected";} ?> >Besar</option>
+				      	<option value="Kecil" <?php if($data['bnt_barang']=="Kecil") {echo "selected";} ?>>Kecil</option>
 				      	
-				      	<option value="BATANG" <?php if($data['bnt_obat']=="BATANG") {echo "selected";} ?>>Batang</option>
+				      	<option value="BATANG" <?php if($data['bnt_barang']=="BATANG") {echo "selected";} ?>>Batang</option>
 				      </select>
 				    </div>
 				  </div>
