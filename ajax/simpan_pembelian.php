@@ -6,16 +6,16 @@
 	$no_supplier = $_POST['no_supplier'];
 	$tgl_pembelian = $_POST['tgl_pembelian'];
 	$total_pembelian = $_POST['hidden_totalpembelian'];
-	$cr_bayar = $_POST['cr_bayar'];
-	if($cr_bayar=="Utang"){
-		$status = "Belum Lunas";
-		$tgl_lunas = "0000-00-00";
-		$jth_tempo = $_POST['jth_tempo'];
-	} else {
-		$status = "Lunas";
-		$tgl_lunas = $tgl_pembelian;
-		$jth_tempo = "0000-00-00";
-	}
+	$cr_bayar = NULL;// $_POST['cr_bayar'];
+	// if($cr_bayar=="Utang"){
+		// $status = "Belum Lunas";
+		// $tgl_lunas = "0000-00-00";
+		// $jth_tempo = $_POST['jth_tempo'];
+	// } else {
+		$status = "Mengajukan"; // "Lunas";
+		$tgl_lunas =  NULL; //$tgl_pembelian;
+		$jth_tempo =  NULL; //"0000-00-00";
+	// }
 	
 	$id_pegawai =  $_SESSION['id_peg'];
 	$query_pbl = "INSERT INTO tbl_pembelian (no_faktur, no_supplier, tgl_pembelian, cr_bayar, jth_tempo, total_pembelian, status_byr, tgl_lunas, id_peg) VALUES ('$no_faktur', '$no_supplier', '$tgl_pembelian', '$cr_bayar', '$jth_tempo', '$total_pembelian', '$status', '$tgl_lunas', '$id_pegawai')";

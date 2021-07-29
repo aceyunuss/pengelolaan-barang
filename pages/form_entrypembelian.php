@@ -152,7 +152,7 @@
                                     Rp<span id="total_pembayaran" style="font-size: 25px; padding-right: 15px;">0,00</span>
                                 </div>
                             </div>
-                            <div class="position-relative form-group col-md-4">
+                            <!-- <div class="position-relative form-group col-md-4">
                                 <label for="no_faktur" class="">Cara Bayar</label>
                                 <select class="form-control form-control-sm" name="cr_bayar" id="cr_byr">
                                     <option value="Langsung">Langsung</option>
@@ -162,7 +162,7 @@
                             <div class="position-relative form-group col-md-4">
                                 <label for="jth_tempo" class="">Tgl Jatuh Tempo</label>
                                 <input type="text" class="form-control form-control-sm datepicker_jthtempo" id="jth_tempo" name="jth_tempo" disabled="" placeholder="masukkan tgl jatuh tempo">
-                            </div>
+                            </div> -->
                         </div>
                         <div class="col-md-5 text-right simpan_pembelian">
                             <input type="submit" name="simpan_pembelian" id="simpan_pembelian" class="btn btn-info" value="Simpan">
@@ -570,9 +570,9 @@ $(document).ready(function() {
                             }).then((ok) => {
                               if (ok.value) {
                                 // window.location='?page=entry_datapembelian';
-                                if(cr_byr=="Langsung") {
+                                // if(cr_byr=="Langsung") {
                                     window.open("laporan/?page=nota_pembelian&no_faktur="+no_faktur);
-                                }
+                                // }
                                 location.reload();
                               }
                             })
