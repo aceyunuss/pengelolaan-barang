@@ -17,32 +17,57 @@
 	<div class="konten-home" style="margin-top: 25px;">
 		<div class="row" style="margin-bottom: 18px;">
 			<div class="col-lg-2">
-				<a href="?page=dataobat" class="btn btn-lg btn-block btn-secondary">
-					Aset Fasilitas
-				</a>
+				<div class="card">
+					<img class="card-img-top" src="asset/img/asset.png" alt="Card image cap" style="padding: 15px;">
+					<div class="card-body">
+						<a href="?page=dataobat" class="btn btn-sm btn-block btn-secondary">
+							Aset Fasilitas
+						</a>
+					</div>
+				</div>
 			</div>
 			<div class="col-lg-2">
-				<a href="?page=datapegawai" class="btn btn-lg btn-block  btn-secondary">
-					Pegawai
-				</a>
+				<div class="card">
+					<img class="card-img-top" src="asset/img/usr.png" alt="Card image cap" style="padding: 15px;">
+					<div class="card-body">
+						<a href="?page=datapegawai" class="btn btn-sm btn-block  btn-secondary">
+							Pegawai
+						</a>
+					</div>
+				</div>
 			</div>
 			<div class="col-lg-2">
-				<a href="?page=datasupplier" class="btn btn-lg btn-block  btn-secondary">
-					Supplier
-				</a>
+				<div class="card">
+					<img class="card-img-top" src="asset/img/supp.png" alt="Card image cap" style="padding: 15px;">
+					<div class="card-body">
+						<a href="?page=datasupplier" class="btn btn-sm btn-block  btn-secondary">
+							Supplier
+						</a>
+					</div>
+				</div>
 			</div>
 			<?php if ($_SESSION['posisi_peg'] == 'Admin' || $_SESSION['posisi_peg'] == 'Manager' || $_SESSION['posisi_peg'] == 'Staff') { ?>
-				<div class="col-lg-3">
-					<a href="?page=entry_datapembelian" class="btn btn-lg btn-block  btn-secondary">
-						Facility Request
-					</a>
+				<div class="col-lg-2">
+					<div class="card">
+						<img class="card-img-top" src="asset/img/req.png" alt="Card image cap" style="padding: 15px;">
+						<div class="card-body">
+							<a href="?page=entry_datapembelian" class="btn btn-sm btn-block  btn-secondary">
+								Facility Request
+							</a>
+						</div>
+					</div>
 				</div>
 			<?php } ?>
 			<?php if ($_SESSION['posisi_peg'] == 'Admin' || $_SESSION['posisi_peg'] == 'Manager') { ?>
 				<div class="col-lg-2">
-					<a href="?page=report" class="btn btn-lg btn-block  btn-secondary">
-						Report
-					</a>
+					<div class="card">
+						<img class="card-img-top" src="asset/img/report.png" alt="Card image cap">
+						<div class="card-body">
+							<a href="?page=report" class="btn btn-sm btn-block  btn-secondary">
+								Report
+							</a>
+						</div>
+					</div>
 				</div>
 			<?php } ?>
 		</div>
