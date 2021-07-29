@@ -31,16 +31,20 @@
 					Supplier
 				</a>
 			</div>
-			<div class="col-lg-3">
-				<a href="?page=entry_datapembelian" class="btn btn-lg btn-block  btn-secondary">
-					Facility Request
-				</a>
-			</div>
-			<div class="col-lg-2">
-				<a href="?page=report" class="btn btn-lg btn-block  btn-secondary">
-					Report
-				</a>
-			</div>
+			<?php if ($_SESSION['posisi_peg'] == 'Admin' || $_SESSION['posisi_peg'] == 'Manager' || $_SESSION['posisi_peg'] == 'Staff') { ?>
+				<div class="col-lg-3">
+					<a href="?page=entry_datapembelian" class="btn btn-lg btn-block  btn-secondary">
+						Facility Request
+					</a>
+				</div>
+			<?php } ?>
+			<?php if ($_SESSION['posisi_peg'] == 'Admin' || $_SESSION['posisi_peg'] == 'Manager') { ?>
+				<div class="col-lg-2">
+					<a href="?page=report" class="btn btn-lg btn-block  btn-secondary">
+						Report
+					</a>
+				</div>
+			<?php } ?>
 		</div>
 	</div>
 
