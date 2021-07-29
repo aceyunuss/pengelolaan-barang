@@ -214,13 +214,15 @@
             </tr>
           </tfoot>
         </table>
-        <div class="col-sm-12">
-          <center>
-            <input type="hidden" value="" id="nf">
-            <button class="btn btn-danger aksi" data-status="Ditolak">Tolak</button>
-            <button class="btn btn-primary aksi" data-status="Disetujui">Setuju</button>
-          </center>
-        </div>
+        <?php if ($_SESSION['posisi_peg'] == 'Manager') { ?>
+          <div class="col-sm-12">
+            <center>
+              <input type="hidden" value="" id="nf">
+              <button class="btn btn-danger aksi" data-status="Ditolak">Tolak</button>
+              <button class="btn btn-primary aksi" data-status="Disetujui">Setuju</button>
+            </center>
+          </div>
+        <?php } ?>
       </div>
       <!-- <div class="modal-footer">
           <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Close</button>
