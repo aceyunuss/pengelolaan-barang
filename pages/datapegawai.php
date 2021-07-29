@@ -8,7 +8,7 @@
 <div class="page-content">
 	<div class="row">
 		<div class="col-6" id="judul"><h4>Data Pegawai</h4></div>
-		<?php if($_SESSION['posisi_peg'] == 'Admin' || $_SESSION['posisi_peg'] == 'Manager') { ?>
+		<?php if($_SESSION['posisi_peg'] == 'Admin' || $_SESSION['posisi_peg'] == 'Staff' || $_SESSION['posisi_peg'] == 'Manager') { ?>
 		<div class="col-6 text-right">
 			<!-- <button class="btn btn-sm btn-info" data-toggle="modal" data-target="#exampleModal">
 				<i class="far fa-file-excel"></i> Import Excel
@@ -30,7 +30,7 @@
 		            <th>Jenis Kelamin</th>
 		            <th>Tanggal Lahir</th>
 		            <th>No HP</th>
-		            <?php if($_SESSION['posisi_peg'] == 'Admin' || $_SESSION['posisi_peg'] == 'Manager') { ?>
+		            <?php if($_SESSION['posisi_peg'] == 'Admin' || $_SESSION['posisi_peg'] == 'Staff' || $_SESSION['posisi_peg'] == 'Manager') { ?>
 		            <th>Opsi</th>
 		        	<?php } ?>
 		        </tr>
@@ -50,7 +50,7 @@
 		 			<td><?php echo $data['lhr_peg']; ?></td>
 		 			<td><?php echo $data['hp_peg']; ?></td>
 
-		 			<?php if($_SESSION['posisi_peg'] == 'Admin' || $_SESSION['posisi_peg'] == 'Manager') { ?>
+		 			<?php if($_SESSION['posisi_peg'] == 'Admin' || $_SESSION['posisi_peg'] == 'Staff' || $_SESSION['posisi_peg'] == 'Manager') { ?>
 		 			<td class="td-opsi">
                         <!-- <button class="btn-transition btn btn-outline-success btn-sm" title="lihat detail" id="tombol_detail">
                             <i class="fas fa-info-circle"></i>
