@@ -43,7 +43,10 @@ table.data-nota th, table.data-nota td{
 	width: 7%;
 }
 .data-item-pembelian .col_nmobat {
-	width: 42%;
+	width: 31%;
+}
+.data-item-pembelian .col_kd {
+	width: 11%;
 }
 .data-item-pembelian .col_hrg {
 	width: 14%;

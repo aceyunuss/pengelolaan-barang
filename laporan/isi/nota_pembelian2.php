@@ -46,6 +46,7 @@
 			<tr>
 				<th class="col_no">No.</th>
 				<th class="col_nmobat">Nama Barang</th>
+				<th class="col_kd">Kode Barang</th>
 				<th class="col_hrg">Harga</th>
 				<th class="col_jml">Jumlah</th>
 				<th class="col_sat">Satuan</th>
@@ -54,7 +55,7 @@
 	<?php 
 		$no = 1;
 		$total = 0;
-		$query_lihat = "SELECT tbl_databarang.nm_barang, tbl_pembeliandetail.hrg_beli, tbl_pembeliandetail.jml_beli, tbl_pembeliandetail.sat_beli, tbl_pembeliandetail.subtotal FROM tbl_pembeliandetail INNER JOIN tbl_databarang ON tbl_pembeliandetail.kd_barang = tbl_databarang.kd_barang WHERE tbl_pembeliandetail.no_faktur = '$no_faktur'";
+		$query_lihat = "SELECT tbl_databarang.nm_barang, tbl_databarang.kd_barang, tbl_pembeliandetail.hrg_beli, tbl_pembeliandetail.jml_beli, tbl_pembeliandetail.sat_beli, tbl_pembeliandetail.subtotal FROM tbl_pembeliandetail INNER JOIN tbl_databarang ON tbl_pembeliandetail.kd_barang = tbl_databarang.kd_barang WHERE tbl_pembeliandetail.no_faktur = '$no_faktur'";
 		$sql_lihat = mysqli_query($conn, $query_lihat) or die ($conn->error);
 		while($data = mysqli_fetch_array($sql_lihat)) {
 		$total = $total+$data['subtotal'];
@@ -62,6 +63,7 @@
 			<tr>
 				<td class="col_no"><?php echo $no++; ?></td>
 				<td class="col_nmobat" align="left"><?php echo $data['nm_barang']; ?></td>
+				<td class="col_kd" align="left"><?php echo $data['kd_barang']; ?></td>
 				<td class="col_hrg" align="right"><?php echo $data['hrg_beli']; ?></td>
 				<td class="col_jml"><?php echo $data['jml_beli']; ?></td>
 				<td class="col_sat"><?php echo $data['sat_beli']; ?></td>
@@ -69,7 +71,7 @@
 			</tr>
 	<?php } ?>
 			<tr>
-				<th colspan="5" class="col_tot" align="right">Total</th>
+				<th colspan="6" class="col_tot" align="right">Total</th>
 				<th class="col_tot" align="right">Rp<?php echo number_format($total); ?></th>
 			</tr>
 		</table>
