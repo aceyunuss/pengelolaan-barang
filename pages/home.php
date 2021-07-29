@@ -18,7 +18,7 @@
 		<div class="row" style="margin-bottom: 18px;">
 			<div class="col-lg-2">
 				<a href="?page=dataobat" class="btn btn-lg btn-block btn-secondary">
-					Asset Fasilitas
+					Aset Fasilitas
 				</a>
 			</div>
 			<div class="col-lg-2">
@@ -112,3 +112,5 @@
 			</div>
 		</div>
 	</div> -->
+	<br><br><br>
+	<?php include('dashboard_datapembelian.php') ?>
