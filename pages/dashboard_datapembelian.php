@@ -60,7 +60,7 @@
                 <th>Supplier</th>
                 <th>Total</th>
                 <th>Status</th>
-                <th>Opsi</th>
+                <th><?= $_SESSION['posisi_peg'] == 'Manager' ? "Aksi" : "Opsi" ?></th>
               </tr>
             </thead>
             <tbody>
