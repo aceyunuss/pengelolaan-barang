@@ -14,7 +14,7 @@
 			<!-- <button class="btn btn-sm btn-info" data-toggle="modal" data-target="#exampleModal" title="<under maintenance>">
 				<i class="far fa-file-excel"></i> Import Excel
 			</button> -->
-			<a href="?page=tambah_dataobat">
+			<a href="?page=tambah_databarang">
 				<button class="btn btn-sm btn-info">Tambah Data</button>
 			</a>
 			<?php } ?>
@@ -207,7 +207,7 @@
 
 	$("button[name='tombol_edit']").click(function(){
 		var kode = $(this).data('kode');
-		window.location='?page=edit_dataobat&kode='+kode;
+		window.location='?page=edit_databarang&kode='+kode;
 	});
 
 	$("button[name='tombol_hapus']").click(function(){
@@ -237,7 +237,7 @@
 		          confirmButtonText: 'OK'
 		        }).then((ok) => {
 		          if (ok.value) {
-		            window.location='?page=dataobat';
+		            window.location='?page=databarang';
 		          }
 		        })
               }

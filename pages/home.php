@@ -20,7 +20,7 @@
 				<div class="card">
 					<img class="card-img-top" src="asset/img/asset.png" alt="Card image cap" style="padding: 15px;">
 					<div class="card-body">
-						<a href="?page=dataobat" class="btn btn-sm btn-block btn-secondary">
+						<a href="?page=databarang" class="btn btn-sm btn-block btn-secondary">
 							Aset Fasilitas
 						</a>
 					</div>

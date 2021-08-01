@@ -26,8 +26,8 @@
       <?php 
         if(@$_GET['page']=='') {
           echo "Dashboard";
-        } else if(@$_GET['page']=='dataobat' || @$_GET['page']=='tambah_dataobat' || @$_GET['page']=='edit_dataobat') {
-          echo "Data Obat";
+        } else if(@$_GET['page']=='databarang' || @$_GET['page']=='tambah_databarang' || @$_GET['page']=='edit_databarang') {
+          echo "Data Barang";
         } else if(@$_GET['page']=='datapegawai' || @$_GET['page']=='tambah_datapegawai' || @$_GET['page']=='edit_datapegawai') {
           echo "Data Pegawai";
         } else if(@$_GET['page']=='datapenjualan' || @$_GET['page']=='entry_datapenjualan' || @$_GET['page']=='form_laporanpenjualan' || @$_GET['page']=='datapenjualan_perobat') {
@@ -100,12 +100,12 @@
                   <i class="fas fa-home"></i> Home
                 </a>
 
-                <a href="#" class="list-group-item list-group-item-action <?php if(@$_GET['page']=='dataobat' || @$_GET['page']=='datapegawai' || @$_GET['page']=='tambah_dataobat' || @$_GET['page']=='tambah_datapegawai' || @$_GET['page']=='edit_datapegawai' || @$_GET['page']=='edit_dataobat' || @$_GET['page']=='datasupplier' || @$_GET['page']=='tambah_datasupplier' || @$_GET['page']=='edit_datasupplier' || @$_GET['page']=='info_kadaluarsa') {echo "show";} ?>" data-toggle="collapse" data-target="#menu-collapse-master" aria-expanded="true" aria-controls="menu-collapse-master">
+                <a href="#" class="list-group-item list-group-item-action <?php if(@$_GET['page']=='databarang' || @$_GET['page']=='datapegawai' || @$_GET['page']=='tambah_databarang' || @$_GET['page']=='tambah_datapegawai' || @$_GET['page']=='edit_datapegawai' || @$_GET['page']=='edit_databarang' || @$_GET['page']=='datasupplier' || @$_GET['page']=='tambah_datasupplier' || @$_GET['page']=='edit_datasupplier' || @$_GET['page']=='info_kadaluarsa') {echo "show";} ?>" data-toggle="collapse" data-target="#menu-collapse-master" aria-expanded="true" aria-controls="menu-collapse-master">
                   <i class="fas fa-folder"></i> Data Master <i class="fas fa-angle-down float-right mt-1"></i>
                 </a>
-                <div id="menu-collapse-master" class="collapse <?php if(@$_GET['page']=='dataobat' || @$_GET['page']=='datapegawai' || @$_GET['page']=='tambah_dataobat' || @$_GET['page']=='info_kadaluarsa' || @$_GET['page']=='tambah_datapegawai' || @$_GET['page']=='edit_datapegawai' || @$_GET['page']=='edit_dataobat' || @$_GET['page']=='datasupplier' || @$_GET['page']=='tambah_datasupplier' || @$_GET['page']=='edit_datasupplier') {echo "show";} ?>" aria-labelledby="" data-parent="#daftar_menu">
+                <div id="menu-collapse-master" class="collapse <?php if(@$_GET['page']=='databarang' || @$_GET['page']=='datapegawai' || @$_GET['page']=='tambah_databarang' || @$_GET['page']=='info_kadaluarsa' || @$_GET['page']=='tambah_datapegawai' || @$_GET['page']=='edit_datapegawai' || @$_GET['page']=='edit_databarang' || @$_GET['page']=='datasupplier' || @$_GET['page']=='tambah_datasupplier' || @$_GET['page']=='edit_datasupplier') {echo "show";} ?>" aria-labelledby="" data-parent="#daftar_menu">
                   <ul class="list-group list-group-collapse">
-                    <a href="?page=dataobat" class="list-group-item list-group-item-action list-group-item-collapse <?php if(@$_GET['page']=='dataobat' || @$_GET['page']=='tambah_dataobat' || @$_GET['page']=='edit_dataobat' || @$_GET['page']=='info_kadaluarsa') {echo "active";} ?>" style="border-radius: 0px;">
+                    <a href="?page=databarang" class="list-group-item list-group-item-action list-group-item-collapse <?php if(@$_GET['page']=='databarang' || @$_GET['page']=='tambah_databarang' || @$_GET['page']=='edit_databarang' || @$_GET['page']=='info_kadaluarsa') {echo "active";} ?>" style="border-radius: 0px;">
                       <i class="fas fa-angle-right"></i> Data Aset Fasilitas <i class="fas fa-capsules float-right mt-1"></i>
                     </a>
                     <a href="?page=datapegawai" class="list-group-item list-group-item-action list-group-item-collapse <?php if(@$_GET['page']=='datapegawai' || @$_GET['page']=='tambah_datapegawai' || @$_GET['page']=='edit_datapegawai') {echo "active";} ?>">
@@ -153,7 +153,7 @@
   				if(@$_GET['page']=='') {
     					include 'pages/home.php';
     					// echo "Halaman Dashboard";
-    				} else if(@$_GET['page']=='dataobat') {
+    				} else if(@$_GET['page']=='databarang') {
     					include 'pages/dataobat.php';
     				} else if(@$_GET['page']=='info_kadaluarsa') {
               include 'pages/info_kadaluarsa.php';
@@ -165,9 +165,9 @@
           		include 'pages/form_tmbdatapegawai.php';
         		} else if(@$_GET['page']=='edit_datapegawai') {
     					include 'pages/form_editdatapegawai.php';
-    				} else if(@$_GET['page']=='tambah_dataobat') {
+    				} else if(@$_GET['page']=='tambah_databarang') {
     					include 'pages/form_tmbdataobat.php';
-    				} else if(@$_GET['page']=='edit_dataobat') {
+    				} else if(@$_GET['page']=='edit_databarang') {
   		        	include 'pages/form_editdataobat.php';
 		        } else if(@$_GET['page']=='datasupplier') {
 		            include 'pages/datasupplier.php';

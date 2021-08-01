@@ -1,7 +1,7 @@
 <nav aria-label="breadcrumb">
   <ol class="breadcrumb bg-light">
     <li class="breadcrumb-item"><a href="./"><i class="fas fa-home"></i> Home</a></li>
-    <li class="breadcrumb-item"><a href="?page=dataobat"><i class="fas fa-capsules"></i> Data Fasilitas</a></li>
+    <li class="breadcrumb-item"><a href="?page=databarang"><i class="fas fa-capsules"></i> Data Fasilitas</a></li>
     <li class="breadcrumb-item active" aria-current="page"><i class="fas fa-align-left"></i> Form Tambah Data Fasilitas</li>
   </ol>
 </nav>
@@ -10,7 +10,7 @@
 	<div class="row">
 		<div class="col-6"><h4>Form Tambah Data Fasilitas</h4></div>
 		<div class="col-6 text-right">
-			<a href="?page=dataobat">
+			<a href="?page=databarang">
 				<button class="btn btn-sm btn-info">Daftar Data Fasilitas</button>
 			</a>
 		</div>
@@ -224,7 +224,7 @@
 				          confirmButtonText: 'OK'
 				        }).then((ok) => {
 				          if (ok.value) {
-				            window.location='?page=tambah_dataobat' ;
+				            window.location='?page=tambah_databarang' ;
 				          }
 				        })
 					} else if(hasil=="gagal") {
