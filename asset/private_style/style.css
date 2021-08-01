@@ -9,6 +9,7 @@ body {
 	font-weight: bold;
 	padding: 50px;
 	font-size: 42px;
+	padding-top: 0px;
 }
 .form-login {
 	background-color: #7fc7b4;

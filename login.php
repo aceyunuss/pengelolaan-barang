@@ -1,11 +1,12 @@
-<?php 
-  session_start();
-  if(@$_SESSION['posisi_peg']) {
-    echo "<script>window.location='./';</script>";
-  } else {
- ?>
-<!doctype html>
-<html lang="en">
+<?php
+session_start();
+if (@$_SESSION['posisi_peg']) {
+  echo "<script>window.location='./';</script>";
+} else {
+?>
+  <!doctype html>
+  <html lang="en">
+
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -18,37 +19,41 @@
 
     <title>Aplikasi Fasilitas Sarana KCI | Login</title>
   </head>
+
   <body>
-  	<div class="container">
-  		<div class="row">
-        
-  			<div class="welcome col-lg-8">
-  				SELAMAT DATANG DI APLIKASI PERENCANAAN FASILITAS MILIK KAI COMMUTER
-  			</div>
-	    	<div class="form-login col-lg-4">
-	    		<form>
-	    		  <h6>Mohon login terlebih dahulu</h6>
-  				  <div class="form-group">
-  				    <label for="username">username</label>
-  				    <input type="email" class="form-control" id="username" placeholder="username" autofocus="">
-  				  </div>
-  				  <div class="form-group">
-  				    <label for="password">password</label>
-  				    <input type="password" class="form-control" id="password" placeholder="password">
-  				  </div>
-  				  <!-- <div class="form-group form-check">
+    <div class="container">
+      <div class="row">
+
+        <div class="welcome col-lg-8">
+          <center>
+            <img src="asset/img/kai.png" width="320px">
+          </center>
+          SELAMAT DATANG DI APLIKASI PERENCANAAN FASILITAS MILIK KAI COMMUTER
+        </div>
+        <div class="form-login col-lg-4">
+          <form>
+            <h6>Mohon login terlebih dahulu</h6>
+            <div class="form-group">
+              <label for="username">username</label>
+              <input type="email" class="form-control" id="username" placeholder="username" autofocus="">
+            </div>
+            <div class="form-group">
+              <label for="password">password</label>
+              <input type="password" class="form-control" id="password" placeholder="password">
+            </div>
+            <!-- <div class="form-group form-check">
   				    <input type="checkbox" class="form-check-input" id="exampleCheck1">
   				    <label class="form-check-label" for="exampleCheck1">Check me out</label>
   				  </div> -->
             <div class="form-group tombol-login">
-              <a href="javascript:void(0)">        
+              <a href="javascript:void(0)">
                 <div class="btn btn-sm btn-info" id="tombol_login">LOGIN</div>
               </a>
             </div>
-  				</form>
-	    	</div>
-  		</div>	
-  	</div>
+          </form>
+        </div>
+      </div>
+    </div>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -65,10 +70,10 @@
         $.ajax({
           type: "GET",
           url: "ajax/ceklogin.php",
-          data: "username="+username+"&password="+password,
+          data: "username=" + username + "&password=" + password,
           success: function(hasil) {
-            if(hasil=="berhasil") {
-              window.location='./';
+            if (hasil == "berhasil") {
+              window.location = './';
             } else {
               document.getElementById("username").focus();
               Swal.fire({
@@ -84,5 +89,6 @@
       });
     </script>
   </body>
-</html>
+
+  </html>
 <?php } ?>
