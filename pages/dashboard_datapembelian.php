@@ -76,19 +76,28 @@
                   <td class="text-right"><?php echo $dpersetujuan['total_pembelian']; ?></td>
                   <td class="text-center"><span class="badge badge-pill badge-info badge-status"><?php echo $dpersetujuan['status_byr']; ?></span></td>
                   <td class="td-opsi">
-                    <button class="btn-transition btn btn-outline-primary btn-sm" title="detail obat" id="tombol_detail" name="tombol_detail" data-toggle="modal" data-target="#detail_pembelian" data-no_faktur="<?php echo $dpersetujuan['no_faktur']; ?>" data-tgl_pembelian="<?php echo tgl_indo($dpersetujuan['tgl_pembelian']); ?>" data-nama_supp="<?php echo $dpersetujuan['nama_supp']; ?>" data-status_byr="<?php echo $dpersetujuan['status_byr']; ?>">
-                      <i class="fas fa-info-circle"></i>
-                    </button>
-                    <a href="laporan/?page=nota_pembelian&no_faktur=<?php echo $dpersetujuan['no_faktur']; ?>" target="_blank">
-                      <button class="btn-transition btn btn-outline-dark btn-sm" title="cetak" id="tombol_cetak" name="tombol_cetak">
-                        <i class="fas fa-print"></i>
+                    <?php if ($_SESSION['posisi_peg'] == 'Manager') { ?>
+                      <button class="btn btn-danger btn-md aksi" title="aksi" id="tombol_tolak" name="tombol_tolak" data-status="Ditolak" data-no_faktur="<?php echo $dpersetujuan['no_faktur']; ?>">
+                        Tolak
                       </button>
-                    </a>
-                    <?php if ($_SESSION['posisi_peg'] == 'Admin' || $_SESSION['posisi_peg'] == 'Manager' || $_SESSION['posisi_peg'] == 'Apoteker') { ?>
-                      <button class="btn-transition btn btn-outline-danger btn-sm" title="hapus" id="tombol_hapus" name="tombol_hapus" data-no_faktur="<?php echo $dpersetujuan['no_faktur']; ?>">
-                        <i class="fas fa-trash"></i>
+                      <button class="btn btn-primary btn-md aksi" title="aksi" id="tombol_setuju" name="tombol_setuju" data-status="Disetujui" data-no_faktur="<?php echo $dpersetujuan['no_faktur']; ?>">
+                        Setuju
                       </button>
-                    <?php } ?>
+                    <?php } else { ?>
+                      <button class="btn-transition btn btn-outline-primary btn-sm" title="detail obat" id="tombol_detail" name="tombol_detail" data-toggle="modal" data-target="#detail_pembelian" data-no_faktur="<?php echo $dpersetujuan['no_faktur']; ?>" data-tgl_pembelian="<?php echo tgl_indo($dpersetujuan['tgl_pembelian']); ?>" data-nama_supp="<?php echo $dpersetujuan['nama_supp']; ?>" data-status_byr="<?php echo $dpersetujuan['status_byr']; ?>">
+                        <i class="fas fa-info-circle"></i>
+                      </button>
+                      <a href="laporan/?page=nota_pembelian&no_faktur=<?php echo $dpersetujuan['no_faktur']; ?>" target="_blank">
+                        <button class="btn-transition btn btn-outline-dark btn-sm" title="cetak" id="tombol_cetak" name="tombol_cetak">
+                          <i class="fas fa-print"></i>
+                        </button>
+                      </a>
+                      <?php if ($_SESSION['posisi_peg'] == 'Admin' || $_SESSION['posisi_peg'] == 'Manager' || $_SESSION['posisi_peg'] == 'Apoteker') { ?>
+                        <button class="btn-transition btn btn-outline-danger btn-sm" title="hapus" id="tombol_hapus" name="tombol_hapus" data-no_faktur="<?php echo $dpersetujuan['no_faktur']; ?>">
+                          <i class="fas fa-trash"></i>
+                        </button>
+                    <?php }
+                    } ?>
                   </td>
                 </tr>
               <?php } ?>
@@ -199,13 +208,13 @@
           </tfoot>
         </table>
         <?php if ($_SESSION['posisi_peg'] == 'Manager') { ?>
-          <div class="col-sm-12">
+          <!-- <div class="col-sm-12">
             <center>
               <input type="hidden" value="" id="nf">
               <button class="btn btn-danger aksi" data-status="Ditolak">Tolak</button>
               <button class="btn btn-primary aksi" data-status="Disetujui">Setuju</button>
             </center>
-          </div>
+          </div> -->
         <?php } ?>
       </div>
       <!-- <div class="modal-footer">
@@ -332,63 +341,105 @@
     })
   });
 
+  // $(".aksi").click(function() {
+  //   let nf = $("#nf").val()
+  //   let postForm = {
+  //     'no_faktur': nf,
+  //     'status': $(this).data('status')
+  //   };
+  //   Swal.fire({
+  //     title: 'Apakah anda yakin mengubah status ini?',
+  //     text: '',
+  //     type: 'warning',
+  //     showCancelButton: true,
+  //     cancelButtonColor: '#d33',
+  //     confirmButtonColor: '#28A745',
+  //     cancelButtonText: 'Tidak',
+  //     confirmButtonText: 'Ya'
+  //   }).then((selesai) => {
+  //     if (selesai.value) {
+  //       $.ajax({
+  //         type: "POST",
+  //         url: "ajax/detail.php?page=update_status",
+  //         data: postForm,
+  //         dataType: 'json',
+  //         success: function(hasilll) {}
+  //       })
+  //       Swal.fire({
+  //         title: 'Berhasil',
+  //         text: 'Status Pengajuan Berhasil Diubah',
+  //         type: 'success',
+  //         confirmButtonColor: '#3085d6',
+  //         confirmButtonText: 'OK'
+  //       }).then((ok_status) => {
+  //         if (ok_status.value) {
+  //           window.open("laporan/?page=nota_pembelian&no_faktur=" + nf);
+  //           window.location = '?page=datapembelian';
+  //         }
+  //       })
+  //     }
+  //   })
+
+  // $.ajax({
+  //   type: "POST",
+  //   url: "ajax/detail.php?page=update_status",
+  //   data: postForm,
+  //   dataType: 'json',
+  //   success: function(hasil3) {
+  //     Swal.fire({
+  //       title: 'Berhasil',
+  //       text: 'Data Berhasil Diubah',
+  //       type: 'success',
+  //       confirmButtonColor: '#3085d6',
+  //       confirmButtonText: 'OK'
+  //     }).then((ok_status) => {
+  //       if (ok_status.value) {
+  //         window.location = '?page=datapembelian';
+  //       }
+  //     })
+  //   }
+  // })
+  // });
+
+
+
   $(".aksi").click(function() {
-    let nf = $("#nf").val()
-    let postForm = {
-      'no_faktur': nf,
-      'status': $(this).data('status')
-    };
+    let no_faktur = $(this).data("no_faktur");
+    let stat = $(this).data('status');
+
     Swal.fire({
-      title: 'Apakah anda yakin mengubah status ini?',
-      text: '',
+      title: 'Apakah Anda Yakin?',
+      text: 'Anda akan mengubah status data pembelian ' + no_faktur + ', anda tidak dapat mengembalikan data yang telah diubah.',
       type: 'warning',
       showCancelButton: true,
       cancelButtonColor: '#d33',
-      confirmButtonColor: '#28A745',
+      confirmButtonColor: '#3085d6',
       cancelButtonText: 'Tidak',
       confirmButtonText: 'Ya'
-    }).then((selesai) => {
-      if (selesai.value) {
+    }).then((acct) => {
+      if (acct.value) {
         $.ajax({
           type: "POST",
           url: "ajax/detail.php?page=update_status",
-          data: postForm,
-          dataType: 'json',
-          success: function(hasilll) {}
-        })
-        Swal.fire({
-          title: 'Berhasil',
-          text: 'Status Pengajuan Berhasil Diubah',
-          type: 'success',
-          confirmButtonColor: '#3085d6',
-          confirmButtonText: 'OK'
-        }).then((ok_status) => {
-          if (ok_status.value) {
-            window.open("laporan/?page=nota_pembelian&no_faktur=" + nf);
-            window.location = '?page=datapembelian';
+          data: {
+            'no_faktur': no_faktur,
+            'status': stat
+          },
+          success: function(rett) {
+            Swal.fire({
+              title: 'Berhasil',
+              text: 'Status Berhasil Diubah',
+              type: 'success',
+              confirmButtonColor: '#3085d6',
+              confirmButtonText: 'OK'
+            }).then((cnf) => {
+              if (cnf.value) {
+                window.location = '?page=';
+              }
+            })
           }
         })
       }
     })
-
-    // $.ajax({
-    //   type: "POST",
-    //   url: "ajax/detail.php?page=update_status",
-    //   data: postForm,
-    //   dataType: 'json',
-    //   success: function(hasil3) {
-    //     Swal.fire({
-    //       title: 'Berhasil',
-    //       text: 'Data Berhasil Diubah',
-    //       type: 'success',
-    //       confirmButtonColor: '#3085d6',
-    //       confirmButtonText: 'OK'
-    //     }).then((ok_status) => {
-    //       if (ok_status.value) {
-    //         window.location = '?page=datapembelian';
-    //       }
-    //     })
-    //   }
-    // })
   });
 </script>
