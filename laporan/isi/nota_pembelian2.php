@@ -18,7 +18,7 @@
 		</div>
 		<div style="border-bottom: 1px solid; margin: 15px 0;"></div>
 		<div class="judul-surat">
-			<span class="judul">SURAT TANDA PELUNASAN</span>
+			<span class="judul">SURAT PENGAJUAN BARANG</span>
 		</div>
 		<div class="data-transaksi" style="line-height: 1.6; margin-bottom: 12px;">
 			Dengan surat ini menyatakan bahwa transaksi :

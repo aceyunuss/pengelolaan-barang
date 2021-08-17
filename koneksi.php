@@ -1,5 +1,5 @@
 <?php 
-	$conn = new mysqli("localhost", "root", "", "db_apt_margosaras");
+	$conn = new mysqli("localhost", "root", "", "db_pengajuan");
 
 	function tgl_indo($tgl) {
 		$tanggal = substr($tgl,8,2);

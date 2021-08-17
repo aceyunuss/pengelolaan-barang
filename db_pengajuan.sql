@@ -364,11 +364,11 @@ CREATE TABLE IF NOT EXISTS `tbl_pegawai` (
 --
 
 INSERT INTO `tbl_pegawai` (`username`, `password`, `id_peg`, `nama_peg`, `alamat_peg`, `hp_peg`, `jk_peg`, `lhr_peg`, `msk_peg`, `pos_peg`) VALUES
-('admin', 'admin', 'ADM01970215', 'Faizal Abidin', 'Kp. Gambiran RT38/10, Umbulharjo', '085333461216', 'Laki-laki', '1997-02-15', '2019-11-02', 'Admin'),
+('admin', 'admin', 'ADM01970215', 'Hardianto', 'Bogor', '082113359293', 'Laki-laki', '1997-10-27', '2019-11-02', 'Admin'),
 ('ibutika', 'ibutika', 'MNG01841021', 'Chartika Septasari, S.Farm., Apt.', 'Jl. Kebon Agung, Mriyan Kulon, Margomulyo, Kec. Seyegan, Sleman', '082225034004', 'Perempuan', '1984-10-21', '2019-11-03', 'Manager'),
 ('rahayu', 'rahayu', 'APT01940317', 'Kiki Rahayu, A.Md.Far.', 'Jl. Siliwangi, Ringroad Utara, Jombor Lor, Mlati Krajan, Sendangadi, Kec. Mlati, Kabupaten Sleman.', '085337213423', 'Perempuan', '1994-03-17', '2019-11-07', 'Apoteker'),
 ('rangga', 'rangga', 'ADM02960909', 'Rangga Putra', 'Jl. Kakap No 9, Perum Wiromartani, Condong Catur, Sleman', '085205432432', 'Laki-laki', '1996-09-09', '2019-11-07', 'Admin'),
-('septi', 'septi', 'KSR01960119', 'Septiana Ambyar', 'Jl. Kaliurang KM02, Condong Catur, Sleman.', '082225450273', 'Perempuan', '1996-01-19', '2019-11-05', 'Kasir');
+('staff', 'staff', 'STF01960110', 'Dedy S', 'Jl. Kaliurang KM02, Condong Catur, Sleman.', '082225450273', 'Laki-laki', '1996-01-19', '2019-11-05', 'Kasir');
 
 -- --------------------------------------------------------
 

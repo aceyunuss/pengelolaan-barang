@@ -17,7 +17,7 @@ if (@$_SESSION['posisi_peg']) {
     <link rel="stylesheet" href="asset/private_style/style.css">
     <link rel="stylesheet" href="asset/sweetalert/dist/sweetalert2.min.css">
 
-    <title>Aplikasi Fasilitas Sarana KCI | Login</title>
+    <title>Aplikasi Pengajuan Fasilitas Divisi Pelayanan KCI | Login</title>
   </head>
 
   <body>
@@ -28,7 +28,7 @@ if (@$_SESSION['posisi_peg']) {
           <center>
             <img src="asset/img/kai.png" width="320px">
           </center>
-          SELAMAT DATANG DI APLIKASI PERENCANAAN FASILITAS MILIK KAI COMMUTER
+          SELAMAT DATANG DI APLIKASI PENGAJUAN FASILITAS MILIK PT KERETA COMMUTER INDONESIA
         </div>
         <div class="form-login col-lg-4">
           <form>

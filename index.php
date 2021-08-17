@@ -22,7 +22,7 @@
     <link rel="stylesheet" href="asset/bootstrap_datepicker1.9.0/css/bootstrap-datepicker.min.css">
 
     <title>
-      Aplikasi Fasilitas Sarana KAI Commuter | 
+      Aplikasi Pengajuan Fasilitas Divisi Pelayanan KCI | 
       <?php 
         if(@$_GET['page']=='') {
           echo "Dashboard";
@@ -42,7 +42,7 @@
   </head>
   <body class="bg-light">
   	<!-- <div class="logo bg-info">
-  		<span class="navbar-brand logo-atas text-white" href="#">Aplikasi Sales Forecasting - Apotek Margo Saras</span>
+  		<span class="navbar-brand logo-atas text-white" href="#">Aplikasi Pengajuan Fasilitas Sarana Divisi Pelayanan KAI Commuter</span>
   	</div> -->
   	<div id="container">
   	<div id="main">
@@ -50,7 +50,7 @@
   		<!-- <div class="container"> -->
   		<div class="row">
   			<div class="col-md-6">
-  				<span class="text-white font-weight-light">Aplikasi Perencanaan Fasilitas Sarana Pelayanan KAI Commuter</span>
+  				<span class="text-white font-weight-light">Aplikasi Pengajuan Fasilitas Sarana Divisi Pelayanan KAI Commuter</span>
   			</div>
   			<div class="col-md-6 text-right">
   				<!-- <button class="btn btn-sm bg-light text-info">
