@@ -201,7 +201,10 @@
 		            include 'pages/riwayat_peramalan.php';
 		        } else if(@$_GET['page']=='laporan') {
 		            include 'pages/laporan.php';
-		        } 
+		        
+            } else if(@$_GET['page']=='report') {
+              include 'pages/report.php';
+            } 
   			 ?>
   		</div>
 
