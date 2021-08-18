@@ -76,6 +76,9 @@
                   <td class="text-right"><?php echo $dpersetujuan['total_pembelian']; ?></td>
                   <td class="text-center"><span class="badge badge-pill badge-info badge-status"><?php echo $dpersetujuan['status_byr']; ?></span></td>
                   <td class="td-opsi">
+                    <button class="btn-transition btn btn-outline-primary btn-sm" title="detail obat" id="tombol_detail" name="tombol_detail" data-toggle="modal" data-target="#detail_pembelian" data-no_faktur="<?php echo $dpersetujuan['no_faktur']; ?>" data-tgl_pembelian="<?php echo tgl_indo($dpersetujuan['tgl_pembelian']); ?>" data-nama_supp="<?php echo $dpersetujuan['nama_supp']; ?>" data-status_byr="<?php echo $dpersetujuan['status_byr']; ?>">
+                      <i class="fas fa-info-circle"></i>
+                    </button>
                     <?php if ($_SESSION['posisi_peg'] == 'Manager') { ?>
                       <button class="btn btn-danger btn-md aksi" title="aksi" id="tombol_tolak" name="tombol_tolak" data-status="Ditolak" data-no_faktur="<?php echo $dpersetujuan['no_faktur']; ?>">
                         Tolak
@@ -84,9 +87,6 @@
                         Setuju
                       </button>
                     <?php } else { ?>
-                      <button class="btn-transition btn btn-outline-primary btn-sm" title="detail obat" id="tombol_detail" name="tombol_detail" data-toggle="modal" data-target="#detail_pembelian" data-no_faktur="<?php echo $dpersetujuan['no_faktur']; ?>" data-tgl_pembelian="<?php echo tgl_indo($dpersetujuan['tgl_pembelian']); ?>" data-nama_supp="<?php echo $dpersetujuan['nama_supp']; ?>" data-status_byr="<?php echo $dpersetujuan['status_byr']; ?>">
-                        <i class="fas fa-info-circle"></i>
-                      </button>
                       <a href="laporan/?page=nota_pembelian&no_faktur=<?php echo $dpersetujuan['no_faktur']; ?>" target="_blank">
                         <button class="btn-transition btn btn-outline-dark btn-sm" title="cetak" id="tombol_cetak" name="tombol_cetak">
                           <i class="fas fa-print"></i>

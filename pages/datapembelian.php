@@ -49,11 +49,11 @@
   <div class="kotak-data-tab">
     <ul class="nav nav-pills" id="pills-tab" role="tablist">
       <?php
-      $menunggu_persetujuan = "SELECT * FROM tbl_pembelian INNER JOIN tbl_pegawai ON tbl_pembelian.id_peg = tbl_pegawai.id_peg INNER JOIN tbl_supplier ON tbl_pembelian.no_supplier = tbl_supplier.no_supp WHERE tbl_pembelian.status_byr = 'Mengajukan' ORDER BY tbl_supplier.nama_supp ASC";
+      $menunggu_persetujuan = "SELECT * FROM tbl_pembelian INNER JOIN tbl_pegawai ON tbl_pembelian.id_peg = tbl_pegawai.id_peg INNER JOIN tbl_supplier ON tbl_pembelian.no_supplier = tbl_supplier.no_supp LEFT JOIN (SELECT no_faktur, GROUP_CONCAT( nm_barang SEPARATOR ', ' ) as nama_barang FROM tbl_pembeliandetail p	LEFT JOIN tbl_databarang b ON p.kd_barang = b.kd_barang GROUP BY p.no_faktur) x on x.no_faktur = tbl_pembelian.no_faktur WHERE tbl_pembelian.status_byr = 'Mengajukan' ORDER BY tbl_supplier.nama_supp ASC";
       $sql_persetujuan = mysqli_query($conn, $menunggu_persetujuan) or die($conn->error);
       $jml_persetujuan = mysqli_num_rows($sql_persetujuan);
 
-      $selesai = "SELECT * FROM tbl_pembelian INNER JOIN tbl_pegawai ON tbl_pembelian.id_peg = tbl_pegawai.id_peg INNER JOIN tbl_supplier ON tbl_pembelian.no_supplier = tbl_supplier.no_supp WHERE tbl_pembelian.status_byr != 'Mengajukan' ORDER BY tbl_pembelian.tgl_pembelian ASC";
+      $selesai = "SELECT * FROM tbl_pembelian INNER JOIN tbl_pegawai ON tbl_pembelian.id_peg = tbl_pegawai.id_peg INNER JOIN tbl_supplier ON tbl_pembelian.no_supplier = tbl_supplier.no_supp LEFT JOIN (SELECT no_faktur, GROUP_CONCAT( nm_barang SEPARATOR ', ' ) as nama_barang FROM tbl_pembeliandetail p	LEFT JOIN tbl_databarang b ON p.kd_barang = b.kd_barang GROUP BY p.no_faktur) x on x.no_faktur = tbl_pembelian.no_faktur WHERE tbl_pembelian.status_byr != 'Mengajukan' ORDER BY tbl_pembelian.tgl_pembelian ASC";
       $sql_selesai = mysqli_query($conn, $selesai) or die($conn->error);
       $jml_selesai = mysqli_num_rows($sql_selesai);
       ?>
@@ -74,6 +74,7 @@
                 <th>No Faktur</th>
                 <th>Tanggal</th>
                 <th>Supplier</th>
+                <th>Nama Barang</th>
                 <th>Total</th>
                 <th>Status</th>
                 <th><?= $_SESSION['posisi_peg'] == 'Manager' ? "Aksi" : "Opsi" ?></th>
@@ -89,9 +90,13 @@
                   <td><?php echo $dpersetujuan['no_faktur']; ?></td>
                   <td class="text-center"><?php echo $dpersetujuan['tgl_pembelian']; ?></td>
                   <td><?php echo $dpersetujuan['nama_supp']; ?></td>
+                  <td><?php echo $dpersetujuan['nama_barang']; ?></td>
                   <td class="text-right"><?php echo $dpersetujuan['total_pembelian']; ?></td>
                   <td class="text-center"><span class="badge badge-pill badge-info badge-status"><?php echo $dpersetujuan['status_byr']; ?></span></td>
                   <td class="td-opsi">
+                    <button class="btn-transition btn btn-outline-primary btn-sm" title="detail obat" id="tombol_detail" name="tombol_detail" data-toggle="modal" data-target="#detail_pembelian" data-no_faktur="<?php echo $dpersetujuan['no_faktur']; ?>" data-tgl_pembelian="<?php echo tgl_indo($dpersetujuan['tgl_pembelian']); ?>" data-nama_supp="<?php echo $dpersetujuan['nama_supp']; ?>" data-status_byr="<?php echo $dpersetujuan['status_byr']; ?>">
+                      <i class="fas fa-info-circle"></i>
+                    </button>
                     <?php if ($_SESSION['posisi_peg'] == 'Manager') { ?>
                       <button class="btn btn-danger btn-md aksi" title="aksi" id="tombol_tolak" name="tombol_tolak" data-status="Ditolak" data-no_faktur="<?php echo $dpersetujuan['no_faktur']; ?>">
                         Tolak
@@ -100,9 +105,6 @@
                         Setuju
                       </button>
                     <?php } else { ?>
-                      <button class="btn-transition btn btn-outline-primary btn-sm" title="detail obat" id="tombol_detail" name="tombol_detail" data-toggle="modal" data-target="#detail_pembelian" data-no_faktur="<?php echo $dpersetujuan['no_faktur']; ?>" data-tgl_pembelian="<?php echo tgl_indo($dpersetujuan['tgl_pembelian']); ?>" data-nama_supp="<?php echo $dpersetujuan['nama_supp']; ?>" data-status_byr="<?php echo $dpersetujuan['status_byr']; ?>">
-                        <i class="fas fa-info-circle"></i>
-                      </button>
                       <a href="laporan/?page=nota_pembelian&no_faktur=<?php echo $dpersetujuan['no_faktur']; ?>" target="_blank">
                         <button class="btn-transition btn btn-outline-dark btn-sm" title="cetak" id="tombol_cetak" name="tombol_cetak">
                           <i class="fas fa-print"></i>
@@ -130,6 +132,7 @@
                 <th>No Faktur</th>
                 <th>Tanggal</th>
                 <th>Supplier</th>
+                <th>Nama Barang</th>
                 <th>Total</th>
                 <th>Status</th>
                 <!-- <th>Jth Tempo</th> -->
@@ -146,6 +149,7 @@
                   <td><?php echo $dselesai['no_faktur']; ?></td>
                   <td class="text-center"><?php echo $dselesai['tgl_pembelian']; ?></td>
                   <td><?php echo $dselesai['nama_supp']; ?></td>
+                  <td><?php echo $dselesai['nama_barang']; ?></td>
                   <td class="text-right"><?php echo $dselesai['total_pembelian']; ?></td>
                   <td class="text-center"><span class="badge badge-pill badge-<?= $dselesai['status_byr'] == "Disetujui" ? "success" : "danger" ?> badge-status"><?php echo $dselesai['status_byr']; ?></span></td>
                   <!-- <td class="text-center"><?php echo $dselesai['jth_tempo']; ?></td> -->
